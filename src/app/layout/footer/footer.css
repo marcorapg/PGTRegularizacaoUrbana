@@ -1,0 +1,17 @@
+.footer {
+    background-color: #071d41 !important;
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 100%
+}
+
+.footer>.p-grid {
+    margin: 0
+}
+
+@media print {
+    .br-footer {
+        display: none
+    }
+}

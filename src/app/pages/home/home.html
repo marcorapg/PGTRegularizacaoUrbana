@@ -1,29 +1,49 @@
-<app-breadcrumb [breadcrumbs]="pageBreadcrumbs"></app-breadcrumb>
-<div class="main-content pl-sm-3 mt-4" id="main-content">
-    <h1>PGT - Protótipos</h1>
-    <p>Selecione a opção que deseja acessar:</p>
+<div class="corpo">
+    <div class="topo">
+        <div class="topo-titulo">
+            <h1>
+                Plataforma de <br>
+                <span style="font-weight: bold !important;">Governança Territorial</span>
+            </h1>
+            <h4>
+                Todos os serviços do <strong>INCRA</strong> para você
+            </h4>
+            <div class="mt-5">
+                <button type="button" class="br-button primary">
+                    Minhas solicitações
+                </button>
+            </div>
+        </div>
+    </div>
 
-    <div class="row justify-content-center">
-        <div class="col-md-4 d-flex">
-            <div class="br-card hover d-flex flex-column h-100 w-100">
-                <div class="card-header">
-                    <div class="d-flex align-items-center">
-                        <i class="fas fa-plus-circle fa-3x" aria-hidden="true"></i>
-                        <div class="ml-3">
-                            <div class="text-weight-semi-bold text-up-02">Autosserviço</div>
-                        </div>
+
+    <div class="row ml-3 mr-3">
+        <div class="col-md">
+            <div class="br-card hover">
+                <div class="card-content text-center">
+                    <h3>Regularização Urbana</h3>
+                    <p>Entrar como Prefeitura</p>
+                    <div class="mt-5">
+                        <button type="button" class="br-button primary">
+                            Entrar
+                        </button>
                     </div>
                 </div>
-                <div class="card-content flex-grow-1">
-                    <p>Realize solicitações de serviços você mesmo</p>
-                </div>
-                <div class="card-footer mt-auto">
-                    <div class="d-flex justify-content-center">
-                        <a routerLink="autoservico"><button class="br-button primary mr-3"
-                                type="button">Acessar</button></a>
+            </div>
+        </div>
+        <div class="col-md">
+            <div class="br-card hover">
+                <div class="card-content text-center">
+                    <h3>Regularização Urbana</h3>
+                    <p>Entrar como Analista do INCRA</p>
+                    <div class="mt-5">
+                        <button type="button" class="br-button primary">
+                            Entrar
+                        </button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
 </div>

@@ -1,1 +1,315 @@
 /* You can add global styles to this file, and also import other style files */
+/* === LOADER DE CARREGAMENTO === */
+.progress-loader {
+  background-color: rgba(0, 0, 0, 0.26);
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.progress-loader.hidden {
+  display: none;
+}
+
+/* === TOPO / CABEÇALHO === */
+.topo {
+  width: 100%;
+  padding-top: 5rem;
+  background-image: url(https://pro-pgt-incra.estaleiro.serpro.gov.br/pgt/cabecalho-2.4268559d08e72ade7357.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 400px;
+}
+
+.topo-titulo {
+  padding-left: 10rem;
+}
+
+/* === SEÇÕES DE CONTEÚDO === */
+.servicos,
+.assentamentos-aptos {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  color: var(--color-primary-darken-01);
+  text-align: center;
+  background-color: #f8f8f8;
+}
+
+.assentamentos-aptos {
+  padding: 6rem 8rem 6rem 9.5rem;
+}
+
+/* === ELEMENTOS DE CONTEÚDO === */
+.card {
+  padding: 8px;
+  width: 345px;
+}
+
+.card-badge {
+  padding: 0.5rem 0.75rem;
+  background-color: #268744;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin: 0.5rem 0.75rem;
+  border-radius: 0.25rem;
+  font-size: 0.7rem;
+}
+
+.titulo,
+.titulo-carrossel {
+  color: var(--color-primary-darken-02);
+  font-size: var(--font-size-scale-up-01);
+  min-height: 50px;
+  text-align: center;
+}
+
+.titulo-carrossel {
+  text-align: center;
+}
+
+.imagem,
+.card-imagem {
+  height: 80px;
+}
+
+/* === SEÇÃO DE GOVERNANÇA === */
+.governanca-container {
+  padding-left: 6rem;
+  padding-right: 6rem;
+  padding-bottom: 3rem;
+  color: var(--color-primary-darken-01);
+  text-align: center;
+}
+
+.governanca {
+  display: flex;
+  flex-direction: row;
+  text-align: left;
+}
+
+.imagem-governanca {
+  display: flex;
+  justify-content: flex-end;
+  text-align: right;
+  width: 50%;
+}
+
+/* === SEÇÃO DE JORNADA === */
+.jornada-container {
+  text-align: left;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  color: var(--color-primary-darken-01);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.jornada-numeros {
+  padding-top: 5rem;
+  padding-bottom: 8rem;
+  background-color: #268744;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.jornada-numeros .titulo-numeros {
+  font-weight: 600;
+}
+
+.jornada-numeros .itens {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.jornada-numeros .item {
+  text-align: center;
+  padding: 14px;
+  width: 280px;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.jornada-numeros .titulo-item {
+  font-size: 3.6rem;
+  font-weight: 900;
+}
+
+/* === MODAL (FUNDO ESCURECIDO) === */
+.overlay-modal {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: hsla(0, 0%, 53.3%, 0.53);
+  justify-content: center;
+  align-items: center;
+  padding: 0 30%;
+}
+
+/* === TEXTOS === */
+.texto {
+  line-height: 24px;
+  color: #333;
+}
+
+.texto-evidente {
+  font-weight: 600;
+  line-height: 40px;
+}
+
+.cinza {
+  font-size: 22px;
+  color: #555;
+  text-align: center;
+  font-weight: 500;
+  padding-bottom: 1.5rem;
+}
+
+.footer {
+  text-align: center;
+}
+
+/* === LISTA DE SERVIÇOS === */
+.lista-servicos {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* === IMAGENS E ÍCONES === */
+.imagem-jornada {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.imagem-jornada-icon {
+  width: 50%;
+}
+
+/* === RESPONSIVIDADE === */
+
+/* Telas pequenas (até 500px) */
+@media only screen and (max-width: 500px) {
+  .header-links {
+    display: none !important;
+  }
+
+  .topo {
+    padding-top: 2rem;
+    background-image: none;
+    height: 320px;
+  }
+
+  .governanca {
+    flex-wrap: wrap;
+    text-align: center;
+  }
+
+  .governanca-container {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  .imagem-governanca,
+  .imagem-jornada-icon {
+    width: 100%;
+    padding-top: 42px;
+  }
+
+  .servicos,
+  .assentamentos-aptos {
+    padding: 3rem 1rem 2rem;
+  }
+
+  .jornada-numeros {
+    padding: 6rem;
+    margin-top: 32px;
+  }
+
+  .h1, h1 {
+    font-size: 24px !important;
+    font-weight: var(--font-weight-regular);
+  }
+
+  .h4, h4 {
+    font-size: 16.78px !important;
+    font-weight: var(--font-weight-regular);
+  }
+
+  .divider {
+    display: none;
+  }
+}
+
+/* Telas médias (entre 500px e 1280px) */
+@media (min-width: 500px) and (max-width: 1280px) {
+  .topo {
+    padding-top: 2rem;
+    background-image: url(https://pro-pgt-incra.estaleiro.serpro.gov.br/pgt/cabecalho-2.4268559d08e72ade7357.jpg);
+    height: 340px;
+  }
+
+  .governanca-container {
+    padding-left: 5rem !important;
+    padding-right: 5rem !important;
+    text-align: center;
+  }
+
+  .imagem-governanca,
+  .imagem-jornada-icon {
+    width: 100%;
+    padding-top: 42px;
+  }
+
+  .jornada-numeros .itens {
+    padding-left: 10rem;
+    padding-right: 10rem;
+  }
+}
+
+/* Telas grandes (até 1366px) */
+@media (max-width: 1366px) {
+  .governanca-container {
+    padding-left: 8rem;
+    padding-right: 8rem;
+  }
+
+  .topo-titulo {
+    padding-left: 8rem;
+  }
+}
+
+/* Telas muito grandes (mínimo 1920px) */
+@media (min-width: 1920px) {
+  .governanca-container {
+    padding-left: 14rem;
+    padding-right: 14rem;
+  }
+
+  .topo-titulo {
+    padding-left: 14rem;
+  }
+
+  .topo {
+    height: 560px;
+  }
+}
