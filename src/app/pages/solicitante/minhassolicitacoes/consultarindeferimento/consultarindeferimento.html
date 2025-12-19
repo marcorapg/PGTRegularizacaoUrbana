@@ -1,0 +1,31 @@
+<app-breadcrumb [breadcrumbs]="pageBreadcrumbs"></app-breadcrumb>
+
+<h3>Consultar Notificação de Indeferimento da Solicitação</h3>
+
+<app-cabecalhosolicitacao></app-cabecalhosolicitacao>
+
+<div class="br-accordion" id="accordion4-negative" single="single">
+    <div class="item" active>
+        <button class="header" type="button" aria-controls="idsn31"><span class="icon"><i class="fas fa-angle-down"
+                    aria-hidden="true"></i></span><span class="title">Indeferimento da solicitação</span></button>
+    </div>
+    <div class="content" id="idsn31">
+        <div class="row mb-3 mt-3">
+            <div class="col-sm-12 col-lg-12">
+                <div class="br-input">
+                    <label for="nomeTitular">Justificativa para o indeferimento da solicitação</label>
+                    <p>Após análise técnica e documental, verificou-se que a solicitação de Regularização Fundiária
+                        Urbana não atende aos requisitos mínimos estabelecidos pela legislação vigente, impossibilitando
+                        sua continuidade. Constatou-se a ausência de documentos essenciais para comprovação da posse,
+                        ocupação ou legitimidade do requerente, mesmo após a concessão de prazo para apresentação das
+                        complementações necessárias.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-12 mt-3 text-left">
+    <a routerLink="/solicitante/minhassolicitacoes"><button class="br-button primary mr-3"
+            type="button">Voltar</button></a>
+</div>

@@ -1,0 +1,220 @@
+<div class="d-flex align-items-center">
+    <!-- Imagem -->
+    <img src="assets/images/pessoa.png" alt="Ilustração" class="mr-3" style="width: 200px; height: 200px;" />
+
+    <!-- Texto -->
+    <div>
+        <h4>Identificação</h4>
+        <br>
+        <p class="mb-0">
+            Pesquise o solicitante pelo CNPJ.
+        </p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <!-- Linha: CPF + botão -->
+        <div class="row mb-3">
+            <div class="col-3">
+                <div class="br-input">
+                    <label for="input-icon">CNPJ</label>
+                    <div class="input-group">
+                        <div class="input-icon">
+                            <i class="fas fa-user-tie" aria-hidden="true"></i>
+                        </div>
+                        <input id="input-icon" type="text" value="12.345.678/9000-00" placeholder="00.000.000/0000-00"
+                            mask="00.000.000/0000-00" disabled />
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="col-auto d-flex align-items-end">
+                <button class="br-button circle primary" type="button" (click)="pesquisarCPF()"
+                    aria-label="Pesquisar CPF">
+                    <i class="fas fa-search" aria-hidden="true"></i>
+                </button>
+            </div> -->
+        </div>
+
+        <!-- Outro input -->
+        <div class="row">
+            <!-- [hidden]="exibirBeneficiarioEncontrado" -->
+            <div class="col-sm-6 col-lg-12 mb-3">
+                <div class="br-input">
+                    <label for="input-default">Nome do representante municipal em exercício</label>
+                    <input id="input-default" type="text" value="Jorge Freitas Silva" disabled="disabled" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 
+<div class="row">
+    <div class="col-12">
+
+        <div class="br-table" data-search="data-search" data-selection="data-selection" data-collapse="data-collapse"
+            data-random="data-random">
+            <div class="table-header">
+                <div class="top-bar">
+                    <div class="table-title">Foram encontradas solicitações anteriores do solicitante informado</div>
+                </div>
+                <div class="search-bar">
+                    <div class="br-input">
+                        <label for="table-searchbox-49447">Buscar na tabela</label>
+                        <input id="table-searchbox-49447" type="search" placeholder="Buscar na tabela"
+                            aria-labelledby="button-input-search" aria-label="Buscar na tabela" />
+                        <button class="br-button" type="button" aria-label="Buscar"><i class="fas fa-search"
+                                aria-hidden="true"></i>
+                        </button>
+                    </div>
+                    <button class="br-button circle" type="button" data-dismiss="search" aria-label="Fechar busca"><i
+                            class="fas fa-times" aria-hidden="true"></i>
+                    </button>
+                </div>
+                <div class="selected-bar">
+                    <div class="info"><span class="count">0</span><span class="text">item selecionado</span></div>
+                    <div class="actions-trigger text-nowrap">
+                        <button class="br-button circle inverted" type="button" id="button-dropdown-selection"
+                            data-toggle="dropdown" data-target="target02-49447" aria-controls="target02-49447"
+                            aria-label="Ver mais opções de ação" aria-haspopup="true"><i class="fas fa-ellipsis-v"
+                                aria-hidden="true"></i>
+                        </button>
+                        <div class="br-list" id="target02-49447" role="menu" aria-labelledby="button-dropdown-selection"
+                            hidden="hidden">
+                            <button class="br-item" type="button" data-toggle="" role="menuitem">Ação 1
+                            </button><span class="br-divider"></span>
+                            <button class="br-item" type="button" role="menuitem">Ação 2
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <table>
+                <caption>Título da Tabela</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Nome da gleba</th>
+                        <th scope="col">Município</th>
+                        <th scope="col">Localização (bairro/distrito/vila/povoado)</th>
+                        <th scope="col">Área georreferenciada (em hectares)</th>
+                        <th scope="col">Código da Parcela no SIGEF</th>
+                        <th scope="col">Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-th="Título coluna 1">Nova Esperança</td>
+                        <td data-th="Título coluna 2">Belo Horizonte</td>
+                        <td data-th="Título coluna 2">Bairro Santa Luzia</td>
+                        <td data-th="Título coluna 3">135</td>
+                        <td data-th="Título coluna 4">3f09b823-991f-48b4-8d0c-1064d5849c4f</td>
+                        <td data-th="Título coluna 5"><span class="br-tag bg-green-warm-vivid-70"
+                                aria-describedby="tag-text02"><span id="tag-text02">Processada</span></span></td>
+                    </tr>
+                    <tr>
+                        <td data-th="Título coluna 1">Jardim das Acácias</td>
+                        <td data-th="Título coluna 2">Belo Horizonte</td>
+                        <td data-th="Título coluna 2">Vila São João</td>
+                        <td data-th="Título coluna 3">78</td>
+                        <td data-th="Título coluna 4">db634c8a-9be4-4e55-b357-faf2acc036a9</td>
+                        <td data-th="Título coluna 5"><span class="br-tag bg-red-warm-vivid-70"
+                                aria-describedby="tag-text02"><span id="tag-text02">Processada com
+                                    pendências</span></span></td>
+                    </tr>
+                    <tr>
+                        <td data-th="Título coluna 1">Alto do Horizonte</td>
+                        <td data-th="Título coluna 2">Belo Horizonte</td>
+                        <td data-th="Título coluna 2">Povoado Boa Vista</td>
+                        <td data-th="Título coluna 3">235</td>
+                        <td data-th="Título coluna 4">21f42c56-cadc-4b3f-832f-e083189c2d6d</td>
+                        <td data-th="Título coluna 5"><span class="br-tag bg-violet-warm-vivid-70"
+                                aria-describedby="tag-text02"><span id="tag-text02">Cancelada</span></span></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="table-footer">
+                <nav class="br-pagination" aria-label="paginação" data-total="50" data-current="1" data-per-page="20">
+                    <div class="pagination-per-page">
+                        <div class="br-select">
+                            <div class="br-input">
+                                <label for="per-page-selection-random-58720">Exibir</label>
+                                <input id="per-page-selection-random-58720" type="text" placeholder=" " />
+                                <button class="br-button" type="button" aria-label="Exibir lista" tabindex="-1"
+                                    data-trigger="data-trigger"><i class="fas fa-angle-down" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                            <div class="br-list" tabindex="0">
+                                <div class="br-item" tabindex="-1">
+                                    <div class="br-radio">
+                                        <input id="per-page-10-random-58720" type="radio" name="per-page-random-58720"
+                                            value="per-page-10-random-58720" checked="checked" />
+                                        <label for="per-page-10-random-58720">10</label>
+                                    </div>
+                                </div>
+                                <div class="br-item" tabindex="-1">
+                                    <div class="br-radio">
+                                        <input id="per-page-20-random-58720" type="radio" name="per-page-random-58720"
+                                            value="per-page-20-random-58720" />
+                                        <label for="per-page-20-random-58720">20</label>
+                                    </div>
+                                </div>
+                                <div class="br-item" tabindex="-1">
+                                    <div class="br-radio">
+                                        <input id="per-page-30-random-58720" type="radio" name="per-page-random-58720"
+                                            value="per-page-30-random-58720" />
+                                        <label for="per-page-30-random-58720">30</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><span class="br-divider d-none d-sm-block mx-3"></span>
+                    <div class="pagination-information d-none d-sm-flex"><span class="current">1</span>&ndash;<span
+                            class="per-page">20</span>&nbsp;de&nbsp;<span class="total">50</span>&nbsp;itens</div>
+                    <div class="pagination-go-to-page d-none d-sm-flex ml-auto">
+                        <div class="br-select">
+                            <div class="br-input">
+                                <label for="go-to-selection-random-44623">Página</label>
+                                <input id="go-to-selection-random-44623" type="text" placeholder=" " />
+                                <button class="br-button" type="button" aria-label="Exibir lista" tabindex="-1"
+                                    data-trigger="data-trigger"><i class="fas fa-angle-down" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                            <div class="br-list" tabindex="0">
+                                <div class="br-item" tabindex="-1">
+                                    <div class="br-radio">
+                                        <input id="go-to-1-random-44623" type="radio" name="go-to-random-44623"
+                                            value="go-to-1-random-44623" checked="checked" />
+                                        <label for="go-to-1-random-44623">1</label>
+                                    </div>
+                                </div>
+                                <div class="br-item" tabindex="-1">
+                                    <div class="br-radio">
+                                        <input id="go-to-2-random-44623" type="radio" name="go-to-random-44623"
+                                            value="go-to-2-random-44623" />
+                                        <label for="go-to-2-random-44623">2</label>
+                                    </div>
+                                </div>
+                                <div class="br-item" tabindex="-1">
+                                    <div class="br-radio">
+                                        <input id="go-to-3-random-44623" type="radio" name="go-to-random-44623"
+                                            value="go-to-3-random-44623" />
+                                        <label for="go-to-3-random-44623">3</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><span class="br-divider d-none d-sm-block mx-3"></span>
+                    <div class="pagination-arrows ml-auto ml-sm-0">
+                        <button class="br-button circle" type="button" aria-label="Voltar página"><i
+                                class="fas fa-angle-left" aria-hidden="true"></i>
+                        </button>
+                        <button class="br-button circle" type="button" aria-label="Página seguinte"><i
+                                class="fas fa-angle-right" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div> -->

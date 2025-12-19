@@ -1,0 +1,35 @@
+<app-breadcrumb [breadcrumbs]="pageBreadcrumbs"></app-breadcrumb>
+
+<h3>Consultar Notificação de Indeferimento de Autorização de Obra</h3>
+
+<app-cabecalhosolicitacao></app-cabecalhosolicitacao>
+
+<div class="br-accordion" id="accordion4-negative" single="single">
+    <div class="item" active>
+        <button class="header" type="button" aria-controls="idsn31"><span class="icon"><i class="fas fa-angle-down"
+                    aria-hidden="true"></i></span><span class="title">Indeferimento da autorização de obra</span></button>
+    </div>
+    <div class="content" id="idsn31">
+        <div class="row mb-3 mt-3">
+            <div class="col-sm-12 col-lg-12">
+                <div class="br-input">
+                    <label for="nomeTitular">Justificativa para o indeferimento da autorização de obra</label>
+                    <p>Após análise técnica e documental da solicitação de Autorização de Obra, apresentada no âmbito do
+                        processo de Regularização Fundiária Urbana, constatou-se que o pedido não atende aos requisitos
+                        legais, técnicos e administrativos exigidos para sua aprovação.</p>
+
+                    <p>Verificou-se que a obra pretendida encontra-se em desacordo com os parâmetros urbanísticos e
+                        fundiários aplicáveis, bem como apresenta pendências e inconsistências na documentação técnica
+                        apresentada, especialmente no que se refere à compatibilidade do projeto com o levantamento
+                        georreferenciado aprovado, às limitações de uso e ocupação do solo e às diretrizes estabelecidas
+                        para áreas em processo de regularização.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-12 mt-3 text-left">
+    <a routerLink="/solicitante/minhassolicitacoes"><button class="br-button primary mr-3"
+            type="button">Voltar</button></a>
+</div>

@@ -2,11 +2,10 @@ import { Component, AfterViewInit, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Header } from './layout/header/header';
 import { Footer } from './layout/footer/footer';
-import { Menu } from "./layout/menu/menu";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Header, Footer, Menu],
+  imports: [RouterOutlet, Header, Footer],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

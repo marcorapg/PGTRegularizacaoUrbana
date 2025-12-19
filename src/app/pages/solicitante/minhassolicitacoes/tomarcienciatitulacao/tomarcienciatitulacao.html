@@ -1,0 +1,48 @@
+<app-breadcrumb [breadcrumbs]="pageBreadcrumbs"></app-breadcrumb>
+
+<h3>Tomar Ciência da Titulação</h3>
+
+<app-cabecalhosolicitacao></app-cabecalhosolicitacao>
+
+<div class="col-12 mt-3">
+    <div class="br-message warning">
+        <div class="icon"><i class="fas fa-info-circle fa-lg" aria-hidden="true"></i>
+        </div>
+        <div class="content"
+            aria-label="Informação. Seus dados só serão salvos após o preenchimento do primeiro campo do formulário."
+            role="alert"><span class="message-title">Alerta</span><br><span class="message-body">Para que o processo
+                avance, é necessário tomar ciência da emissão da titulação; para isso, o usuário deve marcar a caixa de
+                seleção declarando que tomou ciência e, em seguida, clicar no botão “Salvar” para registrar a
+                confirmação no sistema.</span>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <div class="br-card">
+            <div class="card-content">
+                <div class="row mb-5 mt-5">
+                    <div class="col-12">
+                        <div class="br-checkbox">
+                            <input id="check-state-solicitacao" name="check-state-solicitacao" type="checkbox" />
+                            <label style="font-weight: bold;" for="check-state-solicitacao">Declaro, para os devidos
+                                fins, que tomei ciência da emissão do Título de Regularização Fundiária Urbana,
+                                referente à área e aos beneficiários constantes no respectivo processo administrativo,
+                                emitido pelo órgão competente, nos termos da legislação vigente.</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="p-3 d-flex justify-content-end">
+    <a routerLink="/solicitante/minhassolicitacoes"><button class="br-button primary mr-3"
+            type="button">Voltar</button></a>
+    <button class="br-button primary mr-3" [routerLink]="['/solicitante/minhassolicitacoes']"
+        [queryParams]="{ tipoMensagemSucesso: 'tomarCienciaTitulacao' }">
+        Salvar
+    </button>
+</div>

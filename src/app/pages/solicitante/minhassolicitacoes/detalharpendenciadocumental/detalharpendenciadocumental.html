@@ -1,0 +1,49 @@
+<app-breadcrumb [breadcrumbs]="pageBreadcrumbs"></app-breadcrumb>
+
+<h3>Detalhamento de Pendência Documental</h3>
+
+<app-cabecalhosolicitacao></app-cabecalhosolicitacao>
+
+<!-- Dados da solicitação -->
+<div class="br-accordion" id="accordion4-negative" single="single">
+    <div class="item" active>
+        <button class="header" type="button" aria-controls="idsn31"><span class="icon"><i class="fas fa-angle-down"
+                    aria-hidden="true"></i></span><span class="title">Pendências documentais</span></button>
+    </div>
+    <div class="content" id="idsn31">
+        <div class="row">
+            <div class="col-12">
+                <h2 style="text-align: center;">Notificação</h2>
+
+                <p>Notificação nº ............/2025/INCRA</p>
+                <p>Ao: Sr. xxxxxxxxxxx</p>
+                <p>Prefeito Municipal - xxxxxxx/UF</p>
+                <p>Endereço: xxxxxxxxxxxxx</p>
+                <p>CNPJ: xxxxxxxxxxx - Tel: (xx) xxxxxx</p>
+                <p>Assunto: Ausência ou correção de documentos fundamentais para a doação pelo Incra da área
+                    xxxxxxxxxx</p>
+                <p>Referência: Protocolo nº xxxxxxxxxxxxx</p>
+                <p>Senhor Prefeito,</p>
+                <ul>
+                    <li>1. Informamos que, após análise da documentação apresentada ao Incra para doação da área
+                        xxxxxxxxx, encontramos inconsistências que devem ser sanadas para a continuidade do
+                        processo:</li>
+                    <li>2. Georreferenciamento incorreto ou com que apresenta áreas não consolidadas em seu
+                        interior.</li>
+                    <li>3. Assim, informamos que a titulação da área ficará sobrestada até que se verifique a
+                        solução da pendência processual apresentada acima.</li>
+                </ul>
+                <p>Atenciosamente,</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="p-3 d-flex justify-content-end">
+    <a routerLink="/solicitante/minhassolicitacoes"><button class="br-button primary mr-3"
+            type="button">Voltar</button></a>
+    <a routerLink="/solicitante/minhassolicitacoes/corrigirpendenciadocumental"><button class="br-button primary mr-3"
+            type="button">Corrigir pendência documental</button></a>
+    <a routerLink="/solicitante/minhassolicitacoes/corrigirpendenciadocumentalgeo"><button class="br-button primary mr-3"
+            type="button">Corrigir pendência de georreferenciada</button></a>                        
+</div>

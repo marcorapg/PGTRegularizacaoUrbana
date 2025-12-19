@@ -1,0 +1,68 @@
+<app-breadcrumb [breadcrumbs]="pageBreadcrumbs"></app-breadcrumb>
+
+<h3>Solicitação de Título de Regularização Fundiária Urbana</h3>
+
+<div class="wizard-sample-1">
+    <div class="br-wizard" collapsed="collapsed" step="1">
+        <div class="wizard-progress" role="tablist">
+            <button class="wizard-progress-btn" type="button" aria-labelledby="info1" role="tab" aria-controls="tab1"
+                title="Identificacao"><span class="info" id="info1">Identificação</span></button>
+            <button class="wizard-progress-btn" type="button" aria-labelledby="info2" role="tab" aria-controls="tab2"
+                title="DadosSolicitante" active="active" disabled="disabled"><span class="info" id="info2">Dados do
+                    solicitante</span></button>
+            <button class="wizard-progress-btn" type="button" aria-labelledby="info3" role="tab" aria-controls="tab3"
+                title="SelecaoParcelas" active="active" disabled="disabled"><span class="info" id="info3">Seleção de
+                    parcelas</span></button>
+        </div>
+        <div class="wizard-form">
+            <div class="wizard-panel" active="active" role="tabpanel" id="tab1">
+                <div class="wizard-panel-content" tabindex="0">
+                    <!-- Identificação -->
+                    <app-identificacao></app-identificacao>
+                </div>
+                <div class="wizard-panel-btn">
+                    <a routerLink="/solicitante"><button class="br-button wizard-btn-canc" type="button">Cancelar
+                        </button>
+                    </a>
+                    <button class="br-button primary wizard-btn-next" type="button"
+                        aria-description="Passo 2 de 5 Validar Dados">
+                        Avançar
+                    </button>
+                </div>
+            </div>
+            <div class="wizard-panel" role="tabpanel" id="tab2">
+                <div class="wizard-panel-content" tabindex="0">
+                    <!-- Dados do solicitante -->
+                    <app-dados></app-dados>
+                </div>
+                <div class="wizard-panel-btn">
+                    <a routerLink="/solicitante"><button class="br-button wizard-btn-canc" type="button">Cancelar
+                        </button>
+                    </a>
+                    <button class="br-button primary wizard-btn-next" type="button"
+                        aria-description="Passo 3 de 5 Habilitar Cadastro"> Avançar
+                    </button>
+                    <button class="br-button secondary wizard-btn-prev" type="button"
+                        aria-description="Passo 1 de 5 Dados Pessoais">Voltar
+                    </button>
+                </div>
+            </div>
+            <div class="wizard-panel" role="tabpanel" id="tab3">
+                <div class="wizard-panel-content" tabindex="0">
+                    <!-- Seleção de parcelas -->
+                    <app-selecao></app-selecao>
+                </div>
+                <div class="wizard-panel-btn">
+                    <a routerLink="/solicitante"><button class="br-button wizard-btn-canc" type="button">Cancelar
+                        </button>
+                    </a>
+                    <a routerLink="/solicitante/criarsolicitacao/sucesso"><button class="br-button primary wizard-btn"
+                            type="button">Concluir
+                        </button></a>
+                    <button class="br-button secondary wizard-btn-prev" type="button">Voltar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

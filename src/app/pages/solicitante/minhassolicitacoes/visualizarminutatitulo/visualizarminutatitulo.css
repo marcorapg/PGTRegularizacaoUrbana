@@ -1,0 +1,15 @@
+.texto-acessorio {
+  color: var(--gray-70);
+  font-size: var(--font-size-scale-down-01);
+}
+
+.imagem-centralizada {
+  display: flex;
+  justify-content: center;
+}
+
+.imagem-centralizada img {
+  width: 1665px;
+  height: 1552px;
+  object-fit: contain; /* ou cover */
+}

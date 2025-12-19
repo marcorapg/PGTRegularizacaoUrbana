@@ -1,0 +1,253 @@
+<div class="d-flex align-items-center">
+    <!-- Imagem -->
+    <img src="assets/images/pessoa.png" alt="Ilustração" class="mr-3" style="width: 200px; height: 200px;" />
+
+    <!-- Texto -->
+    <div>
+        <h4>Dados do solicitante</h4>
+        <br>
+        <p class="mb-0">
+            Informe os dados da pessoa e instituição solicitante.
+        </p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+
+        <div class="br-card">
+            <div class="card-content">
+                <div class="br-card">
+                    <div class="card-header">
+                        <h4 class="fs-5 m-0">Identificação do município e seu representante</h4>
+                    </div>
+
+                    <div class="card-content">
+                        <div class="row mb-2 mt-2">
+                            <div class="col-7">
+                                <label>Município</label>
+                                <p>Belo Horizonte</p>
+                            </div>
+
+                            <div class="col-2">
+                                <label>UF</label>
+                                <p>MG</p>
+                            </div>
+
+                            <div class="col-3">
+                                <label>CNPJ</label>
+                                <p>11.222.333/4444-55</p>
+                            </div>
+                        </div>
+
+                        <div class="row mb-2 mt-2">
+                            <div class="col-7">
+                                <label>Prefeito</label>
+                                <p>Álvaro Damião</p>
+                            </div>
+
+                            <div class="col-2">
+                                <label>Data da posse</label>
+                                <p>26/03/2025</p>
+                            </div>
+                        </div>
+
+                        <div class="row mb-2 mt-2">
+                            <div class="col-3">
+                                <label>Documento de Identificação</label>
+                                <p>31254900</p>
+                            </div>
+
+                            <div class="col-3">
+                                <label>Data da emissão</label>
+                                <p>10/08/2013</p>
+                            </div>
+
+                            <div class="col-3">
+                                <label>Órgão emissor</label>
+                                <p>PCMG</p>
+                            </div>
+
+                            <div class="col-3">
+                                <label>CPF</label>
+                                <p>082.697.697-90</p>
+                            </div>
+                        </div>
+
+                        <div class="row mb-2 mt-2">
+                            <div class="col-9">
+                                <label>Endereço da prefeitura</label>
+                                <p>Rua Amazonas, 136 - Lourdes- Belo Horizonte - MG</p>
+                            </div>
+
+                            <div class="col-3">
+                                <label>CEP</label>
+                                <p>30114-235</p>
+                            </div>
+                        </div>
+
+                        <div class="row mb-2 mt-2">
+                            <div class="col-12">
+                                <label>Email oficial da prefeitura</label>
+                                <p>prefeitura@pbh.mg.gov.br</p>
+                            </div>
+                        </div>                        
+
+                        <div class="row mb-2 mt-2">
+                            <div class="col-4">
+                                <div class="br-input">
+                                    <label for="input-default">CPF do responsável para contato</label>
+                                    <input id="input-default" type="text" value="" />
+                                </div>
+                            </div>
+                            <div class="col-1 mt-4">
+                                <button class="br-button circle primary" type="button"
+                                    (click)="pesquisarCPFResponsavel()" aria-label="Pesquisar CPF">
+                                    <i class="fas fa-search" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                            <div class="col-7">
+                                <label>Nome do responsável para contato</label>
+                                <p>{{ nomeResponsavel }}</p>
+                            </div>
+                        </div>
+
+                        <div class="row mb-2 mt-2">
+                            <div class="col-5">
+                                <div class="br-input">
+                                    <label for="input-default">Telefone do responsável para contato</label>
+                                    <input id="input-default" type="text" value="{{telefoneResponsavel}}" />
+                                </div>
+                            </div>
+                            <div class="col-7">
+                                <div class="br-input">
+                                    <label for="input-default">Email do responsável para contato</label>
+                                    <input id="input-default" type="text" value="{{emailResponsavel}}" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="br-card">
+                    <div class="card-header">
+                        <h4 class="fs-5 m-0">Objeto do requerimento de doação</h4>
+                    </div>
+
+                    <div class="card-content">
+                        <div class="row mb-2 mt-2">
+                            <div class="col-12">
+                                <div class="br-radio">
+                                    <input id="op-1" type="radio" name="radio" value="op-1"
+                                        [(ngModel)]="tipoSelecionado" />
+                                    <label for="op-1">Área urbana consolidada, tais como: bairro, distrito, vila,
+                                        povoado</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-2 mt-2">
+                            <div class="col-12">
+                                <div class="br-radio">
+                                    <input id="op-2" type="radio" name="radio" value="op-2"
+                                        [(ngModel)]="tipoSelecionado" />
+                                    <label for="op-2">Área com urbanização específica, tais como: escola, posto de
+                                        saúde,
+                                        cemitério,
+                                        aterro sanitário</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-2 mt-2">
+                            <div class="col-12">
+                                <div class="br-radio">
+                                    <input id="op-3" type="radio" name="radio" value="op-3"
+                                        [(ngModel)]="tipoSelecionado" />
+                                    <label for="op-3">Área de expansão urbana</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div [hidden]="tipoSelecionado !== 'op-3'" class="mt-3">
+                            <h4 style="font-size: 1.2rem;">Informações adicionais da área de expansão urbana</h4>
+                            <div class="row mb-2 mt-2">
+                                <div class="col-12">
+                                    <div class="br-textarea">
+                                        <label for="textarea-id8">Justificativa da necessidade da área</label>
+                                        <textarea id="textarea-id8" aria-controls="limitmax"
+                                            placeholder=""
+                                            maxlength="300"></textarea>
+                                        <div class="text-base mt-1"><span class="limit" aria-live="polite">Limite máximo
+                                                de
+                                                <strong>300</strong> caracteres</span><span class="current"
+                                                aria-live="polite" role="status" id="limitmax"></span></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row mb-2 mt-2">
+                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                    <div class="br-upload">
+                                        <label class="upload-label" for="single-file"><span>Cópia do plano diretor ou
+                                                lei
+                                                municipal</span></label>
+                                        <input class="upload-input" id="single-file" type="file" aria-hidden="null"
+                                            aria-label="enviar arquivo" />
+                                        <div class="upload-list"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mb-5 mt-5">
+                    <div class="col-12">
+                        <div class="br-checkbox">
+                            <input id="check-state-declaracao" name="check-state-declaracao" type="checkbox" />
+                            <label style="font-weight: bold;" for="check-state-declaracao">Declaro não existir
+                                benfeitorias e acessões federais na área</label>
+                        </div>
+                    </div>
+                    <div class="col-12 mt-3">
+                        <div class="br-message warning">
+                            <div class="icon"><i class="fas fa-info-circle fa-lg" aria-hidden="true"></i>
+                            </div>
+                            <div class="content"
+                                aria-label="Informação. Seus dados só serão salvos após o preenchimento do primeiro campo do formulário."
+                                role="alert"><span class="message-title">Alerta</span><br><span
+                                    class="message-body">Benfeitorias: São obras, construções ou melhorias realizadas em
+                                    área pública federal, já existente, e pertencente ao Poder Público Federal.<br>
+                                    Exemplos: Obras em edificações públicas para melhorias ou para evitar a deterioração
+                                    do bem
+                                    público. <br>
+                                    Acessões: é toda forma de acréscimo ao solo de maneira natural ou artificial e se
+                                    incorporam
+                                    automaticamente ao patrimônio do Poder Público Federal.
+                                    acessão natural: decorre de fenômenos naturais, tais como acréscimos de terra
+                                    causado por
+                                    sedimentos depositados por rios, deslocamento abrupto de parte de um terreno para
+                                    outro por
+                                    força natural.
+                                    acessão artificial: é o acréscimo a área pública causado por ação humana, como
+                                    aterros,
+                                    construções ou obras que aumentam a área.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-5 mt-5">
+                    <div class="col-12">
+                        <div class="br-checkbox">
+                            <input id="check-state-solicitacao" name="check-state-solicitacao" type="checkbox" />
+                            <label style="font-weight: bold;" for="check-state-solicitacao">Solicito que seja realizada
+                                a
+                                doação da área identificada nas peças técnicas anexas, em favor do município acima
+                                indicado, com fundamento na Lei nº 11.952/2009 e no Decreto nº 7.341/2010, declarando
+                                ainda que tal doação atende ao interesse público.</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

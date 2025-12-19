@@ -1,0 +1,4 @@
+.conteudo-fixo {
+  width: 1500px;     /* tamanho fixo, ajuste conforme necessário */
+  max-width: 100%;  /* evita quebra em telas pequenas */
+}

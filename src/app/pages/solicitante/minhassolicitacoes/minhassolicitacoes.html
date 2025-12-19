@@ -1,0 +1,589 @@
+<div *ngIf="!esconderMensagemSucesso" class="br-message success mt-3">
+    <div class="icon"><i class="fas fa-check-circle fa-lg" aria-hidden="true"></i>
+    </div>
+    <div class="content" aria-label="Sucesso. Seus dados foram alterados conforme preenchimento do formulário."
+        role="alert"><span class="message-title">Sucesso</span>
+        <p><span class="message-body">{{mensagemSucesso}}</span></p>
+    </div>
+    <div class="close">
+        <button class="br-button circle small" type="button" aria-label="Fechar a mensagem alerta"
+            (click)="esconderMensagemSucesso = true">
+            <i class="fas fa-times" aria-hidden="true"></i>
+        </button>
+    </div>
+</div>
+
+<app-breadcrumb [breadcrumbs]="pageBreadcrumbs"></app-breadcrumb>
+
+<h3>Minhas Solicitações de Título de Regularização Fundiária Urbana</h3>
+
+<!-- Filtros -->
+<div class="br-accordion" id="accordion4-negative" single="single">
+    <div class="item">
+        <button class="header" type="button" aria-controls="idsn30"><span class="icon"><i class="fas fa-angle-down"
+                    aria-hidden="true"></i></span><span class="title">Filtros</span></button>
+    </div>
+    <div class="content" id="idsn30">
+        <div class="row mb-3 mt-3">
+            <div class="col-sm-3 col-lg-3">
+                <div class="br-input">
+                    <label for="nomeTitular">Número da solicitação</label>
+                    <input id="nomeTitular" type="text" value="" />
+                </div>
+            </div>
+            <div class="col-sm-3 col-lg-3">
+                <div class="br-input">
+                    <label for="nomeTitular">Nome da gleba</label>
+                    <input id="nomeTitular" type="text" value="" />
+                </div>
+            </div>
+            <div class="col-sm-3 col-lg-3">
+                <div class="br-input">
+                    <label for="nomeTitular">Localização</label>
+                    <input id="nomeTitular" type="text" value="" />
+                </div>
+            </div>
+            <div class="col-sm-3 col-lg-3">
+                <div class="br-input">
+                    <label for="nomeTitular">Código da parcela do SIGEF</label>
+                    <input id="nomeTitular" type="text" value="" />
+                </div>
+            </div>
+            <div class="col-sm-3 col-lg-3">
+                <div class="br-input">
+                    <label for="nomeTitular">Data do requerimento</label>
+                    <input id="nomeTitular" type="text" value="" />
+                </div>
+            </div>
+
+            <div class="col-sm-3 col-lg-3">
+                <div class="br-select">
+                    <div class="br-input">
+                        <label for="select-simple">Situação da solicitação</label>
+                        <input id="select-simple" type="text" placeholder="Selecione o item" />
+                        <button class="br-button" type="button" aria-label="Exibir lista" tabindex="-1"
+                            data-trigger="data-trigger"><i class="fas fa-angle-down" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                    <div class="br-list" tabindex="0">
+                        <div class="br-item" tabindex="-1">
+                            <div class="br-radio">
+                                <input id="rb0" type="radio" name="estados-simples" value="rb0" />
+                                <label for="rb0">Análise Documental</label>
+                            </div>
+                        </div>
+                        <div class="br-item" tabindex="-1">
+                            <div class="br-radio">
+                                <input id="rb1" type="radio" name="estados-simples" value="rb1" />
+                                <label for="rb1">Pendência Documental</label>
+                            </div>
+                        </div>
+                        <div class="br-item" tabindex="-1">
+                            <div class="br-radio">
+                                <input id="rb2" type="radio" name="estados-simples" value="rb2" />
+                                <label for="rb2">Análise de Perímetro Urbano</label>
+                            </div>
+                        </div>
+                        <div class="br-item" tabindex="-1">
+                            <div class="br-radio">
+                                <input id="rb3" type="radio" name="estados-simples" value="rb3" />
+                                <label for="rb3">Pendência no Georreferenciamento</label>
+                            </div>
+                        </div>
+                        <div class="br-item" tabindex="-1">
+                            <div class="br-radio">
+                                <input id="rb4" type="radio" name="estados-simples" value="rb4" />
+                                <label for="rb4">Análise Jurídica</label>
+                            </div>
+                        </div>
+                        <div class="br-item" tabindex="-1">
+                            <div class="br-radio">
+                                <input id="rb6" type="radio" name="estados-simples" value="rb6" />
+                                <label for="rb6">Título Emitido</label>
+                            </div>
+                        </div>
+                        <div class="br-item" tabindex="-1">
+                            <div class="br-radio">
+                                <input id="rb7" type="radio" name="estados-simples" value="rb7" />
+                                <label for="rb7">Concluída</label>
+                            </div>
+                        </div>
+                        <div class="br-item" tabindex="-1">
+                            <div class="br-radio">
+                                <input id="rb8" type="radio" name="estados-simples" value="rb8" />
+                                <label for="rb8">Indeferida</label>
+                            </div>
+                        </div>
+                        <div class="br-item" tabindex="-1">
+                            <div class="br-radio">
+                                <input id="rb9" type="radio" name="estados-simples" value="rb9" />
+                                <label for="rb9">Cancelada pelo Usuário</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3 col-lg-3">
+                <div class="br-select">
+                    <div class="br-input">
+                        <label for="select-simple">Status da autorização de obra</label>
+                        <input id="select-simple" type="text" placeholder="Selecione o item" />
+                        <button class="br-button" type="button" aria-label="Exibir lista" tabindex="-1"
+                            data-trigger="data-trigger"><i class="fas fa-angle-down" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                    <div class="br-list" tabindex="0">
+                        <div class="br-item" tabindex="-1">
+                            <div class="br-radio">
+                                <input id="rb0" type="radio" name="estados-simples" value="rb0" />
+                                <label for="rb0">Pendência na Autorização de Obra</label>
+                            </div>
+                        </div>
+                        <div class="br-item" tabindex="-1">
+                            <div class="br-radio">
+                                <input id="rb1" type="radio" name="estados-simples" value="rb1" />
+                                <label for="rb1">Não Aplicável</label>
+                            </div>
+                        </div>
+                        <div class="br-item" tabindex="-1">
+                            <div class="br-radio">
+                                <input id="rb2" type="radio" name="estados-simples" value="rb2" />
+                                <label for="rb2">Autorização de Obra Emitida</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-2 col-lg-2 mt-3">
+                <button class="br-button circle primary large" type="button">
+                    <i class="fas fa-search"></i>
+                </button>
+                <button class="br-button circle primary large ml-2" type="button">
+                    <i class="fas fa-eraser"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Grid -->
+<div class="br-table" data-search="data-search" data-selection="data-selection" data-collapse="data-collapse"
+    data-random="data-random">
+    <div class="table-header">
+        <div class="top-bar">
+            <div class="table-title">Solicitações cadastradas</div>
+        </div>
+        <div class="search-bar">
+            <div class="br-input">
+                <label for="table-searchbox-40583">Buscar na tabela</label>
+                <input id="table-searchbox-40583" type="search" placeholder="Buscar na tabela"
+                    aria-labelledby="button-input-search" aria-label="Buscar na tabela" />
+                <button class="br-button" type="button" aria-label="Buscar"><i class="fas fa-search"
+                        aria-hidden="true"></i>
+                </button>
+            </div>
+            <button class="br-button circle" type="button" data-dismiss="search" aria-label="Fechar busca"><i
+                    class="fas fa-times" aria-hidden="true"></i>
+            </button>
+        </div>
+        <div class="selected-bar">
+            <div class="info"><span class="count">0</span><span class="text">item selecionado</span></div>
+            <div class="actions-trigger text-nowrap">
+                <button class="br-button circle inverted" type="button" id="button-dropdown-selection"
+                    data-toggle="dropdown" data-target="target02-40583" aria-controls="target02-40583"
+                    aria-label="Ver mais opções de ação" aria-haspopup="true"><i class="fas fa-ellipsis-v"
+                        aria-hidden="true"></i>
+                </button>
+                <div class="br-list" id="target02-40583" role="menu" aria-labelledby="button-dropdown-selection"
+                    hidden="hidden">
+                    <button class="br-item" type="button" data-toggle="" role="menuitem">Ação 1
+                    </button><span class="br-divider"></span>
+                    <button class="br-item" type="button" role="menuitem">Ação 2
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <table>
+        <caption>Solicitações cadastradas</caption>
+        <thead>
+            <tr>
+                <th class="border-right border-left" scope="col">Número da solicitação</th>
+                <th class="border-right border-left" scope="col">Nome da gleba</th>
+                <th class="border-right border-left" scope="col">Localização (bairro/distrito/vila/povoado)
+                </th>
+                <th class="border-right border-left" scope="col">Código da parcela do SIGEF</th>
+                <th class="border-right border-left" scope="col">Data do requerimento</th>
+                <th class="border-right border-left" scope="col">Status da solicitação</th>
+                <th class="border-right border-left" scope="col">Status da autorização de obra</th>
+                <th class="border-right border-left" scope="col">Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <!-- Análise documental -->
+            <tr>
+                <td id="numeroSolicitacao" class="border-right border-left">3819274501</td>
+                <td id="nomeGleba" class="border-right border-left">Santa Luzia</td>
+                <td id="localizacao" class="border-right border-left">Vila Nova Esperança</td>
+                <td id="codigoParcela" class="border-right border-left">7f2c1a9e-b8d4-4f39-9b83-92f1c3e8a4d7
+                </td>
+                <td id="dataRequerimento" class="border-right border-left">12/03/2024</td>
+
+                <td id="statusSolicitacao" class="border-right border-left">
+                    <span class="br-tag bg-blue-warm-vivid-70"
+                        style="display:flex;width:100%;height:100%;justify-content:center;align-items:center;text-align:center;">
+                        <span>Análise Documental</span>
+                    </span>
+                </td>
+
+                <td id="statusAutorizacaoObra" class="border-right border-left">
+                    <span class="br-tag bg-blue-cool-vivid-70"
+                        style="display:flex;width:100%;height:100%;justify-content:center;align-items:center;text-align:center;">
+                        <span>Solicitada</span>
+                    </span>
+                </td>
+
+                <td class="border-right border-left">
+                    <app-dropdownmenu [buttonLabel]="'Menu de Ações'" [items]="menuItemsAnaliseDocumental"
+                        (click)="onMenuSelect($event)"></app-dropdownmenu>
+                </td>
+            </tr>
+
+            <!-- Pendência documental -->
+            <tr>
+                <td id="numeroSolicitacao" class="border-right border-left">9401185237</td>
+                <td id="nomeGleba" class="border-right border-left">Boa Vista</td>
+                <td id="localizacao" class="border-right border-left">Bairro Alto do Cruzeiro</td>
+                <td id="codigoParcela" class="border-right border-left">c41ad8c3-1ac6-4ff2-a287-d60d945fce89
+                </td>
+                <td id="dataRequerimento" class="border-right border-left">25/03/2024</td>
+
+                <td id="statusSolicitacao" class="border-right border-left">
+                    <span class="br-tag bg-orange-warm-vivid-60"
+                        style="display:flex;width:100%;height:100%;justify-content:center;align-items:center;text-align:center;">
+                        <span>Pendência Documental</span>
+                    </span>
+                </td>
+
+                <td id="statusAutorizacaoObra" class="border-right border-left">
+                    <span class="br-tag bg-gray-40"
+                        style="display:flex;width:100%;height:100%;justify-content:center;align-items:center;text-align:center;">
+                        <span>Não Solicitada</span>
+                    </span>
+                </td>
+
+                <td class="border-right border-left">
+                    <app-dropdownmenu [buttonLabel]="'Menu de Ações'" [items]="menuItemsPendenciaDocumental"
+                        (click)="onMenuSelect($event)"></app-dropdownmenu>
+                </td>
+            </tr>
+
+            <!-- Análise perímetro urbano -->
+            <tr>
+                <td id="numeroSolicitacao" class="border-right border-left">5527391048</td>
+                <td id="nomeGleba" class="border-right border-left">Primavera</td>
+                <td id="localizacao" class="border-right border-left">Distrito de São Miguel</td>
+                <td id="codigoParcela" class="border-right border-left">e0fa92c1-6b22-4ce4-b0c7-5ea9238b29cd
+                </td>
+                <td id="dataRequerimento" class="border-right border-left">08/04/2024</td>
+
+                <td id="statusSolicitacao" class="border-right border-left">
+                    <span class="br-tag bg-blue-warm-vivid-70"
+                        style="display:flex;width:100%;height:100%;justify-content:center;align-items:center;text-align:center;">
+                        <span>Análise de Perímetro Urbano</span>
+                    </span>
+                </td>
+
+                <td id="statusAutorizacaoObra" class="border-right border-left">
+                    <span class="br-tag bg-blue-cool-vivid-70"
+                        style="display:flex;width:100%;height:100%;justify-content:center;align-items:center;text-align:center;">
+                        <span>Solicitada</span>
+                    </span>
+                </td>
+
+                <td class="border-right border-left">
+                    <app-dropdownmenu [buttonLabel]="'Menu de Ações'" [items]="menuItemsAnalisePerimetroUrbano"
+                        (click)="onMenuSelect($event)"></app-dropdownmenu>
+                </td>
+            </tr>
+
+            <!-- Pendência Georreferenciamento -->
+            <tr>
+                <td id="numeroSolicitacao" class="border-right border-left">1830479265</td>
+                <td id="nomeGleba" class="border-right border-left">Esperança</td>
+                <td id="localizacao" class="border-right border-left">Povoado Serra Verde</td>
+                <td id="codigoParcela" class="border-right border-left">f92b1db7-2ee7-45fd-8b5a-8fb2f0d456ce
+                </td>
+                <td id="dataRequerimento" class="border-right border-left">19/04/2024</td>
+
+                <td id="statusSolicitacao" class="border-right border-left">
+                    <span class="br-tag bg-orange-vivid-60"
+                        style="display:flex;width:100%;height:100%;justify-content:center;align-items:center;text-align:center;">
+                        <span>Pendência no Georreferenciamento</span>
+                    </span>
+                </td>
+
+                <td id="statusAutorizacaoObra" class="border-right border-left">
+                    <span class="br-tag bg-blue-cool-vivid-70"
+                        style="display:flex;width:100%;height:100%;justify-content:center;align-items:center;text-align:center;">
+                        <span>Solicitada</span>
+                    </span>
+                </td>
+
+                <td class="border-right border-left">
+                    <app-dropdownmenu [buttonLabel]="'Menu de Ações'" [items]="menuItemsPendenciaGeorreferenciamento"
+                        (click)="onMenuSelect($event)"></app-dropdownmenu>
+                </td>
+            </tr>
+
+            <!-- Minuta do Título Emitida -->
+            <tr>
+                <td id="numeroSolicitacao" class="border-right border-left">4923760851</td>
+                <td id="nomeGleba" class="border-right border-left">São Fernando</td>
+                <td id="localizacao" class="border-right border-left">Bairro Jardim das Cruzes</td>
+                <td id="codigoParcela" class="border-right border-left">4a2b1cef-dd53-d46d-f09c-2b90b77e64aa
+                </td>
+                <td id="dataRequerimento" class="border-right border-left">12/05/2024</td>
+
+                <td id="statusSolicitacao" class="border-right border-left">
+                    <span class="br-tag bg-blue-cool-vivid-20"
+                        style="display:flex;width:100%;height:100%;justify-content:center;align-items:center;text-align:center;">
+                        <span>Minuta do Título Emitida</span>
+                    </span>
+                </td>
+
+                <td id="statusAutorizacaoObra" class="border-right border-left">
+                    <span class="br-tag bg-gray-40"
+                        style="display:flex;width:100%;height:100%;justify-content:center;align-items:center;text-align:center;">
+                        <span>Não Solicitada</span>
+                    </span>
+                </td>
+
+                <td class="border-right border-left">
+                    <app-dropdownmenu [buttonLabel]="'Menu de Ações'" [items]="menuItemsMinutaTituloEmitida"
+                        (click)="onMenuSelect($event)"></app-dropdownmenu>
+                </td>
+            </tr>
+
+            <!-- Emissão de Título em Análise -->
+            <tr>
+                <td id="numeroSolicitacao" class="border-right border-left">8045197632</td>
+                <td id="nomeGleba" class="border-right border-left">Santo Antônio</td>
+                <td id="localizacao" class="border-right border-left">Distrito Novo Progresso</td>
+                <td id="codigoParcela" class="border-right border-left">d7c61f40-6150-42ad-b5a3-f4f98e2fa917
+                </td>
+                <td id="dataRequerimento" class="border-right border-left">14/05/2024</td>
+
+                <td id="statusSolicitacao" class="border-right border-left">
+                    <span class="br-tag bg-green-cool-vivid-30"
+                        style="display:flex;width:100%;height:100%;justify-content:center;align-items:center;text-align:center;">
+                        <span>Emissão de Título em Análise</span>
+                    </span>
+                </td>
+
+                <td id="statusAutorizacaoObra" class="border-right border-left">
+                    <span class="br-tag bg-red-warm-vivid-70"
+                        style="display:flex;width:100%;height:100%;justify-content:center;align-items:center;text-align:center;">
+                        <span>Indeferida</span>
+                    </span>
+                </td>
+
+                <td class="border-right border-left">
+                    <app-dropdownmenu [buttonLabel]="'Menu de Ações'"
+                        [items]="menuItemsTituloAguardandoAprovacaoSuperior"
+                        (click)="onMenuSelect($event)"></app-dropdownmenu>
+                </td>
+            </tr>
+
+            <!-- Título Emitido -->
+            <tr>
+                <td id="numeroSolicitacao" class="border-right border-left">8214590376</td>
+                <td id="nomeGleba" class="border-right border-left">Santa Ana</td>
+                <td id="localizacao" class="border-right border-left">Bairro Lapinha</td>
+                <td id="codigoParcela" class="border-right border-left">8b71fc54-8e11-c44d-4c2a-e72d6939c9b3
+                </td>
+                <td id="dataRequerimento" class="border-right border-left">01/02/2024</td>
+
+                <td id="statusSolicitacao" class="border-right border-left">
+                    <span class="br-tag bg-green-warm-vivid-50"
+                        style="display:flex;width:100%;height:100%;justify-content:center;align-items:center;text-align:center;">
+                        <span>Título Emitido</span>
+                    </span>
+                </td>
+
+                <td id="statusAutorizacaoObra" class="border-right border-left">
+                    <span class="br-tag bg-green-cool-vivid-50"
+                        style="display:flex;width:100%;height:100%;justify-content:center;align-items:center;text-align:center;">
+                        <span>Emitida</span>
+                    </span>
+                </td>
+
+                <td class="border-right border-left">
+                    <app-dropdownmenu [buttonLabel]="'Menu de Ações'" [items]="menuItemsTituloEmitido"
+                        (click)="onMenuSelect($event)"></app-dropdownmenu>
+                </td>
+            </tr>
+
+            <!-- Indeferida -->
+            <tr>
+                <td id="numeroSolicitacao" class="border-right border-left">5908214376</td>
+                <td id="nomeGleba" class="border-right border-left">Santa Fé</td>
+                <td id="localizacao" class="border-right border-left">Bairro Central</td>
+                <td id="codigoParcela" class="border-right border-left">c8b71f54-18e1-44cd-a4c2-3e72d69c9b93
+                </td>
+                <td id="dataRequerimento" class="border-right border-left">03/06/2024</td>
+
+                <td id="statusSolicitacao" class="border-right border-left">
+                    <span class="br-tag bg-red-warm-vivid-70"
+                        style="display:flex;width:100%;height:100%;justify-content:center;align-items:center;text-align:center;">
+                        <span>Indeferida</span>
+                    </span>
+                </td>
+
+                <td id="statusAutorizacaoObra" class="border-right border-left">
+                    <span class="br-tag bg-gray-40"
+                        style="display:flex;width:100%;height:100%;justify-content:center;align-items:center;text-align:center;">
+                        <span>Não Solicitada</span>
+                    </span>
+                </td>
+
+                <td class="border-right border-left">
+                    <app-dropdownmenu [buttonLabel]="'Menu de Ações'" [items]="menuItemsIndeferida"
+                        (click)="onMenuSelect($event)"></app-dropdownmenu>
+                </td>
+            </tr>
+
+            <!-- Cancelada -->
+            <tr>
+                <td id="numeroSolicitacao" class="border-right border-left">3357902841</td>
+                <td id="nomeGleba" class="border-right border-left">Nova União</td>
+                <td id="localizacao" class="border-right border-left">Vila do Carmo</td>
+                <td id="codigoParcela" class="border-right border-left">e71c0d7a-92d9-41b2-8890-4c329961b774
+                </td>
+                <td id="dataRequerimento" class="border-right border-left">11/06/2024</td>
+
+                <td id="statusSolicitacao" class="border-right border-left">
+                    <span class="br-tag bg-gray-40"
+                        style="display:flex;width:100%;height:100%;justify-content:center;align-items:center;text-align:center;">
+                        <span>Cancelada pelo Usuário</span>
+                    </span>
+                </td>
+
+                <td id="statusAutorizacaoObra" class="border-right border-left">
+                    <span class="br-tag bg-red-warm-vivid-70"
+                        style="display:flex;width:100%;height:100%;justify-content:center;align-items:center;text-align:center;">
+                        <span>Indeferida</span>
+                    </span>
+                </td>
+
+                <td class="border-right border-left">
+                    <app-dropdownmenu [buttonLabel]="'Menu de Ações'" [items]="menuItemsCanceladaUsuario"
+                        (click)="onMenuSelect($event)"></app-dropdownmenu>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <div class="table-footer">
+        <nav class="br-pagination" aria-label="paginação" data-total="50" data-current="1" data-per-page="20">
+            <div class="pagination-per-page">
+                <div class="br-select">
+                    <div class="br-input">
+                        <label for="per-page-selection-random-30313">Exibir</label>
+                        <input id="per-page-selection-random-30313" type="text" placeholder=" " />
+                        <button class="br-button" type="button" aria-label="Exibir lista" tabindex="-1"
+                            data-trigger="data-trigger"><i class="fas fa-angle-down" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                    <div class="br-list" tabindex="0">
+                        <div class="br-item" tabindex="-1">
+                            <div class="br-radio">
+                                <input id="per-page-10-random-30313" type="radio" name="per-page-random-30313"
+                                    value="per-page-10-random-30313" checked="checked" />
+                                <label for="per-page-10-random-30313">10</label>
+                            </div>
+                        </div>
+                        <div class="br-item" tabindex="-1">
+                            <div class="br-radio">
+                                <input id="per-page-20-random-30313" type="radio" name="per-page-random-30313"
+                                    value="per-page-20-random-30313" />
+                                <label for="per-page-20-random-30313">20</label>
+                            </div>
+                        </div>
+                        <div class="br-item" tabindex="-1">
+                            <div class="br-radio">
+                                <input id="per-page-30-random-30313" type="radio" name="per-page-random-30313"
+                                    value="per-page-30-random-30313" />
+                                <label for="per-page-30-random-30313">30</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><span class="br-divider d-none d-sm-block mx-3"></span>
+            <div class="pagination-information d-none d-sm-flex"><span class="current">1</span>&ndash;<span
+                    class="per-page">9</span>&nbsp;de&nbsp;<span class="total">9</span>&nbsp;itens</div>
+            <div class="pagination-go-to-page d-none d-sm-flex ml-auto">
+                <div class="br-select">
+                    <div class="br-input">
+                        <label for="go-to-selection-random-39004">Página</label>
+                        <input id="go-to-selection-random-39004" type="text" placeholder=" " />
+                        <button class="br-button" type="button" aria-label="Exibir lista" tabindex="-1"
+                            data-trigger="data-trigger"><i class="fas fa-angle-down" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                    <div class="br-list" tabindex="0">
+                        <div class="br-item" tabindex="-1">
+                            <div class="br-radio">
+                                <input id="go-to-1-random-39004" type="radio" name="go-to-random-39004"
+                                    value="go-to-1-random-39004" checked="checked" />
+                                <label for="go-to-1-random-39004">1</label>
+                            </div>
+                        </div>
+                        <div class="br-item" tabindex="-1">
+                            <div class="br-radio">
+                                <input id="go-to-2-random-39004" type="radio" name="go-to-random-39004"
+                                    value="go-to-2-random-39004" />
+                                <label for="go-to-2-random-39004">2</label>
+                            </div>
+                        </div>
+                        <div class="br-item" tabindex="-1">
+                            <div class="br-radio">
+                                <input id="go-to-3-random-39004" type="radio" name="go-to-random-39004"
+                                    value="go-to-3-random-39004" />
+                                <label for="go-to-3-random-39004">3</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><span class="br-divider d-none d-sm-block mx-3"></span>
+            <div class="pagination-arrows ml-auto ml-sm-0">
+                <button class="br-button circle" type="button" aria-label="Voltar página"><i class="fas fa-angle-left"
+                        aria-hidden="true"></i>
+                </button>
+                <button class="br-button circle" type="button" aria-label="Página seguinte"><i
+                        class="fas fa-angle-right" aria-hidden="true"></i>
+                </button>
+            </div>
+        </nav>
+    </div>
+</div>
+
+<div class="col-12 mt-3 text-left">
+    <a routerLink="/solicitante"><button class="br-button primary mr-3" type="button">Voltar</button></a>
+</div>
+
+<div class="br-scrim foco" id="scrimexample" data-trigger="scrim">
+    <div class="br-modal modal-large">
+        <div class="br-modal-dialog">
+            <div class="br-modal-content">
+                <div class="br-modal-body">
+                    <div style="width: 99%;">
+                        <app-cancelamento [hidden]="esconderCancelamento"></app-cancelamento>
+                        <app-visualizarsolicitacao [hidden]="esconderVisualizarSolicitacao"></app-visualizarsolicitacao>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

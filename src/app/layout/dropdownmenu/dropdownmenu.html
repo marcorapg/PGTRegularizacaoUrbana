@@ -1,0 +1,46 @@
+<div class="br-dropdown" [class.open]="isOpen">
+  <!-- Botão: mantive suas classes e o ícone fa-ellipsis-v -->
+  <button
+    #menuButton
+    class="br-button circle secondary dark-mode mr-3"
+    type="button"
+    aria-haspopup="true"
+    [attr.aria-expanded]="isOpen"
+    (click)="toggle()">
+    <i class="fas fa-ellipsis-v" aria-hidden="true"></i>
+  </button>
+
+  <!-- Lista do menu (aberta quando isOpen === true) -->
+  <div class="br-list" *ngIf="isOpen" role="menu" aria-label="Opções">
+    <ng-container *ngFor="let it of items">
+      <!-- item como rota interna -->
+      <a *ngIf="it.routerLink && !it.disabled"
+         class="br-item"
+         href={{it.routerLink}}
+         (click)="onItemClick(it, $event)">
+        {{ it.label }}
+      </a>
+
+      <!-- item como link externo -->
+      <a *ngIf="it.href && !it.routerLink && !it.disabled"
+         class="br-item"
+         [href]="it.href"
+         (click)="onItemClick(it)">
+        {{ it.label }}
+      </a>
+
+      <!-- item como ação (botão) -->
+      <a *ngIf="it.modal"
+              class="br-item"
+              type="button"
+              (click)="onItemClick(it, $event)">
+        {{ it.label }}
+    </a>
+
+      <!-- item desabilitado -->
+      <span *ngIf="it.disabled" class="br-item disabled" aria-disabled="true">
+        {{ it.label }}
+      </span>
+    </ng-container>
+  </div>
+</div>

@@ -1,0 +1,388 @@
+<app-breadcrumb [breadcrumbs]="pageBreadcrumbs"></app-breadcrumb>
+
+<h3>Detalhar Solicitação</h3>
+
+<div class="br-tab" data-counter="true">
+    <nav class="tab-nav">
+        <ul>
+            <li class="tab-item is-active" title="Todos">
+                <button type="button" data-panel="panel-7-count"><span class="name">Dados da solicitação</span></button>
+            </li>
+            <li class="tab-item" title="Notícias">
+                <button type="button" data-panel="panel-8-count"><span class="name">Parcelas</span></button>
+            </li>
+        </ul>
+    </nav>
+    <div class="tab-content">
+        <!-- Dados do prefeito -->
+        <div class="tab-panel active" id="panel-7-count">
+            <div class="row">
+                <div class="col-12">
+                    <!-- Dados do prefeito -->
+                    <div class="br-card">
+                        <div class="card-header">
+                            <h4 class="fs-5 m-0">Identificação do município e seu representante</h4>
+                        </div>
+
+                        <div class="card-content">
+                            <div class="row mb-2 mt-2">
+                                <div class="col-7">
+                                    <label>Município</label>
+                                    <p>Belo Horizonte</p>
+                                </div>
+
+                                <div class="col-2">
+                                    <label>UF</label>
+                                    <p>MG</p>
+                                </div>
+
+                                <div class="col-3">
+                                    <label>CNPJ</label>
+                                    <p>11.222.333/4444-55</p>
+                                </div>
+                            </div>
+
+                            <div class="row mb-2 mt-2">
+                                <div class="col-7">
+                                    <label>Prefeito</label>
+                                    <p>Fuad Jorge Noman Filho</p>
+                                </div>
+
+                                <div class="col-2">
+                                    <label>Data da posse</label>
+                                    <p>01/01/2024</p>
+                                </div>
+                            </div>
+
+                            <div class="row mb-2 mt-2">
+                                <div class="col-3">
+                                    <label>Documento de Identificação</label>
+                                    <p>54931200</p>
+                                </div>
+
+                                <div class="col-3">
+                                    <label>Data da emissão</label>
+                                    <p>12/01/2005</p>
+                                </div>
+
+                                <div class="col-3">
+                                    <label>Órgão emissor</label>
+                                    <p>PCMG</p>
+                                </div>
+
+                                <div class="col-3">
+                                    <label>CPF</label>
+                                    <p>802.127.347-31</p>
+                                </div>
+                            </div>
+
+                            <div class="row mb-2 mt-2">
+                                <div class="col-9">
+                                    <label>Endereço da prefeitura</label>
+                                    <p>Rua Amazonas, 136 - Lourdes- Belo Horizonte - MG</p>
+                                </div>
+
+                                <div class="col-3">
+                                    <label>CEP</label>
+                                    <p>30114-235</p>
+                                </div>
+                            </div>
+
+                            <div class="row mb-2 mt-2">
+                                <div class="col-12">
+                                    <label>Email oficial da prefeitura</label>
+                                    <p>prefeitura@pbh.mg.gov.br</p>
+                                </div>
+                            </div>
+
+                            <div class="row mb-2 mt-2">
+                                <div class="col-5">
+                                    <label>CPF do responsável para contato</label>
+                                    <p>093.823.367-90</p>
+                                </div>
+                                <div class="col-7">
+                                    <label>Nome do responsável para contato</label>
+                                    <p>Rogério Freitas Souza</p>
+                                </div>
+                            </div>
+
+                            <div class="row mb-2 mt-2">
+                                <div class="col-5">
+                                    <label>Telefone do responsável para contato</label>
+                                    <p>(31) 99647-3149</p>
+                                </div>
+                                <div class="col-7">
+                                    <label>Email do responsável para contato</label>
+                                    <p>rogerio.souza@pbh.mg.gov.br</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Dados do novo prefeito -->
+                    <div class="br-card" [hidden]="!mostrarElemento">
+                        <div class="card-header">
+                            <h4 class="fs-5 m-0">Identificação do representante atual do município</h4>
+                        </div>
+                        <div class="card-content">
+                            <div class="row mb-2 mt-2">
+                                <div class="col-7">
+                                    <label>Prefeito</label>
+                                    <p>Álvaro Damião</p>
+                                </div>
+
+                                <div class="col-2">
+                                    <label>Data da posse</label>
+                                    <p>26/03/2025</p>
+                                </div>
+                            </div>
+
+                            <div class="row mb-2 mt-2">
+                                <div class="col-3">
+                                    <label>Documento de Identificação</label>
+                                    <p>31254900</p>
+                                </div>
+
+                                <div class="col-3">
+                                    <label>Data da emissão</label>
+                                    <p>10/08/2013</p>
+                                </div>
+
+                                <div class="col-3">
+                                    <label>Órgão emissor</label>
+                                    <p>PCMG</p>
+                                </div>
+
+                                <div class="col-3">
+                                    <label>CPF</label>
+                                    <p>082.697.697-90</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Objeto do requerimento da doeção -->
+                    <div class="br-card">
+                        <div class="card-header">
+                            <h4 class="fs-5 m-0">Objeto do requerimento de doação</h4>
+                        </div>
+
+                        <div class="card-content">
+                            <div class="row mb-2 mt-2">
+                                <div class="col-12">
+                                    <div class="br-radio">
+                                        <input id="op-1" type="radio" name="radio" value="op-1" disabled />
+                                        <label for="op-1">Área urbana consolidada, tais como: bairro, distrito,
+                                            vila,
+                                            povoado</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mb-2 mt-2">
+                                <div class="col-12">
+                                    <div class="br-radio">
+                                        <input id="op-2" type="radio" name="radio" value="op-2" disabled />
+                                        <label for="op-2">Área com urbanização específica, tais como: escola,
+                                            posto de
+                                            saúde,
+                                            cemitério,
+                                            aterro sanitário</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mb-2 mt-2">
+                                <div class="col-12">
+                                    <div class="br-radio">
+                                        <input id="op-3" type="radio" name="radio" value="op-3" disabled checked />
+                                        <label for="op-3">Área de expansão urbana</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mt-3">
+                                <h4 style="font-size: 1.2rem;">Informações adicionais da área de expansão urbana
+                                </h4>
+                                <div class="row mb-4 mt-4">
+                                    <div class="col-12">
+                                        <div class="br-textarea">
+                                            <label for="textarea-id8">Justificativa da necessidade da
+                                                área</label>
+                                            <p>A área em questão apresenta importância estratégica para o
+                                                desenvolvimento urbano do município, considerando o crescimento
+                                                populacional registrado nos últimos anos e a consequente demanda
+                                                por novos espaços destinados à habitação, infraestrutura pública
+                                                e equipamentos comunitários. A expansão proposta visa atender
+                                                famílias que atualmente se encontram em situação de
+                                                vulnerabilidade habitacional, ocupando áreas irregulares ou
+                                                inadequadas do ponto de vista socioambiental.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-2 mt-2">
+                                    <div class="col-sm-12 col-md-12 col-lg-12">
+                                        <div class="br-upload">
+                                            <label class="upload-label" for="single-file"><span>Cópia do plano
+                                                    diretor ou
+                                                    lei
+                                                    municipal</span></label>
+                                            <div class="br-list" role="list">
+                                                <div class="header">
+                                                    <div class="title">Anexos</div>
+                                                </div><span class="br-divider"></span>
+                                                <div class="br-item" role="listitem">
+                                                    <div class="row align-items-center">
+                                                        <div class="col-auto"><i class="fa fa-paperclip"
+                                                                aria-hidden="true"></i>
+                                                        </div>
+                                                        <div class="col">
+                                                            <a href="">Anexo 1</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dados da parcela -->
+        <div class="tab-panel" id="panel-8-count">
+            <div class="row">
+                <div class="col-12">
+                    <h6>Parcela selecionada</h6>
+                    <table>
+
+                        <thead>
+                            <tr>
+                                <th scope="col">Nome da gleba</th>
+                                <th scope="col">Localização (bairro/distrito/vila/povoado)</th>
+                                <th scope="col">Área georreferenciada (em hectares)</th>
+                                <th scope="col">Código da Parcela no SIGEF</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td data-th="Título coluna 1">
+                                    <p>Alto do Horizonte</p>
+                                </td>
+                                <td data-th="Título coluna 2">
+                                    <p>Povoado Boa Vista</p>
+                                </td>
+                                <td data-th="Título coluna 4">
+                                    <p>176</p>
+                                </td>
+                                <td data-th="Título coluna 3">
+                                    <p>db634c8a-9be4-4e55-b357-faf2acc036a9</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="d-flex align-items-center mt-5 mb-5">
+                <!-- Imagem -->
+                <img src="assets/images/geo_sigef.png" alt="Ilustração" class="mr-3"
+                    style="width: 100%; height: 100%;" />
+            </div>
+
+            <div class="br-card">
+                <div class="card-header">
+                    <h4 class="fs-5 m-0">Informações adicionais</h4>
+                </div>
+
+                <div class="card-content">
+                    <div class="row mb-2 mt-2">
+                        <div class="col-3">
+                            <div class="br-input">
+                                <label for="input-default">População estimada na área</label>
+                                <p>23000</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-2 mt-2">
+                        <div class="col-12">
+                            <label>Solicito autorização de obra</label>
+                            <div class="br-radio">
+                                <input id="radioOpcaoAutorizaoObra1" type="radio" name="radioOpcaoAutorizaoObra"
+                                    value="op-autorizacao-sim" checked />
+                                <label for="radioOpcaoAutorizaoObra1">Sim</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-2 mt-2">
+                        <div class="col-12">
+                            <div class="br-radio">
+                                <input id="radioOpcaoAutorizaoObra2" type="radio" name="radioOpcaoAutorizaoObra"
+                                    value="op-autorizacao-nao" />
+                                <label for="radioOpcaoAutorizaoObra2">Não</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-3">
+                        <div class="row mb-4 mt-4">
+                            <div class="col-12">
+                                <label for="textarea-id8">Justificativa e natureza</label>
+                                <p>A presente solicitação de autorização de obra tem por finalidade viabilizar
+                                    intervenções necessárias à melhoria das condições de uso e ocupação da área
+                                    objeto do processo de regularização fundiária. A obra proposta consiste na
+                                    implantação de infraestrutura básica, incluindo abertura e adequação de vias de
+                                    acesso, drenagem superficial, instalação de redes de abastecimento de água e
+                                    energia, além da construção de equipamentos comunitários essenciais ao
+                                    atendimento das famílias residentes.</p>
+
+                            </div>
+                        </div>
+
+                        <div class="row mb-4 mt-4">
+                            <div class="col-12">
+                                <label for="textarea-id8">Memorial descritivo da obra georreferenciada</label>
+                                <p>O presente Memorial Descritivo tem por objetivo detalhar as características técnicas,
+                                    a localização georreferenciada e o escopo da obra a ser executada na área destinada
+                                    à expansão urbana, vinculada ao processo de regularização fundiária. A obra está
+                                    situada dentro do perímetro previamente delimitado e georreferenciado conforme
+                                    normas vigentes do INCRA e atendendo aos padrões de precisão estabelecidos pela
+                                    Norma Técnica para Georreferenciamento de Imóveis Rurais.</p>
+                            </div>
+                        </div>
+
+                        <div class="row mb-4 mt-4">
+                            <div class="col-sm-12 col-md-12 col-lg-12">
+                                <div class="br-upload">
+                                    <label class="upload-label" for="single-file"><span>Planta topográfica da
+                                            obra</span></label>
+                                    <div class="br-list" role="list">
+                                        <div class="header">
+                                            <div class="title">Anexos</div>
+                                        </div><span class="br-divider"></span>
+                                        <div class="br-item" role="listitem">
+                                            <div class="row align-items-center">
+                                                <div class="col-auto"><i class="fa fa-paperclip" aria-hidden="true"></i>
+                                                </div>
+                                                <div class="col">
+                                                    <a href="">Anexo 1</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="p-3 d-flex justify-content-start">
+    <a routerLink="/solicitante/minhassolicitacoes"><button class="br-button primary mr-3"
+            type="button">Voltar</button></a>
+</div>

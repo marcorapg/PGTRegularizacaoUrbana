@@ -1,0 +1,24 @@
+<app-breadcrumb [breadcrumbs]="pageBreadcrumbs"></app-breadcrumb>
+
+<h3>Visualizar Autorização de Obra</h3>
+
+<app-cabecalhosolicitacao></app-cabecalhosolicitacao>
+
+<header class="text-center mb-5">
+    <div class="imagem-centralizada">
+        <img src="assets/images/autorizacao.png" alt="Imagem ilustrativa" />
+    </div>
+</header>
+
+<div class="p-3 d-flex justify-content-end">
+    <a routerLink="/solicitante/minhassolicitacoes"><button class="br-button primary mr-3"
+            type="button">Voltar</button></a>
+    <button class="br-button primary mr-3" type="button" (click)="imprimir()">
+        Imprimir
+    </button>
+    <a href="assets/images/autorizacao.pdf" download>
+        <button class="br-button primary mr-3" type="button">
+            Fazer download
+        </button>
+    </a>
+</div>
