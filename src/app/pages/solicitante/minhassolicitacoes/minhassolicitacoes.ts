@@ -50,7 +50,8 @@ export class Minhassolicitacoes {
   menuItemsPendenciaGeorreferenciamento: MenuItem[] = [
     { label: 'Detalhar Solicitação', value: 'visualizar', modal: false, routerLink: '/solicitante/minhassolicitacoes/visualizarsolicitacao' },
     { label: 'Detalhar Pendência no Georreferenciamento', value: 'visualizar', modal: false, routerLink: '/solicitante/minhassolicitacoes/detalharpendenciageorreferenciamento' },
-    { label: 'Corrigir Pendência de Georreferenciamento', value: 'visualizar', modal: false, routerLink: '/solicitante/minhassolicitacoes/corrigirpendenciadocumentalgeo' }
+    { label: 'Corrigir Pendência de Georreferenciamento', value: 'visualizar', modal: false, routerLink: '/solicitante/minhassolicitacoes/corrigirpendenciadocumentalgeo' },
+    { label: 'Cancelar Solicitação', value: 'cancelar', modal: false, routerLink: '/solicitante/minhassolicitacoes/cancelamento' }
   ];
 
   menuItemsMinutaTituloEmitida: MenuItem[] = [
@@ -156,10 +157,10 @@ export class Minhassolicitacoes {
     }
 
     const tipoMensagem = this.route.snapshot.queryParamMap.get('tipoMensagemSucesso');
-    
-    if (tipoMensagem){
+
+    if (tipoMensagem) {
       this.esconderMensagemSucesso = false;
-      switch(tipoMensagem){
+      switch (tipoMensagem) {
         case "pendenciaDocumental":
           this.mensagemSucesso = "Correção de pendência documental salva com sucesso!";
           break;
