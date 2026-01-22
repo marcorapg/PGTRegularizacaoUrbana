@@ -1,0 +1,144 @@
+<app-breadcrumb [breadcrumbs]="pageBreadcrumbs"></app-breadcrumb>
+
+<h3>Detalhar Pendência</h3>
+
+<p>Você está visualizando as condicionantes da Solicitação de Regularização Urbana de <span style="color: blue;">JULIO
+        CEZAR CAMINOTE PEDRONI</span> com o número do requerimento <span style="color: blue;">PA202100000002</span>.</p>
+
+<form>
+
+  <!-- Descrição -->
+  <div class="br-input mb-3">
+    <label for="descricao">Descrição</label>
+    <input id="descricao" type="text" value="Imóvel se localiza em Gleba Pública Federal?" readonly />
+  </div>
+
+  <!-- Explicação -->
+  <div class="br-textarea mb-3">
+    <label for="explicacao">Explicação</label>
+    <textarea id="explicacao" rows="3" readonly>
+Valida se imóvel está localizado em uma Gleba Pública Federal ou em outro tipo de terreno.
+    </textarea>
+  </div>
+
+  <!-- Resposta -->
+  <div class="br-textarea mb-4">
+    <label for="resposta">Resposta</label>
+    <textarea id="resposta" rows="2" readonly>Sim</textarea>
+  </div>
+
+  <!-- Linha com Código / Situação / Data / CPF / Impeditivo -->
+  <div class="row mb-4">
+
+    <div class="col-sm-12 col-md-2">
+      <div class="br-input">
+        <label for="codigo">Código</label>
+        <input id="codigo" type="text" value="VAL0001" readonly />
+      </div>
+    </div>
+
+    <div class="col-sm-12 col-md-3">
+      <div class="br-input">
+        <label for="codigo">Situação</label>
+        <input id="codigo" type="text" value="Válida" readonly />
+      </div>
+    </div>
+
+    <div class="col-sm-12 col-md-3">
+      <div class="br-input">
+        <label for="dataHora">Data/hora</label>
+        <input id="dataHora" type="text" value="22/11/2021 09:24:35" readonly />
+      </div>
+    </div>
+
+    <div class="col-sm-12 col-md-2">
+      <div class="br-input">
+        <label for="cpf">CPF do responsável</label>
+        <input id="cpf" type="text" value="097.132.479-90" readonly />
+      </div>
+    </div>
+
+    <div class="col-sm-12 col-md-2">
+      <div class="br-input">
+        <label for="impeditivo">Impeditivo</label>
+        <input id="impeditivo" type="text" value="Sim" readonly />
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Justificativa -->
+  <div class="br-textarea">
+    <label for="justificativa">Justificativa para resolução da pendência</label>
+    <textarea id="justificativa" rows="3" readonly></textarea>
+  </div>
+
+</form>
+
+<div class="br-table mt-5" data-search="data-search" data-selection="data-selection" data-collapse="data-collapse"
+    data-random="data-random">
+    <table>
+        <thead>
+            <tr>
+                <th scope="col">Status da Validação</th>
+                <th scope="col">CPF do Responsável</th>
+                <th scope="col">Data/Hora da Validação</th>
+                <th scope="col">Data/hora do Parecer</th>
+                <th scope="col">Parecer</th>
+                <th scope="col">Outras Informações</th>
+                <th scope="col">Justificativa para Resolução da Pendência</th>
+            </tr>
+        </thead>
+        <tbody>
+            <ng-container *ngFor="let item of itemsHistorico">
+                <tr>
+                    <td data-th="situacao" class="col-status">
+                        <ng-container [ngSwitch]="item.status">
+
+                            <span *ngSwitchCase="1" class="legenda-item valido">
+                                <i class="fas fa-check-circle"></i> Sim
+                            </span>
+
+                            <span *ngSwitchCase="2" class="legenda-item pendente">
+                                <i class="fas fa-times-circle"></i> Não
+                            </span>
+
+                            <span *ngSwitchCase="3" class="legenda-item atencao">
+                                <i class="fas fa-exclamation-triangle"></i> Atenção
+                            </span>
+                        </ng-container>
+                    </td>
+
+                    <td data-th="CPFResponsavel">
+                        {{ item.CPFResponsavel }}
+                    </td>
+
+                    <td data-th="dataHoraValidacao">
+                        {{ item.dataHoraValidacao }}
+                    </td>
+
+                    <td data-th="dataHoraParecer">
+                        {{ item.dataHoraParecer }}
+                    </td>
+
+                    <td data-th="parecer">
+                        {{ item.parecer }}
+                    </td>
+
+                    <td data-th="outrasInformacoes">
+                        {{ item.outrasInformacoes }}
+                    </td>
+
+                    <td data-th="justificativa">
+                        {{ item.justificativa }}
+                    </td>
+                </tr>
+            </ng-container>
+        </tbody>
+    </table>
+</div>
+
+<div class="col-12 mt-3 text-right">
+    <a routerLink="/analista/relatorioconformidades"><button class="br-button secondary mr-3"
+            type="button">Voltar</button></a>
+</div>

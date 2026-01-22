@@ -1,0 +1,177 @@
+<app-breadcrumb [breadcrumbs]="pageBreadcrumbs"></app-breadcrumb>
+
+<h3>Relatório de Conformidades</h3>
+
+<p>Você está visualizando as condicionantes da Solicitação de Regularização Urbana de <span style="color: blue;">JULIO
+        CEZAR CAMINOTE PEDRONI</span> com o número do requerimento <span style="color: blue;">PA202100000002</span>.</p>
+
+<div class="mt-5 mb-5">
+    <div class="d-inline-block mr-5">
+        <div class="br-checkbox">
+            <input id="h-checkbox-1" name="h-checkbox-1" type="checkbox" />
+            <label for="h-checkbox-1">Filtrar por pendentes</label>
+        </div>
+    </div>
+    <div class="d-inline-block mr-5">
+        <div class="br-checkbox">
+            <input id="h-checkbox-2" name="h-checkbox-2" type="checkbox" />
+            <label for="h-checkbox-2">Expandir todos
+            </label>
+        </div>
+    </div>
+    <div class="d-inline-block mr-5">
+        <div class="br-checkbox">
+            <input id="h-checkbox-3" name="h-checkbox-3" type="checkbox" />
+            <label for="h-checkbox-3">Apenas validações de vistoria</label>
+        </div>
+    </div>
+</div>
+
+<button class="br-button br-accordion-toggle" type="button" (click)="accordionSobreposicao = !accordionSobreposicao"
+    [attr.aria-expanded]="accordionSobreposicao">
+
+    <span class="icon">
+        <i class="fas fa-angle-right" [class.rotate]="accordionSobreposicao"></i>
+    </span>
+
+    <span class="legenda-item pendente">
+        <i class="fas fa-times-circle"></i> <span class="title">Sobreposição</span>
+    </span>
+
+</button>
+
+<div class="accordion-content" [hidden]="!accordionSobreposicao" role="region"
+    aria-label="Conteúdo do filtro por localização">
+    <ng-container *ngFor="let itemGrupo of grupos">
+        <button class="br-button br-accordion-toggle" type="button"
+            (click)="itemGrupo.accordionAberto = !itemGrupo.accordionAberto"
+            [attr.aria-expanded]="itemGrupo.accordionAberto">
+
+            <span class="icon">
+                <i class="fas fa-angle-right" [class.rotate]="itemGrupo.accordionAberto"></i>
+            </span>
+
+            <span class="legenda-item pendente">
+                <i class="fas fa-times-circle"></i> <span class="title">{{itemGrupo.titulo}}</span>
+            </span>
+
+        </button>
+        <div class="accordion-content" [hidden]="!itemGrupo.accordionAberto" role="region"
+            aria-label="Conteúdo do filtro por localização">
+
+            <div class="br-table" data-search="data-search" data-selection="data-selection"
+                data-collapse="data-collapse" data-random="data-random">
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col">Situação</th>
+                            <th scope="col">Descrição da validação</th>
+                            <th scope="col">Resposta</th>
+                            <th scope="col">Data/hora</th>
+                            <th scope="col">Justificativa da resolução de pendências</th>
+                            <th scope="col">Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <ng-container *ngFor="let item of itemGrupo.items">
+
+                            <!-- LINHA SUPERIOR -->
+                            <tr>
+                                <!-- Situação ocupa DUAS linhas -->
+                                <td data-th="situacao" [attr.rowspan]="item.maisInformacoes ? 2 : 1" class="col-status">
+                                    <ng-container [ngSwitch]="item.status">
+
+                                        <span *ngSwitchCase="1" class="legenda-item valido">
+                                            <i class="fas fa-check-circle"></i>
+                                        </span>
+
+                                        <span *ngSwitchCase="2" class="legenda-item pendente">
+                                            <i class="fas fa-times-circle"></i>
+                                        </span>
+
+                                        <span *ngSwitchCase="3" class="legenda-item atencao">
+                                            <i class="fas fa-exclamation-triangle"></i>
+                                        </span>
+
+                                    </ng-container>
+                                </td>
+
+                                <td data-th="descricaoValidacao">
+                                    {{ item.descricao }}
+                                </td>
+
+                                <td data-th="resposta">
+                                    {{ item.resposta }}
+                                </td>
+
+                                <td data-th="dataHora">
+                                    {{ item.datahora }}
+                                </td>
+
+                                <td data-th="justificativa">
+                                    {{ item.justificativa }}
+                                </td>
+
+                                <td data-th="acoes">
+                                    <span class="legenda-item valido" title="Visualizar">
+                                        <a routerLink="/analista/detalharpendencia"><i class="fas fa-search" aria-hidden="true"></i></a>
+                                    </span>
+                                </td>
+                            </tr>
+
+                            <!-- LINHA INFERIOR (metade de baixo) -->
+                            <tr *ngIf="item.maisInformacoes">
+                                <td colspan="5" class="col-detalhes">
+
+                                    <!-- ÍCONE DE EXPANDIR / RECOLHER -->
+                                    <button type="button" class="btn-mais-info"
+                                        (click)="item.expandido = !item.expandido"
+                                        [attr.aria-expanded]="item.expandido">
+
+                                        <i class="fas"
+                                            [ngClass]="item.expandido ? 'fa-minus-square' : 'fa-plus-square'">
+                                        </i>
+                                    </button>
+
+                                    <strong>Mais informações: {{ item.maisInformacoes }}</strong>
+
+                                    <!-- TEXTO DETALHADO -->
+                                    <span *ngIf="item.expandido">
+                                        <p class="mt-3">{{ item.detalhamentoMaisInformacoes }}</p>
+                                    </span>
+                                </td>
+                            </tr>
+                        </ng-container>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </ng-container>
+</div>
+
+<div class="legenda-card mt-5">
+    <div class="legenda-titulo">Legenda:</div>
+
+    <div class="legenda-itens">
+        <span class="legenda-item valido">
+            <i class="fas fa-check-circle"></i> Válido
+        </span>
+
+        <span class="legenda-item pendente">
+            <i class="fas fa-times-circle"></i> Pendente
+        </span>
+
+        <span class="legenda-item atencao">
+            <i class="fas fa-exclamation-triangle"></i> Atenção
+        </span>
+    </div>
+</div>
+
+<div class="col-12 mt-3 text-right">
+    <a routerLink="/analista/solicitacoes"><button class="br-button secondary mr-3" type="button">Voltar</button></a>
+    <a routerLink="/analista/resolverpendencias"><button class="br-button primary mr-3" type="button">Resolver
+            Pendências</button></a>
+    <a routerLink="/analista/solicitacoes"><button class="br-button primary mr-3" type="button">Executar
+            Validações</button></a>
+    <a routerLink="/analista/solicitacoes"><button class="br-button primary mr-3" type="button">Imprimir</button></a>
+</div>

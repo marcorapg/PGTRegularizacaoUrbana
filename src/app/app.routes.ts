@@ -19,6 +19,11 @@ import { Consultarindeferimentoautorizacaoobra } from './pages/solicitante/minha
 import { Corrigirpendenciadocumental } from './pages/solicitante/minhassolicitacoes/corrigirpendenciadocumental/corrigirpendenciadocumental';
 import { Corrigirpendenciadocumentalgeo } from './pages/solicitante/minhassolicitacoes/corrigirpendenciadocumentalgeo/corrigirpendenciadocumentalgeo';
 import { Visualizarautorizacaoobra } from './pages/solicitante/minhassolicitacoes/visualizarautorizacaoobra/visualizarautorizacaoobra';
+import { Solicitacoes } from './pages/analista/solicitacoes/solicitacoes';
+import { Analista } from './pages/analista/analista';
+import { Relatorioconformidades } from './pages/analista/relatorioconformidades/relatorioconformidades';
+import { Resolverpendencias } from './pages/analista/resolverpendencias/resolverpendencias';
+import { Detalharpendencia } from './pages/analista/detalharpendencia/detalharpendencia';
 
 export const routes: Routes = [
   { path: '', component: Home },
@@ -40,7 +45,12 @@ export const routes: Routes = [
   { path: 'solicitante/minhassolicitacoes/consultarindeferimentoautorizacaoobra', component: Consultarindeferimentoautorizacaoobra },
   { path: 'solicitante/minhassolicitacoes/corrigirpendenciadocumental', component: Corrigirpendenciadocumental },
   { path: 'solicitante/minhassolicitacoes/corrigirpendenciadocumentalgeo', component: Corrigirpendenciadocumentalgeo },
-  { path: 'solicitante/minhassolicitacoes/visualizarautorizacaoobra', component: Visualizarautorizacaoobra },  
+  { path: 'solicitante/minhassolicitacoes/visualizarautorizacaoobra', component: Visualizarautorizacaoobra },
+  { path: 'analista', component: Analista },
+  { path: 'analista/solicitacoes', component: Solicitacoes },
+  { path: 'analista/relatorioconformidades', component: Relatorioconformidades },
+  { path: 'analista/resolverpendencias', component: Resolverpendencias },
+  { path: 'analista/detalharpendencia', component: Detalharpendencia },
   { path: '**', redirectTo: '' } // optional fallback
 ];
 

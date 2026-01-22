@@ -1,0 +1,138 @@
+.legenda-card {
+    background-color: #f8f9fa;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    padding: 16px 20px;
+    width: fit-content;
+    font-family: Arial, sans-serif;
+}
+
+.legenda-titulo {
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.legenda-itens {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.legenda-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    color: #555;
+}
+
+/* Cores dos status */
+.legenda-item.valido i {
+    color: #168821;
+    /* verde */
+}
+
+.legenda-item.pendente i {
+    color: #d9534f;
+    /* vermelho */
+}
+
+.legenda-item.atencao i {
+    color: #f0ad4e;
+    /* amarelo */
+}
+
+td {
+    vertical-align: middle;
+    padding: 16px;
+}
+
+.col-status {
+    width: 48px;
+    vertical-align: middle;
+}
+
+.col-status,
+.col-acoes {
+    text-align: center;
+}
+
+.col-status>*,
+.col-acoes>* {
+    display: flex;
+    align-items: center;
+    /* centraliza verticalmente */
+    justify-content: center;
+    /* centraliza horizontalmente */
+    height: 100%;
+}
+
+.col-detalhes {
+    padding-top: 8px;
+    color: #666;
+    font-size: 0.95em;
+}
+
+/* Ícones */
+.legenda-item i {
+    font-size: 18px;
+}
+
+.btn-mais-info {
+    background: none;
+    border: none;
+    padding: 0;
+    margin-right: 6px;
+    cursor: pointer;
+}
+
+.btn-mais-info i {
+    color: #1351b4;
+    font-size: 16px;
+}
+
+.btn-mais-info:focus {
+    outline: 2px solid #1351b4;
+    outline-offset: 2px;
+}
+
+.col-detalhes {
+    color: #666;
+    font-size: 0.95em;
+}
+
+.br-accordion-toggle {
+    width: 100%;
+    justify-content: flex-start;
+    background: none;
+    border: none;
+    padding: 1rem;
+    font-weight: 600;
+    text-align: left;
+}
+
+.br-accordion-toggle .icon {
+    margin-right: 0.75rem;
+    transition: transform 0.2s ease;
+}
+
+.br-accordion-toggle .rotate {
+    transform: rotate(90deg);
+}
+
+.accordion-content {
+    padding: 1rem 1.5rem;
+    border-left: 4px solid var(--interactive);
+}
+
+.br-accordion-toggle {
+  border: 1px solid var(--interactive);
+  border-color: var(--interactive);
+  background-color: var(--gray-2);
+}
+
+.modal-large {
+  width: 40% !important;
+  max-width: 40% !important;
+}

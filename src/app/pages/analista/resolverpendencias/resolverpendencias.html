@@ -1,0 +1,257 @@
+<app-breadcrumb [breadcrumbs]="pageBreadcrumbs"></app-breadcrumb>
+
+<h3>Resolução de Pendências</h3>
+
+<p>Você está visualizando as validações com pendência da Solicitação de Regularização Urbana de <span
+        style="color: blue;">JULIO
+        CEZAR CAMINOTE PEDRONI</span> com o número do requerimento <span style="color: blue;">PA202100000002</span>.</p>
+
+<div class="br-table" data-selection="data-selection" data-random="data-random">
+    <div class="table-header">
+        <div class="selected-bar">
+            <div class="info"><span class="count">0</span><span class="text">item selecionado</span></div>
+            <div class="actions-trigger text-nowrap">
+                <button class="br-button circle inverted" type="button" id="button-dropdown-selection"
+                    data-toggle="dropdown" data-target="target02-52512" aria-controls="target02-52512"
+                    aria-label="Ver mais opções de ação" aria-haspopup="true"><i class="fas fa-ellipsis-v"
+                        aria-hidden="true"></i>
+                </button>
+                <div class="br-list" id="target02-52512" role="menu" aria-labelledby="button-dropdown-selection"
+                    hidden="hidden">
+                    <button class="br-item modal-btn" type="button" role="menuitem"
+                        (click)="esconderEditarJustificativaResolucao = true; esconderJustificativaResolucao = false; esconderEstornarResolucao = true">Dar
+                        parecer(es) favorável(eis)</button>
+                    <button class="br-item modal-btn" type="button" role="menuitem"
+                        (click)="esconderEditarJustificativaResolucao = false; esconderJustificativaResolucao = true; esconderEstornarResolucao = true">Editar
+                        Justificativa(s)</button>
+                    <button class="br-item modal-btn" type="button" role="menuitem"
+                        (click)="esconderEditarJustificativaResolucao = true; esconderJustificativaResolucao = true; esconderEstornarResolucao = false">Estornar
+                        Resolução(ões)</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <table>
+        <caption>Título da Tabela</caption>
+        <thead>
+            <tr>
+                <th class="column-checkbox" scope="col">
+                    <div class="br-checkbox hidden-label">
+                        <input id="check-all-52512" name="check-all-52512" type="checkbox" aria-label="Selecionar tudo"
+                            data-parent="check-01-52512" />
+                        <label for="check-all-52512">Selecionar todas as linhas</label>
+                    </div>
+                </th>
+                <th scope="col">Situação</th>
+                <th scope="col">Descrição da validação</th>
+                <th scope="col">Resposta</th>
+                <th scope="col">Data/hora</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td rowspan="2">
+                    <div class="br-checkbox hidden-label">
+                        <input id="check-line-1-52512" name="check-line-1-52512" type="checkbox"
+                            aria-label="Selecionar linha 1" data-child="check-01-52512" />
+                        <label for="check-line-1-52512">Selecionar linha 1</label>
+                    </div>
+                </td>
+                <td data-th="situacao" class="col-status" rowspan="2">
+                    <span class="legenda-item pendente">
+                        <i class="fas fa-times-circle"></i>
+                    </span>
+                </td>
+                <td data-th="Título coluna 1">Imóvel se localiza em Gleba Pública Federal?</td>
+                <td data-th="Título coluna 2">Não</td>
+                <td data-th="Título coluna 3">21/03/2024 11:44</td>
+            </tr>
+            <!-- LINHA INFERIOR (metade de baixo) -->
+            <tr>
+                <td colspan="5" class="col-detalhes">
+
+                    <!-- ÍCONE DE EXPANDIR / RECOLHER -->
+                    <button type="button" class="btn-mais-info" (click)="expandido1 = !expandido1"
+                        [attr.aria-expanded]="expandido1">
+
+                        <i class="fas" [ngClass]="expandido1 ? 'fa-minus-square' : 'fa-plus-square'">
+                        </i>
+                    </button>
+
+                    <strong>Mais informações: {{ maisInformacoes1 }}</strong>
+
+                    <!-- TEXTO DETALHADO -->
+                    <span *ngIf="expandido1">
+                        <p class="mt-3">{{ detalhamentoMaisInformacoes1 }}</p>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="2">
+                    <div class="br-checkbox hidden-label">
+                        <input id="check-line-2-52512" name="check-line-2-52512" type="checkbox"
+                            aria-label="Selecionar linha 1" data-child="check-01-52512" />
+                        <label for="check-line-2-52512">Selecionar linha 1</label>
+                    </div>
+                </td>
+                <td data-th="situacao" class="col-status" rowspan="2">
+                    <span class="legenda-item pendente">
+                        <i class="fas fa-times-circle"></i>
+                    </span>
+                </td>
+                <td data-th="Título coluna 1">A área total ou parcial das parcelas selecionadas sobrepõe áreas
+                    reservadas de Administração Militar Federal e as outras finalidades de utilidade pública ou de
+                    interesse social a cargo da União?</td>
+                <td data-th="Título coluna 2">Sim</td>
+                <td data-th="Título coluna 3">12/08/2024 12:11</td>
+            </tr>
+            <!-- LINHA INFERIOR (metade de baixo) -->
+            <tr>
+                <td colspan="5" class="col-detalhes">
+
+                    <!-- ÍCONE DE EXPANDIR / RECOLHER -->
+                    <button type="button" class="btn-mais-info" (click)="expandido1 = !expandido1"
+                        [attr.aria-expanded]="expandido1">
+
+                        <i class="fas" [ngClass]="expandido1 ? 'fa-minus-square' : 'fa-plus-square'">
+                        </i>
+                    </button>
+
+                    <strong>Mais informações: {{ maisInformacoes1 }}</strong>
+
+                    <!-- TEXTO DETALHADO -->
+                    <span *ngIf="expandido1">
+                        <p class="mt-3">{{ detalhamentoMaisInformacoes1 }}</p>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="br-checkbox hidden-label">
+                        <input id="check-line-3-52512" name="check-line-3-52512" type="checkbox"
+                            aria-label="Selecionar linha 1" data-child="check-01-52512" />
+                        <label for="check-line-3-52512">Selecionar linha 1</label>
+                    </div>
+                </td>
+                <td data-th="situacao" class="col-status">
+                    <span class="legenda-item pendente">
+                        <i class="fas fa-times-circle"></i>
+                    </span>
+                </td>
+                <td data-th="Título coluna 1">A área total ou parcial das parcelas selecionadas é objeto de processo
+                    administrativo voltado à Criação de Unidade de Conservação Iinteresse do ICMBio, MMA e órgão
+                    estaduais de meio ambiente? </td>
+                <td data-th="Título coluna 2">Sim</td>
+                <td data-th="Título coluna 3">22/06/2024 15:21</td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="table-footer">
+        <nav class="br-pagination" aria-label="paginação" data-total="50" data-current="1" data-per-page="20">
+            <div class="pagination-per-page">
+                <div class="br-select">
+                    <div class="br-input">
+                        <label for="per-page-selection-random-88546">Exibir</label>
+                        <input id="per-page-selection-random-88546" type="text" placeholder=" " />
+                        <button class="br-button" type="button" aria-label="Exibir lista" tabindex="-1"
+                            data-trigger="data-trigger"><i class="fas fa-angle-down" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                    <div class="br-list" tabindex="0">
+                        <div class="br-item" tabindex="-1">
+                            <div class="br-radio">
+                                <input id="per-page-10-random-88546" type="radio" name="per-page-random-88546"
+                                    value="per-page-10-random-88546" checked="checked" />
+                                <label for="per-page-10-random-88546">10</label>
+                            </div>
+                        </div>
+                        <div class="br-item" tabindex="-1">
+                            <div class="br-radio">
+                                <input id="per-page-20-random-88546" type="radio" name="per-page-random-88546"
+                                    value="per-page-20-random-88546" />
+                                <label for="per-page-20-random-88546">20</label>
+                            </div>
+                        </div>
+                        <div class="br-item" tabindex="-1">
+                            <div class="br-radio">
+                                <input id="per-page-30-random-88546" type="radio" name="per-page-random-88546"
+                                    value="per-page-30-random-88546" />
+                                <label for="per-page-30-random-88546">30</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><span class="br-divider d-none d-sm-block mx-3"></span>
+            <div class="pagination-information d-none d-sm-flex"><span class="current">1</span>&ndash;<span
+                    class="per-page">20</span>&nbsp;de&nbsp;<span class="total">3</span>&nbsp;itens</div>
+            <div class="pagination-go-to-page d-none d-sm-flex ml-auto">
+                <div class="br-select">
+                    <div class="br-input">
+                        <label for="go-to-selection-random-35551">Página</label>
+                        <input id="go-to-selection-random-35551" type="text" placeholder=" " />
+                        <button class="br-button" type="button" aria-label="Exibir lista" tabindex="-1"
+                            data-trigger="data-trigger"><i class="fas fa-angle-down" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                    <div class="br-list" tabindex="0">
+                        <div class="br-item" tabindex="-1">
+                            <div class="br-radio">
+                                <input id="go-to-1-random-35551" type="radio" name="go-to-random-35551"
+                                    value="go-to-1-random-35551" checked="checked" />
+                                <label for="go-to-1-random-35551">1</label>
+                            </div>
+                        </div>
+                        <div class="br-item" tabindex="-1">
+                            <div class="br-radio">
+                                <input id="go-to-2-random-35551" type="radio" name="go-to-random-35551"
+                                    value="go-to-2-random-35551" />
+                                <label for="go-to-2-random-35551">2</label>
+                            </div>
+                        </div>
+                        <div class="br-item" tabindex="-1">
+                            <div class="br-radio">
+                                <input id="go-to-3-random-35551" type="radio" name="go-to-random-35551"
+                                    value="go-to-3-random-35551" />
+                                <label for="go-to-3-random-35551">3</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><span class="br-divider d-none d-sm-block mx-3"></span>
+            <div class="pagination-arrows ml-auto ml-sm-0">
+                <button class="br-button circle" type="button" aria-label="Voltar página"><i class="fas fa-angle-left"
+                        aria-hidden="true"></i>
+                </button>
+                <button class="br-button circle" type="button" aria-label="Página seguinte"><i
+                        class="fas fa-angle-right" aria-hidden="true"></i>
+                </button>
+            </div>
+        </nav>
+    </div>
+</div>
+
+
+
+
+<div class="col-12 mt-3 text-right">
+    <a routerLink="/analista/relatorioconformidades"><button class="br-button secondary mr-3"
+            type="button">Voltar</button></a>
+</div>
+
+<div class="br-scrim foco" id="scrimexample" data-trigger="scrim">
+    <div class="br-modal modal-large">
+        <div class="br-modal-dialog">
+            <div class="br-modal-content">
+                <div class="br-modal-body">
+                    <div style="width: 99%;">
+                        <app-justificativaresolucao
+                            [hidden]="esconderJustificativaResolucao"></app-justificativaresolucao>
+                        <app-editarjustificativa
+                            [hidden]="esconderEditarJustificativaResolucao"></app-editarjustificativa>
+                        <app-estornarresolucao [hidden]="esconderEstornarResolucao"></app-estornarresolucao>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
