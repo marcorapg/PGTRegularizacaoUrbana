@@ -1,6 +1,6 @@
 <app-breadcrumb [breadcrumbs]="pageBreadcrumbs"></app-breadcrumb>
 
-<h3>Detalhar Pendência</h3>
+<h3>Detalhar Validação</h3>
 
 <p>Você está visualizando as condicionantes da Solicitação de Regularização Urbana de <span style="color: blue;">JULIO
         CEZAR CAMINOTE PEDRONI</span> com o número do requerimento <span style="color: blue;">PA202100000002</span>.</p>
@@ -85,8 +85,6 @@ Valida se imóvel está localizado em uma Gleba Pública Federal ou em outro tip
                 <th scope="col">Data/Hora da Validação</th>
                 <th scope="col">Data/hora do Parecer</th>
                 <th scope="col">Parecer</th>
-                <th scope="col">Outras Informações</th>
-                <th scope="col">Justificativa para Resolução da Pendência</th>
             </tr>
         </thead>
         <tbody>
@@ -119,14 +117,6 @@ Valida se imóvel está localizado em uma Gleba Pública Federal ou em outro tip
 
                     <td data-th="dataHoraParecer">
                         {{ item.dataHoraParecer }}
-                    </td>
-
-                    <td data-th="parecer">
-                        {{ item.parecer }}
-                    </td>
-
-                    <td data-th="outrasInformacoes">
-                        {{ item.outrasInformacoes }}
                     </td>
 
                     <td data-th="justificativa">

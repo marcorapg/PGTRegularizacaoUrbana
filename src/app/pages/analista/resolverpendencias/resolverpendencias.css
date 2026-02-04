@@ -62,9 +62,7 @@ td {
 .col-acoes>* {
     display: flex;
     align-items: center;
-    /* centraliza verticalmente */
     justify-content: center;
-    /* centraliza horizontalmente */
     height: 100%;
 }
 

@@ -6,6 +6,7 @@
         style="color: blue;">JULIO
         CEZAR CAMINOTE PEDRONI</span> com o número do requerimento <span style="color: blue;">PA202100000002</span>.</p>
 
+
 <div class="br-table" data-selection="data-selection" data-random="data-random">
     <div class="table-header">
         <div class="selected-bar">
@@ -35,115 +36,192 @@
         <caption>Título da Tabela</caption>
         <thead>
             <tr>
-                <th class="column-checkbox" scope="col">
-                    <div class="br-checkbox hidden-label">
-                        <input id="check-all-52512" name="check-all-52512" type="checkbox" aria-label="Selecionar tudo"
-                            data-parent="check-01-52512" />
-                        <label for="check-all-52512">Selecionar todas as linhas</label>
-                    </div>
-                </th>
-                <th scope="col">Situação</th>
-                <th scope="col">Descrição da validação</th>
-                <th scope="col">Resposta</th>
-                <th scope="col">Data/hora</th>
+                <th class="border-right border-left">Situação</th>
+                <th class="border-right border-left">Descrição da validação</th>
+                <th class="border-right border-left">Resposta</th>
+                <th class="border-right border-left">Data/hora</th>
+                <th class="border-right border-left">Ações</th>
             </tr>
         </thead>
         <tbody>
+            <!-- Área Destinada -->
             <tr>
-                <td rowspan="2">
-                    <div class="br-checkbox hidden-label">
-                        <input id="check-line-1-52512" name="check-line-1-52512" type="checkbox"
-                            aria-label="Selecionar linha 1" data-child="check-01-52512" />
-                        <label for="check-line-1-52512">Selecionar linha 1</label>
-                    </div>
-                </td>
                 <td data-th="situacao" class="col-status" rowspan="2">
                     <span class="legenda-item pendente">
                         <i class="fas fa-times-circle"></i>
                     </span>
                 </td>
-                <td data-th="Título coluna 1">Imóvel se localiza em Gleba Pública Federal?</td>
+                <td data-th="Título coluna 1">A área total ou parcial do imóvel se localiza em Gleba Pública Federal?</td>
+                <td data-th="Título coluna 2">Sim</td>
+                <td data-th="Título coluna 3">21/03/2024 11:44</td>
+                <td class="border-right border-left">
+                    <app-dropdownmenu [buttonLabel]="'Menu de Ações'" [items]="menuItems"
+                        (click)="onMenuSelect($event)"></app-dropdownmenu>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="6" class="col-detalhes">
+
+                    <button type="button" class="btn-mais-info" (click)="expandido1 = !expandido1"
+                        [attr.aria-expanded]="expandido1">
+
+                        <i class="fas" [ngClass]="expandido1 ? 'fa-minus-square' : 'fa-plus-square'">
+                        </i>
+                    </button>
+
+                    <strong>Mais informações:</strong>
+
+                    <span *ngIf="expandido1">
+                        <p class="mt-3">SOBREPOSIÇÃO PARCIAL EM GLEBA FEDERAL</p>
+                    </span>
+                </td>
+            </tr>
+
+            <tr>
+                <td data-th="situacao" class="col-status" rowspan="2">
+                    <span class="legenda-item pendente">
+                        <i class="fas fa-times-circle"></i>
+                    </span>
+                </td>
+                <td data-th="Título coluna 1">A área total ou parcial sobrepõe projetos de assentamento (INCRA)?</td>
+                <td data-th="Título coluna 2">Sim</td>
+                <td data-th="Título coluna 3">21/03/2024 11:44</td>
+                <td class="border-right border-left">
+                    <app-dropdownmenu [buttonLabel]="'Menu de Ações'" [items]="menuItems"
+                        (click)="onMenuSelect($event)"></app-dropdownmenu>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="6" class="col-detalhes">
+
+                    <button type="button" class="btn-mais-info" (click)="expandido2 = !expandido2"
+                        [attr.aria-expanded]="expandido2">
+
+                        <i class="fas" [ngClass]="expandido2 ? 'fa-minus-square' : 'fa-plus-square'">
+                        </i>
+                    </button>
+
+                    <strong>Mais informações:</strong>
+
+                    <span *ngIf="expandido2">
+                        <p class="mt-3">SOBREPOSIÇÃO PARCIAL EM PROJETOS DE ASSENTAMENTO</p>
+                    </span>
+                </td>
+            </tr>
+
+            <tr>
+                <td data-th="situacao" class="col-status" rowspan="2">
+                    <span class="legenda-item pendente">
+                        <i class="fas fa-times-circle"></i>
+                    </span>
+                </td>
+                <td data-th="Título coluna 1">A área total ou parcial sobrepõe unidade de constante na Base de Cadastro Nacional de Conservação?</td>
+                <td data-th="Título coluna 2">Sim</td>
+                <td data-th="Título coluna 3">21/03/2024 11:44</td>
+                <td class="border-right border-left">
+                    <app-dropdownmenu [buttonLabel]="'Menu de Ações'" [items]="menuItems"
+                        (click)="onMenuSelect($event)"></app-dropdownmenu>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="6" class="col-detalhes">
+
+                    <button type="button" class="btn-mais-info" (click)="expandido3 = !expandido3"
+                        [attr.aria-expanded]="expandido3">
+
+                        <i class="fas" [ngClass]="expandido3 ? 'fa-minus-square' : 'fa-plus-square'">
+                        </i>
+                    </button>
+
+                    <strong>Mais informações:</strong>
+
+                    <span *ngIf="expandido3">
+                        <p class="mt-3">SOBREPOSIÇÃO PARCIAL</p>
+                    </span>
+                </td>
+            </tr>
+
+            <!-- Detalhes da Área -->
+            <tr>
+                <td data-th="situacao" class="col-status" rowspan="2">
+                    <span class="legenda-item pendente">
+                        <i class="fas fa-times-circle"></i>
+                    </span>
+                </td>
+                <td data-th="Título coluna 1">Somatório de todas as áreas federais já doadas ao municipio ultrapassa 2500 hectares?</td>
+                <td data-th="Título coluna 2">Sim</td>
+                <td data-th="Título coluna 3">21/03/2024 11:44</td>
+                <td class="border-right border-left">
+                    <app-dropdownmenu [buttonLabel]="'Menu de Ações'" [items]="menuItems"
+                        (click)="onMenuSelect($event)"></app-dropdownmenu>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="6" class="col-detalhes">
+
+                    <button type="button" class="btn-mais-info" (click)="expandido4 = !expandido4"
+                        [attr.aria-expanded]="expandido4">
+
+                        <i class="fas" [ngClass]="expandido4 ? 'fa-minus-square' : 'fa-plus-square'">
+                        </i>
+                    </button>
+
+                    <strong>Mais informações:</strong>
+
+                    <span *ngIf="expandido4">
+                        <p class="mt-3">SOMATÓRIO DE TODAS AS ÁREAS JÁ DOADAS AO MUNICÍPIO = X HECTARES</p>
+                    </span>
+                </td>
+            </tr>            
+
+            <!-- Manifestação de Interesse -->
+            <tr>
+                <td data-th="situacao" class="col-status" rowspan="2">
+                    <span class="legenda-item pendente">
+                        <i class="fas fa-times-circle"></i>
+                    </span>
+                </td>
+                <td data-th="Título coluna 1">A área total ou parcial sobrepõe a área de interesse da FUNAI?</td>
+                <td data-th="Título coluna 2">Sim</td>
+                <td data-th="Título coluna 3">21/03/2024 11:44</td>
+                <td class="border-right border-left">
+                    <app-dropdownmenu [buttonLabel]="'Menu de Ações'" [items]="menuItems"
+                        (click)="onMenuSelect($event)"></app-dropdownmenu>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="6" class="col-detalhes">
+
+                    <button type="button" class="btn-mais-info" (click)="expandido5 = !expandido5"
+                        [attr.aria-expanded]="expandido5">
+
+                        <i class="fas" [ngClass]="expandido5 ? 'fa-minus-square' : 'fa-plus-square'">
+                        </i>
+                    </button>
+
+                    <strong>Mais informações:</strong>
+
+                    <span *ngIf="expandido5">
+                        <p class="mt-3">SOBREPOSIÇÃO TOTAL</p>
+                    </span>
+                </td>
+            </tr>   
+
+            <tr>
+                <td data-th="situacao" class="col-status" rowspan="1">
+                    <span class="legenda-item pendente">
+                        <i class="fas fa-times-circle"></i>
+                    </span>
+                </td>
+                <td data-th="Título coluna 1">A gleba foi consultada pela Câmara Técnica de Destinação de Imóveis Rurais?</td>
                 <td data-th="Título coluna 2">Não</td>
                 <td data-th="Título coluna 3">21/03/2024 11:44</td>
-            </tr>
-            <!-- LINHA INFERIOR (metade de baixo) -->
-            <tr>
-                <td colspan="5" class="col-detalhes">
-
-                    <!-- ÍCONE DE EXPANDIR / RECOLHER -->
-                    <button type="button" class="btn-mais-info" (click)="expandido1 = !expandido1"
-                        [attr.aria-expanded]="expandido1">
-
-                        <i class="fas" [ngClass]="expandido1 ? 'fa-minus-square' : 'fa-plus-square'">
-                        </i>
-                    </button>
-
-                    <strong>Mais informações: {{ maisInformacoes1 }}</strong>
-
-                    <!-- TEXTO DETALHADO -->
-                    <span *ngIf="expandido1">
-                        <p class="mt-3">{{ detalhamentoMaisInformacoes1 }}</p>
-                    </span>
+                <td class="border-right border-left">
+                    <app-dropdownmenu [buttonLabel]="'Menu de Ações'" [items]="menuItems"
+                        (click)="onMenuSelect($event)"></app-dropdownmenu>
                 </td>
             </tr>
-            <tr>
-                <td rowspan="2">
-                    <div class="br-checkbox hidden-label">
-                        <input id="check-line-2-52512" name="check-line-2-52512" type="checkbox"
-                            aria-label="Selecionar linha 1" data-child="check-01-52512" />
-                        <label for="check-line-2-52512">Selecionar linha 1</label>
-                    </div>
-                </td>
-                <td data-th="situacao" class="col-status" rowspan="2">
-                    <span class="legenda-item pendente">
-                        <i class="fas fa-times-circle"></i>
-                    </span>
-                </td>
-                <td data-th="Título coluna 1">A área total ou parcial das parcelas selecionadas sobrepõe áreas
-                    reservadas de Administração Militar Federal e as outras finalidades de utilidade pública ou de
-                    interesse social a cargo da União?</td>
-                <td data-th="Título coluna 2">Sim</td>
-                <td data-th="Título coluna 3">12/08/2024 12:11</td>
-            </tr>
-            <!-- LINHA INFERIOR (metade de baixo) -->
-            <tr>
-                <td colspan="5" class="col-detalhes">
 
-                    <!-- ÍCONE DE EXPANDIR / RECOLHER -->
-                    <button type="button" class="btn-mais-info" (click)="expandido1 = !expandido1"
-                        [attr.aria-expanded]="expandido1">
-
-                        <i class="fas" [ngClass]="expandido1 ? 'fa-minus-square' : 'fa-plus-square'">
-                        </i>
-                    </button>
-
-                    <strong>Mais informações: {{ maisInformacoes1 }}</strong>
-
-                    <!-- TEXTO DETALHADO -->
-                    <span *ngIf="expandido1">
-                        <p class="mt-3">{{ detalhamentoMaisInformacoes1 }}</p>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="br-checkbox hidden-label">
-                        <input id="check-line-3-52512" name="check-line-3-52512" type="checkbox"
-                            aria-label="Selecionar linha 1" data-child="check-01-52512" />
-                        <label for="check-line-3-52512">Selecionar linha 1</label>
-                    </div>
-                </td>
-                <td data-th="situacao" class="col-status">
-                    <span class="legenda-item pendente">
-                        <i class="fas fa-times-circle"></i>
-                    </span>
-                </td>
-                <td data-th="Título coluna 1">A área total ou parcial das parcelas selecionadas é objeto de processo
-                    administrativo voltado à Criação de Unidade de Conservação Iinteresse do ICMBio, MMA e órgão
-                    estaduais de meio ambiente? </td>
-                <td data-th="Título coluna 2">Sim</td>
-                <td data-th="Título coluna 3">22/06/2024 15:21</td>
-            </tr>
         </tbody>
     </table>
     <div class="table-footer">
@@ -183,7 +261,7 @@
                 </div>
             </div><span class="br-divider d-none d-sm-block mx-3"></span>
             <div class="pagination-information d-none d-sm-flex"><span class="current">1</span>&ndash;<span
-                    class="per-page">20</span>&nbsp;de&nbsp;<span class="total">3</span>&nbsp;itens</div>
+                    class="per-page">20</span>&nbsp;de&nbsp;<span class="total">6</span>&nbsp;itens</div>
             <div class="pagination-go-to-page d-none d-sm-flex ml-auto">
                 <div class="br-select">
                     <div class="br-input">
@@ -249,6 +327,10 @@
                         <app-editarjustificativa
                             [hidden]="esconderEditarJustificativaResolucao"></app-editarjustificativa>
                         <app-estornarresolucao [hidden]="esconderEstornarResolucao"></app-estornarresolucao>
+                        <!-- <app-analisesolicitacao [hidden]="esconderAnaliseSolicitacao"></app-analisesolicitacao>
+                        <app-elaboraroficiocasacivil [hidden]="esconderElaborarOficioCasaCivil"></app-elaboraroficiocasacivil>
+                        <app-elaboraroficiomda [hidden]="esconderElaborarOficio"></app-elaboraroficiomda>
+                        <app-estornarresolucao [hidden]="esconderEstornoPendencia"></app-estornarresolucao> -->
                     </div>
                 </div>
             </div>

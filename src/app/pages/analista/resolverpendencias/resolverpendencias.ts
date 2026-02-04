@@ -1,16 +1,17 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { Breadcrumb } from '../../../layout/breadcrumb/breadcrumb';
-import { CommonModule } from '@angular/common';
-import { Justificativaresolucao } from './justificativaresolucao/justificativaresolucao';
-import { Editarjustificativa } from "./editarjustificativa/editarjustificativa";
+import { CommonModule, NgIf } from '@angular/common';
 import { Estornarresolucao } from "./estornarresolucao/estornarresolucao";
+import { ContextMenuComponent, MenuItem } from '../../../layout/dropdownmenu/dropdownmenu';
+import { Justificativaresolucao } from "./justificativaresolucao/justificativaresolucao";
+import { Editarjustificativa } from "./editarjustificativa/editarjustificativa";
 
 declare const core: any;
 
 @Component({
   selector: 'app-resolverpendencias',
-  imports: [RouterLink, Breadcrumb, CommonModule, Justificativaresolucao, Editarjustificativa, Estornarresolucao],
+  imports: [RouterLink, Breadcrumb, CommonModule, Estornarresolucao, ContextMenuComponent, Justificativaresolucao, Editarjustificativa, NgIf],
   templateUrl: './resolverpendencias.html',
   styleUrl: './resolverpendencias.css'
 })
@@ -21,6 +22,13 @@ export class Resolverpendencias {
     { text: 'Relatório de Conformidades', address: '/analista/relatorioconformidades/' },
     { text: 'Resolução de Pendências', address: '' }
   ];
+
+  expandido1: boolean = false;
+  expandido2: boolean = false;
+  expandido3: boolean = false;
+  expandido4: boolean = false;
+  expandido5: boolean = false;
+  expandido6: boolean = false;  
 
   items = [
     {
@@ -116,13 +124,82 @@ export class Resolverpendencias {
   //   }
   // ];
 
+  menuItemsAreaDestinada: MenuItem[] = [
+    { label: 'Análise de Solicitação', value: 'Análise de Solicitação', modal: true },
+    { label: 'Estornar Pendência', value: 'Estornar Pendência', modal: true }
+  ];
+
+  menuItemsDetalhesArea: MenuItem[] = [
+    { label: 'Elaborar Ofício Casa Civil', value: 'Elaborar Ofício Casa Civil', modal: true },
+    { label: 'Estornar Pendência', value: 'Estornar Pendência', modal: true }
+  ];
+
+  menuItemsManifestacaoInteresse: MenuItem[] = [
+    { label: 'Elaborar Ofício', value: 'Elaborar Ofício', modal: true },
+    { label: 'Estornar Pendência', value: 'Estornar Pendência', modal: true }
+  ];
+
+  menuItems: MenuItem[] = [
+    { label: 'Dar parecer favorável', value: 'Dar parecer favorável', modal: true },
+    { label: 'Editar justificativa', value: 'Editar justificativa', modal: true },
+    { label: 'Estornar resolução', value: 'Estornar resolução', modal: true }
+  ];
+
+  scrimOpen = false;
+  esconderAnaliseSolicitacao = true;
+  esconderElaborarOficioCasaCivil = true;
+  esconderElaborarOficio = true;
+  esconderEstornoPendencia = true;
+
   esconderJustificativaResolucao: boolean = true;
   esconderEditarJustificativaResolucao: boolean = true;
   esconderEstornarResolucao: boolean = true;
 
-  expandido1: boolean = false;
-  maisInformacoes1: string = "Pendência";
-  detalhamentoMaisInformacoes1: string = "Detalhamento da pendência";
+  onMenuSelect(item: any) {
+
+    this.esconderAnaliseSolicitacao = true;
+    this.esconderElaborarOficioCasaCivil = true;
+    this.esconderElaborarOficio = true;
+    this.esconderEstornoPendencia = true;
+
+    this.esconderJustificativaResolucao = true;
+    this.esconderEditarJustificativaResolucao = true;
+    this.esconderEstornarResolucao = true;
+
+    switch (item.srcElement.text) {
+      case " Análise de Solicitação ":
+        this.esconderAnaliseSolicitacao = false;
+        break;
+      case " Elaborar Ofício Casa Civil ":
+        this.esconderElaborarOficioCasaCivil = false;
+        break;
+      case " Elaborar Ofício ":
+        this.esconderElaborarOficio = false;
+        break;
+      case " Estornar Pendência ":
+        this.esconderEstornoPendencia = false;
+        break;
+
+      case " Dar parecer favorável ":
+        this.esconderJustificativaResolucao = false;
+        break;
+      case " Editar justificativa ":
+        this.esconderEditarJustificativaResolucao = false;
+        break;
+      case " Estornar resolução ":
+        this.esconderEstornarResolucao = false;
+        break;
+    }
+  }
+
+  openScrim() {
+    this.scrimOpen = true;
+    // se precisa de foco ou scroll, faça aqui
+  }
+
+  closeScrim() {
+    this.scrimOpen = false;
+  }
 
   private scrimfoco: any;
   private buttonActivateModalScrim: HTMLButtonElement | null = null;
@@ -152,6 +229,19 @@ export class Resolverpendencias {
     const checkboxList = []
     for (const brCheckbox of window.document.querySelectorAll('.br-checkbox')) {
       checkboxList.push(new core.BRCheckbox('br-checkbox', brCheckbox))
+    }
+
+    const uploadList = []
+
+    function uploadTimeout() {
+      return new Promise((resolve) => {
+        // Colocar aqui um upload para o servidor e retirar o timeout
+        return setTimeout(resolve, 3000)
+      })
+    }
+
+    for (const brUpload of window.document.querySelectorAll('.br-upload')) {
+      uploadList.push(new core.BRUpload('br-upload', brUpload, uploadTimeout))
     }
   };
 

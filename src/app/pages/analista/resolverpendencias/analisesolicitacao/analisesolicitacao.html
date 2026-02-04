@@ -1,0 +1,67 @@
+<h1>Análise de Solicitação</h1>
+
+<!-- RADIO: Pendência de Georreferenciamento -->
+<div class="d-inline-block mr-5">
+  <div class="br-radio">
+    <input
+      id="radio-georreferenciamento"
+      type="radio"
+      name="tipoAcao"
+      value="georreferenciamento"
+      [(ngModel)]="tipoAcaoSelecionada"
+    />
+    <label for="radio-georreferenciamento">
+      Pendência de Georreferenciamento
+    </label>
+  </div>
+</div>
+
+<!-- RADIO: Indeferir Solicitação -->
+<div class="d-inline-block mr-5">
+  <div class="br-radio">
+    <input
+      id="radio-indeferimento"
+      type="radio"
+      name="tipoAcao"
+      value="indeferimento"
+      [(ngModel)]="tipoAcaoSelecionada"
+    />
+    <label for="radio-indeferimento">
+      Indeferir Solicitação
+    </label>
+  </div>
+</div>
+
+<!-- TEXTAREA: Georreferenciamento -->
+<div
+  class="br-textarea mt-3"
+  *ngIf="tipoAcaoSelecionada === 'georreferenciamento'"
+>
+  <label for="textarea-georreferenciamento">
+    Notificação para prefeitura sobre pendência de georreferenciamento
+  </label>
+  <textarea
+    id="textarea-georreferenciamento"
+    rows="8"
+  ></textarea>
+</div>
+
+<!-- TEXTAREA: Indeferimento -->
+<div
+  class="br-textarea mt-3"
+  *ngIf="tipoAcaoSelecionada === 'indeferimento'"
+>
+  <label for="textarea-indeferimento">
+    Justificativa para indeferimento da solicitação
+  </label>
+  <textarea
+    id="textarea-indeferimento"
+    rows="8"
+  ></textarea>
+</div>
+
+<div class="col-12 mt-3 text-right">
+    <button class="br-button secondary mr-3 close-modal-btn" type="button">Fechar</button>
+    <a routerLink="/analista/relatorioconformidades"><button class="br-button primary mr-3"
+            type="button">Salvar</button></a>
+</div>

@@ -14,7 +14,7 @@ export class Detalharpendencia {
     { text: 'Home', address: '/analista/' },
     { text: 'Solicitações de Título de Regularização Urbana', address: '/analista/solicitacoes/' },
     { text: 'Relatório de Conformidades', address: '/analista/relatorioconformidades/' },
-    { text: 'Detalhar Pendência', address: '' }
+    { text: 'Detalhar Validação', address: '' }
   ];
 
   itemsHistorico = [
