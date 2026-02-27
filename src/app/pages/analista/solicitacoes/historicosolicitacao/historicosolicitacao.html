@@ -1,0 +1,55 @@
+<app-breadcrumb [breadcrumbs]="pageBreadcrumbs"></app-breadcrumb>
+
+<h3>Monitoramento de Solicitações de Título de Regularização Urbana</h3>
+
+<app-cabecalhosolicitacao></app-cabecalhosolicitacao>
+
+<div class="timeline">
+
+  <!-- ITEM 1 -->
+  <div class="timeline-item">
+    <div class="timeline-axis">
+      <div class="timeline-marker success">✓</div>
+    </div>
+
+    <div class="timeline-content">
+      <h3 class="timeline-title">Aberta</h3>
+      <p><strong>CPF:</strong> 021.252.411-96</p>
+      <p>16/12/2021 18:46:30</p>
+      <p>Solicitação aberta.</p>
+    </div>
+  </div>
+
+  <!-- ITEM 2 -->
+  <div class="timeline-item">
+    <div class="timeline-axis">
+      <div class="timeline-marker success">✓</div>
+    </div>
+
+    <div class="timeline-content">
+      <h3 class="timeline-title">Aguardando Análise Documental</h3>
+      <p><strong>CPF:</strong> 021.252.411-96</p>
+      <p>16/12/2021 18:46:33</p>
+      <p>Solicitação aguardando análise documental.</p>
+    </div>
+  </div>
+
+  <!-- ITEM 3 - INDEFERIDO -->
+  <div class="timeline-item">
+    <div class="timeline-axis">
+      <div class="timeline-marker error">✕</div>
+    </div>
+
+    <div class="timeline-content error-card">
+      <h3 class="timeline-title">Indeferido</h3>
+      <p><strong>CPF:</strong> 021.252.411-96</p>
+      <p>27/01/2022 11:10:45</p>
+      <p>Solicitação indeferida por inconsistência nos dados.</p>
+    </div>
+  </div>
+
+</div>
+
+<div class="p-3 d-flex justify-content-end">
+    <a routerLink="/analista/solicitacoes/"><button class="br-button primary mr-3" type="button">Voltar</button></a>
+</div>

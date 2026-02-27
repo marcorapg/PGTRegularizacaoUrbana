@@ -24,6 +24,28 @@ import { Analista } from './pages/analista/analista';
 import { Relatorioconformidades } from './pages/analista/relatorioconformidades/relatorioconformidades';
 import { Resolverpendencias } from './pages/analista/resolverpendencias/resolverpendencias';
 import { Detalharpendencia } from './pages/analista/detalharpendencia/detalharpendencia';
+import { Historicosolicitacao } from './pages/analista/solicitacoes/historicosolicitacao/historicosolicitacao';
+import { Detalharsolicitacao } from './pages/analista/solicitacoes/detalharsolicitacao/detalharsolicitacao';
+import { Solicitarparecermcid } from './pages/analista/solicitacoes/solicitarparecermcid/solicitarparecermcid';
+import { Analisarparecermcid } from './pages/analista/solicitacoes/analisarparecermcid/analisarparecermcid';
+import { Elaborarrelatoriocaracterizacaourbana } from './pages/analista/solicitacoes/elaborarrelatoriocaracterizacaourbana/elaborarrelatoriocaracterizacaourbana';
+import { Solicitacarparecermcidrelatoriocaracterizacao } from './pages/analista/solicitacoes/solicitacarparecermcidrelatoriocaracterizacao/solicitacarparecermcidrelatoriocaracterizacao';
+import { Analisarparecermcidrelatoriocaracterizacao } from './pages/analista/solicitacoes/analisarparecermcidrelatoriocaracterizacao/analisarparecermcidrelatoriocaracterizacao';
+import { Aprovarregularizacaofundiaria } from './pages/analista/solicitacoes/aprovarregularizacaofundiaria/aprovarregularizacaofundiaria';
+import { Elaborarminutatitulodoacaoencargos } from './pages/analista/solicitacoes/elaborarminutatitulodoacaoencargos/elaborarminutatitulodoacaoencargos';
+import { Elaboraroficiocasacivil } from './pages/analista/resolverpendencias/elaboraroficiocasacivil/elaboraroficiocasacivil';
+import { Elaboraroficiosolicitacaoparecerpfe } from './pages/analista/solicitacoes/elaboraroficiosolicitacaoparecerpfe/elaboraroficiosolicitacaoparecerpfe';
+import { Registraraprovacaopfe } from './pages/analista/solicitacoes/registraraprovacaopfe/registraraprovacaopfe';
+import { Elaborardocumentotitulodoacao } from './pages/analista/solicitacoes/elaborardocumentotitulodoacao/elaborardocumentotitulodoacao';
+import { Assinardespachodecisorio } from './pages/analista/solicitacoes/assinardespachodecisorio/assinardespachodecisorio';
+import { Assinartitulodoacao } from './pages/analista/solicitacoes/assinartitulodoacao/assinartitulodoacao';
+import { Emitirtitulo } from './pages/analista/solicitacoes/emitirtitulo/emitirtitulo';
+import { Emitirautorizacaoobra } from './pages/analista/solicitacoes/emitirautorizacaoobra/emitirautorizacaoobra';
+import { Assinarautorizacaoobra } from './pages/analista/solicitacoes/assinarautorizacaoobra/assinarautorizacaoobra';
+import { Visualizartituloemitido } from './pages/analista/solicitacoes/visualizartituloemitido/visualizartituloemitido';
+import { Visualizarmotivoindeferimento } from './pages/analista/solicitacoes/visualizarmotivoindeferimento/visualizarmotivoindeferimento';
+import { Visualizarmotivocancelamento } from './pages/analista/solicitacoes/visualizarmotivocancelamento/visualizarmotivocancelamento';
+import { Exibirdocumentostitulodoacao } from './pages/analista/solicitacoes/exibirdocumentostitulodoacao/exibirdocumentostitulodoacao';
 
 export const routes: Routes = [
   { path: '', component: Home },
@@ -51,6 +73,27 @@ export const routes: Routes = [
   { path: 'analista/relatorioconformidades', component: Relatorioconformidades },
   { path: 'analista/resolverpendencias', component: Resolverpendencias },
   { path: 'analista/detalharpendencia', component: Detalharpendencia },
+  { path: 'analista/solicitacoes/historicosolicitacao', component: Historicosolicitacao },
+  { path: 'analista/solicitacoes/detalharsolicitacao', component: Detalharsolicitacao },
+  { path: 'analista/solicitacoes/solicitarparecermcid', component: Solicitarparecermcid },
+  { path: 'analista/solicitacoes/analisarparecermcid', component: Analisarparecermcid },
+  { path: 'analista/solicitacoes/elaborarrelatoriocaracterizacaourbana', component: Elaborarrelatoriocaracterizacaourbana },
+  { path: 'analista/solicitacoes/solicitacarparecermcidrelatoriocaracterizacao', component: Solicitacarparecermcidrelatoriocaracterizacao },
+  { path: 'analista/solicitacoes/analisarparecermcidrelatoriocaracterizacao', component: Analisarparecermcidrelatoriocaracterizacao },
+  { path: 'analista/solicitacoes/aprovarregularizacaofundiaria', component: Aprovarregularizacaofundiaria },
+  { path: 'analista/solicitacoes/elaborarminutatitulodoacaoencargos', component: Elaborarminutatitulodoacaoencargos },
+  { path: 'analista/solicitacoes/elaboraroficiosolicitacaoparecerpfe', component: Elaboraroficiosolicitacaoparecerpfe },
+  { path: 'analista/solicitacoes/registraraprovacaopfe', component: Registraraprovacaopfe },
+  { path: 'analista/solicitacoes/elaborardocumentotitulodoacao', component: Elaborardocumentotitulodoacao },
+  { path: 'analista/solicitacoes/assinardespachodecisorio', component: Assinardespachodecisorio },
+  { path: 'analista/solicitacoes/assinartitulodoacao', component: Assinartitulodoacao },
+  { path: 'analista/solicitacoes/emitirtitulo', component: Emitirtitulo },
+  { path: 'analista/solicitacoes/emitirautorizacaoobra', component: Emitirautorizacaoobra },
+  { path: 'analista/solicitacoes/assinarautorizacaoobra', component: Assinarautorizacaoobra },
+  { path: 'analista/solicitacoes/visualizartituloemitido', component: Visualizartituloemitido }, 
+  { path: 'analista/solicitacoes/visualizarmotivoindeferimento', component: Visualizarmotivoindeferimento },
+  { path: 'analista/solicitacoes/visualizarmotivocancelamento', component: Visualizarmotivocancelamento },
+  { path: 'analista/solicitacoes/exibirdocumentostitulodoacao', component: Exibirdocumentostitulodoacao },
   { path: '**', redirectTo: '' } // optional fallback
 ];
 

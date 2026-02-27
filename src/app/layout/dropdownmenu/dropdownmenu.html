@@ -14,7 +14,7 @@
   <div class="br-list" *ngIf="isOpen" role="menu" aria-label="Opções">
     <ng-container *ngFor="let it of items">
       <!-- item como rota interna -->
-      <a *ngIf="it.routerLink && !it.disabled"
+      <a *ngIf="it.routerLink && !it.disabled && !it.modal"
          class="br-item"
          href={{it.routerLink}}
          (click)="onItemClick(it, $event)">

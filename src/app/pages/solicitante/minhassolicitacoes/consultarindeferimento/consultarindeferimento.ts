@@ -17,11 +17,4 @@ export class Consultarindeferimento {
     { text: 'Minhas solicitações', address: '/solicitante/minhassolicitacoes' },
     { text: 'Consultar Notificação de Indeferimento da Solicitação', address: '' }
   ];
-
-  ngOnInit(): void {
-    const accordionList = []
-    for (const brAccordion of window.document.querySelectorAll('.br-accordion')) {
-      accordionList.push(Object.create(new core.BRAccordion('br-accordion', brAccordion)))
-    }
-  }
 }

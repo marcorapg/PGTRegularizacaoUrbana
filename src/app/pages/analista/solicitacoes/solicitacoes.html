@@ -60,7 +60,7 @@
                     <label for="nomeTitular">Código do Processo SEI</label>
                     <input id="nomeTitular" type="text" value="" />
                 </div>
-            </div>            
+            </div>
 
             <div class="col-sm-12 col-md-12 col-lg-3">
                 <div class="br-select">
@@ -320,7 +320,7 @@
                 </div>
             </div><span class="br-divider d-none d-sm-block mx-3"></span>
             <div class="pagination-information d-none d-sm-flex"><span class="current">1</span>&ndash;<span
-                    class="per-page">9</span>&nbsp;de&nbsp;<span class="total">9</span>&nbsp;itens</div>
+                    class="per-page">30</span>&nbsp;de&nbsp;<span class="total">30</span>&nbsp;itens</div>
             <div class="pagination-go-to-page d-none d-sm-flex ml-auto">
                 <div class="br-select">
                     <div class="br-input">
@@ -367,16 +367,26 @@
     </div>
 </div>
 
-<div class="col-12 mt-3 text-left">
-    <a routerLink="/solicitante"><button class="br-button primary mr-3" type="button">Voltar</button></a>
-</div>
-
 <div class="br-scrim foco" id="scrimexample" data-trigger="scrim">
     <div class="br-modal modal-large">
         <div class="br-modal-dialog">
             <div class="br-modal-content">
                 <div class="br-modal-body">
                     <div style="width: 99%;">
+                        <app-registrarnumerosei [hidden]="esconderRegistrarNumeroSei"></app-registrarnumerosei>
+                        <app-analisarsolicitacao [hidden]="esconderAnalisarSolicitacao"></app-analisarsolicitacao>
+                        <app-analisarperimetrourbano [hidden]="esconderAnalisarPerimetroUrbano"></app-analisarperimetrourbano>
+                        <app-registrarparecermcid [hidden]="esconderRegistrarParecerMCID"></app-registrarparecermcid>
+                        <app-registrarparecermcidrelatoriocaracterizacao [hidden]="esconderRegistrarParecerMCIDRelatorioCaracterizacao"></app-registrarparecermcidrelatoriocaracterizacao>
+                        <app-realizaranalisecartograficaautorizacaoobra [hidden]="esconderRealizarAnaliseCartograficaAutorizacaoObra"></app-realizaranalisecartograficaautorizacaoobra>
+                        <app-realizaranalisegeorreferenciamentoautorizacaoobra [hidden]="esconderRealizarAnaliseGeorreferenciamentoAutorizacaoObra"></app-realizaranalisegeorreferenciamentoautorizacaoobra>
+                    </div>
+                    <div class="col-12 mt-3 text-right">
+                        <button class="br-button secondary mr-3 modal-close-btn" type="button"
+                            (click)="closeScrim()">Fechar</button>
+                        <button type="button" class="br-button primary" (click)="irParaSolicitacoes()">
+                            Salvar
+                        </button>
                     </div>
                 </div>
             </div>

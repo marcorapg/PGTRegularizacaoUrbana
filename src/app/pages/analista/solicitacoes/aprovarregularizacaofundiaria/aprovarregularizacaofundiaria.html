@@ -1,0 +1,23 @@
+<app-breadcrumb [breadcrumbs]="pageBreadcrumbs"></app-breadcrumb>
+
+<h3>Aprovar Regularização Fundiária</h3>
+
+<app-cabecalhosolicitacao></app-cabecalhosolicitacao>
+
+<header class="text-center mb-5">
+    <div class="imagem-centralizada">
+        <img src="assets/images/ManifestacaoTecnica.png" alt="Imagem ilustrativa" />
+    </div>
+    <span class="br-divider lg my-3"></span>
+    <div class="imagem-centralizada">
+        <img src="assets/images/AvaliacaoTerraNua.png" alt="Imagem ilustrativa" />
+    </div>
+</header>
+
+<div class="p-3 d-flex justify-content-end">
+    <a routerLink="/analista/solicitacoes/"><button class="br-button secondary mr-3" type="button">Voltar</button></a>
+    <button class="br-button primary mr-3" type="button" [routerLink]="['/analista/solicitacoes/']"
+        [queryParams]="{ tipoMensagemSucesso: 'sucesso' }">
+        Aprovar
+    </button>
+</div>

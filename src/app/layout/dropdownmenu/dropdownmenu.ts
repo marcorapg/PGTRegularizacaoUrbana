@@ -110,7 +110,11 @@ export class ContextMenuComponent implements OnInit, OnDestroy {
       } else {
         this.router.navigate([item.routerLink]);
       }
-
+      
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
     }
 
     // Fecha o menu

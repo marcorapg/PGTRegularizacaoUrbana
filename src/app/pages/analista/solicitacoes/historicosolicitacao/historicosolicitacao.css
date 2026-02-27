@@ -1,0 +1,87 @@
+.timeline {
+  width: 100%;
+  max-width: 1200px;
+  margin: 60px auto;
+  position: relative;
+}
+
+/* Linha vertical fixa */
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 80px; /* eixo fixo */
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: #e0e0e0;
+}
+
+/* Cada item */
+.timeline-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 40px;
+}
+
+/* Coluna do eixo */
+.timeline-axis {
+  width: 160px; /* controla posição horizontal */
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+/* Marcador */
+.timeline-marker {
+  width: 32px;
+  height: 32px;
+  background: #2e7d32;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 0 0 6px white;
+  z-index: 2;
+}
+
+/* Card */
+.timeline-content {
+  width: 40%;
+  background: #ffffff;
+  padding: 18px 22px;
+  border-radius: 8px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+  border-left: 4px solid transparent;
+}
+
+/* Destacado */
+.timeline-content.highlight {
+  background: #e3f2fd;
+  border-left: 4px solid #1976d2;
+}
+
+/* Tipografia */
+.timeline-title {
+  margin: 0 0 8px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* Marcador sucesso */
+.timeline-marker.success {
+  background: #2e7d32;
+}
+
+/* Marcador erro */
+.timeline-marker.error {
+  background: #c62828;
+}
+
+/* Card erro */
+.timeline-content.error-card {
+  border-left: 4px solid #c62828;
+  background: #ffebee;
+}
+

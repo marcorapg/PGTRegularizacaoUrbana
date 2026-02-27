@@ -1,0 +1,75 @@
+<app-breadcrumb [breadcrumbs]="pageBreadcrumbs"></app-breadcrumb>
+
+<h3>Análise do parecer do MCID referente ao Relatório de Caracterização Urbana</h3>
+
+<app-cabecalhosolicitacao></app-cabecalhosolicitacao>
+
+<form class="br-form">
+
+    <!-- RADIO GROUP -->
+    <div class="br-radio-group" role="radiogroup" aria-label="Situação da solicitação">
+
+        <label class="d-block mb-2 text-weight-semi-bold">
+            Análise do parecer
+        </label>
+
+        <!-- Parecer favorável -->
+        <div class="br-radio">
+            <input id="radio-sem" type="radio" name="situacao" value="parecerFavoravel" [(ngModel)]="situacaoSelecionada" />
+            <label for="radio-sem">Parecer favorável</label>
+        </div>
+
+        <!-- Exigência de documentação complementar -->
+        <div class="br-radio">
+            <input id="radio-pendencia3" type="radio" name="situacao" value="documentacaoComplementar"
+                [(ngModel)]="situacaoSelecionada" />
+            <label for="radio-pendencia3">
+                Exigência de documentação complementar para o relatório de caracterização urbana
+            </label>
+        </div>
+
+        <!-- Parecer não favorável -->
+        <div class="br-radio">
+            <input id="radio-indeferido" type="radio" name="situacao" value="parecerNaoFavoravel"
+                [(ngModel)]="situacaoSelecionada" />
+            <label for="radio-indeferido">Indeferida</label>
+        </div>
+
+    </div>
+
+    <div class="br-textarea mt-4" [hidden]="situacaoSelecionada !== 'parecerFavoravel'">
+        <label for="manifestacao">
+            Manifestação Técnica Conclusiva
+        </label>
+        <quill-editor id="manifestacao" name="manifestacao" [(ngModel)]="texto1" class="editor-full">
+        </quill-editor>
+    </div>
+
+    <div class="br-textarea mt-4" [hidden]="situacaoSelecionada !== 'parecerFavoravel'">
+        <label for="avaliacao">
+            Avaliação da Terra Nua
+        </label>        
+        <quill-editor id="avaliacao" name="avaliacao"  [(ngModel)]="texto2" class="editor-full">
+        </quill-editor>
+    </div>
+
+    <!-- TEXTAREA (aparece apenas quando necessário) -->
+    <div class="br-textarea mt-4"
+        [hidden]="situacaoSelecionada !== 'documentacaoComplementar' && situacaoSelecionada !== 'parecerNaoFavoravel'">
+        <label for="notificacao">
+            Notificação
+        </label>
+
+        <textarea id="notificacao" name="notificacao" rows="8" [(ngModel)]="notificacao"
+            placeholder="Descreva a notificação..."></textarea>
+    </div>
+
+</form>
+
+<div class="col-12 mt-3 text-right">
+    <a routerLink="/analista/solicitacoes/"><button class="br-button secondary mr-3" type="button">Voltar</button></a>
+    <button class="br-button primary mr-3" type="button" [routerLink]="['/analista/solicitacoes/']"
+        [queryParams]="{ tipoMensagemSucesso: 'sucesso' }">
+        Salvar
+    </button>
+</div>

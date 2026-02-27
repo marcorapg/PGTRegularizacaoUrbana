@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "deploy": "ng build --configuration production --base-href /PGTRegularizacaoUrbana/ && npx angular-cli-ghpages --dir=dist/PrototipoPGT/browser"
   },
   "prettier": {
     "printWidth": 100,
@@ -29,6 +30,8 @@
     "@angular/platform-browser": "^20.2.0",
     "@angular/router": "^20.2.0",
     "@govbr-ds/core": "^3.6.2",
+    "ngx-quill": "^28.0.2",
+    "quill": "^2.0.3",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0"

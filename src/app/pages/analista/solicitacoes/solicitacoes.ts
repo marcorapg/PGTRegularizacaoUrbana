@@ -1,24 +1,34 @@
 import { Component } from '@angular/core';
 import { Breadcrumb } from '../../../layout/breadcrumb/breadcrumb';
-import { ActivatedRoute, RouterLink } from '@angular/router';
+import { ActivatedRoute, RouterLink, Router } from '@angular/router';
 import { ContextMenuComponent, MenuItem } from '../../../layout/dropdownmenu/dropdownmenu';
 import { CommonModule } from '@angular/common';
+import { Registrarnumerosei } from './registrarnumerosei/registrarnumerosei';
+import { Analisarsolicitacao } from './analisarsolicitacao/analisarsolicitacao';
+import { Analisarperimetrourbano } from './analisarperimetrourbano/analisarperimetrourbano';
+import { Registrarparecermcid } from './registrarparecermcid/registrarparecermcid';
+import { Registrarparecermcidrelatoriocaracterizacao } from './registrarparecermcidrelatoriocaracterizacao/registrarparecermcidrelatoriocaracterizacao';
+import { Realizaranalisecartograficaautorizacaoobra } from './realizaranalisecartograficaautorizacaoobra/realizaranalisecartograficaautorizacaoobra';
+import { Realizaranalisegeorreferenciamentoautorizacaoobra } from './realizaranalisegeorreferenciamentoautorizacaoobra/realizaranalisegeorreferenciamentoautorizacaoobra';
 
 declare const core: any;
 
 @Component({
   selector: 'app-solicitacoes',
-  imports: [RouterLink, Breadcrumb, ContextMenuComponent, CommonModule],
+  imports: [RouterLink, Breadcrumb, ContextMenuComponent, CommonModule, Registrarnumerosei, Analisarsolicitacao, Analisarperimetrourbano, Registrarparecermcid, Registrarparecermcidrelatoriocaracterizacao, Realizaranalisecartograficaautorizacaoobra, Realizaranalisegeorreferenciamentoautorizacaoobra],
   templateUrl: './solicitacoes.html',
   styleUrl: './solicitacoes.css'
 })
 export class Solicitacoes {
   pageBreadcrumbs = [
     { text: 'Home', address: '/analista/' },
-    { text: 'Solicitações de Título de Regularização Urbana', address: '' }
+    { text: 'Monitoramento de Solicitações de Título de Regularização Urbana', address: '' }
   ];
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router
+  ) { }
 
   esconderMensagemSucesso = true;
   mensagemSucesso = "";
@@ -26,11 +36,25 @@ export class Solicitacoes {
   scrimOpen = false;
   esconderVisualizarSolicitacao = true;
   esconderCancelamento = true;
+  esconderRegistrarNumeroSei = true;
+  esconderAnalisarSolicitacao = true;
+  esconderAnalisarPerimetroUrbano = true;
+  esconderRegistrarParecerMCID = true;
+  esconderRegistrarParecerMCIDRelatorioCaracterizacao = true;
+  esconderRealizarAnaliseCartograficaAutorizacaoObra = true;
+  esconderRealizarAnaliseGeorreferenciamentoAutorizacaoObra = true;
 
   onMenuSelect(item: any) {
 
     this.esconderVisualizarSolicitacao = true;
     this.esconderCancelamento = true;
+    this.esconderRegistrarNumeroSei = true;
+    this.esconderAnalisarSolicitacao = true;
+    this.esconderAnalisarPerimetroUrbano = true;
+    this.esconderRegistrarParecerMCID = true;
+    this.esconderRegistrarParecerMCIDRelatorioCaracterizacao = true;
+    this.esconderRealizarAnaliseCartograficaAutorizacaoObra = true;
+    this.esconderRealizarAnaliseGeorreferenciamentoAutorizacaoObra = true;
 
     switch (item.srcElement.text) {
       case " Visualizar Solicitação ":
@@ -39,63 +63,30 @@ export class Solicitacoes {
       case " Cancelar Solicitação ":
         this.esconderCancelamento = false;
         break;
+      case " Registrar Número SEI ":
+        this.esconderRegistrarNumeroSei = false;
+        break;
+      case " Analisar Documentação ":
+        this.esconderAnalisarSolicitacao = false;
+        break;
+      case " Analisar Perímetro Urbano ":
+        this.esconderAnalisarPerimetroUrbano = false;
+        break;
+      case " Registrar Parecer MCID ":
+        this.esconderRegistrarParecerMCID = false;
+        break;
+      case " Registrar Parecer MCID do Relatório de Caracterização Urbana ":
+        this.esconderRegistrarParecerMCIDRelatorioCaracterizacao = false;
+        break;
+      case " Realizar Análise Cartográfica da Autorização de Obra ":
+        this.esconderRealizarAnaliseCartograficaAutorizacaoObra = false;
+        break;
+      case " Realizar Análise de Georreferenciamento da Autorização de Obra ":
+        this.esconderRealizarAnaliseGeorreferenciamentoAutorizacaoObra = false;
+        break;
+        
     }
   }
-
-  menuItemsAnaliseDocumental: MenuItem[] = [
-    { label: 'Detalhar Solicitação', value: 'visualizar', modal: false, routerLink: '/solicitante/minhassolicitacoes/visualizarsolicitacao' },
-    { label: 'Cancelar Solicitação', value: 'cancelar', modal: false, routerLink: '/solicitante/minhassolicitacoes/cancelamento' },
-    { label: 'Relatório de Conformidades', value: 'cancelar', modal: false, routerLink: '/analista/relatorioconformidades' }
-  ];
-
-  menuItemsPendenciaDocumental: MenuItem[] = [
-    { label: 'Detalhar Solicitação', value: 'visualizar', modal: false, routerLink: '/solicitante/minhassolicitacoes/visualizarsolicitacao' },
-    { label: 'Detalhar Pendência Documental', value: 'visualizar', modal: false, routerLink: '/solicitante/minhassolicitacoes/detalharpendenciadocumental' },
-    { label: 'Corrigir Pendência Documental', value: 'visualizar', modal: false, routerLink: '/solicitante/minhassolicitacoes/corrigirpendenciadocumental' },
-    { label: 'Corrigir Pendência de Georreferenciamento', value: 'visualizar', modal: false, routerLink: '/solicitante/minhassolicitacoes/corrigirpendenciadocumentalgeo' },
-    { label: 'Cancelar Solicitação', value: 'cancelar', modal: false, routerLink: '/solicitante/minhassolicitacoes/cancelamento' }
-  ];
-
-  menuItemsAnalisePerimetroUrbano: MenuItem[] = [
-    { label: 'Detalhar Solicitação', value: 'visualizar', modal: false, routerLink: '/solicitante/minhassolicitacoes/visualizarsolicitacao' },
-  ];
-
-  menuItemsPendenciaGeorreferenciamento: MenuItem[] = [
-    { label: 'Detalhar Solicitação', value: 'visualizar', modal: false, routerLink: '/solicitante/minhassolicitacoes/visualizarsolicitacao' },
-    { label: 'Detalhar Pendência no Georreferenciamento', value: 'visualizar', modal: false, routerLink: '/solicitante/minhassolicitacoes/detalharpendenciageorreferenciamento' },
-    { label: 'Corrigir Pendência de Georreferenciamento', value: 'visualizar', modal: false, routerLink: '/solicitante/minhassolicitacoes/corrigirpendenciadocumentalgeo' },
-    { label: 'Cancelar Solicitação', value: 'cancelar', modal: false, routerLink: '/solicitante/minhassolicitacoes/cancelamento' }
-  ];
-
-  menuItemsMinutaTituloEmitida: MenuItem[] = [
-    { label: 'Detalhar Solicitação', value: 'visualizar', modal: false, routerLink: '/solicitante/minhassolicitacoes/visualizarsolicitacao' },
-    { label: 'Tomar Ciêncida da Titulação', value: 'visualizar', modal: false, routerLink: '/solicitante/minhassolicitacoes/tomarcienciatitulacao' },
-    { label: 'Visualizar Minuta do Título', value: 'visualizar', modal: false, routerLink: '/solicitante/minhassolicitacoes/visualizarminutatitulo' }
-  ];
-
-  menuItemsTituloAguardandoAprovacaoSuperior: MenuItem[] = [
-    { label: 'Detalhar Solicitação', value: 'novoprefeito', modal: false, routerLink: '/solicitante/minhassolicitacoes/visualizarsolicitacao' },
-    { label: 'Visualizar Minuta do Título', value: 'visualizar', modal: false, routerLink: '/solicitante/minhassolicitacoes/visualizarminutatitulo' },
-    { label: 'Consultar Notificação de Indeferimento de Autorização de Obra', value: 'cancelar', modal: false, routerLink: '/solicitante/minhassolicitacoes/consultarindeferimentoautorizacaoobra' }
-  ];
-
-  menuItemsTituloEmitido: MenuItem[] = [
-    { label: 'Detalhar Solicitação', value: 'novoprefeito', modal: false, routerLink: '/solicitante/minhassolicitacoes/visualizarsolicitacao' },
-    { label: 'Consultar Instruções de Retirada do Título', value: 'cancelar', modal: false, routerLink: '/solicitante/minhassolicitacoes/consultarinstrucoesretirada' },
-    { label: 'Visualizar Minuta do Título', value: 'visualizar', modal: false, routerLink: '/solicitante/minhassolicitacoes/visualizarminutatitulo' },
-    { label: 'Visualizar Autorização de Obra', value: 'visualizar', modal: false, routerLink: '/solicitante/minhassolicitacoes/visualizarautorizacaoobra' }
-  ];
-
-  menuItemsIndeferida: MenuItem[] = [
-    { label: 'Detalhar Solicitação', value: 'novoprefeito', modal: false, routerLink: '/solicitante/minhassolicitacoes/visualizarsolicitacao' },
-    { label: 'Consultar Motivo do Indeferimento da Solicitação', value: 'cancelar', modal: false, routerLink: '/solicitante/minhassolicitacoes/consultarindeferimento' }
-  ];
-
-  menuItemsCanceladaUsuario: MenuItem[] = [
-    { label: 'Detalhar Solicitação', value: 'novoprefeito', modal: false, routerLink: '/solicitante/minhassolicitacoes/visualizarsolicitacao' },
-    { label: 'Consultar Motivo do Cancelamento da Solicitação', value: 'cancelar', modal: false, routerLink: '/solicitante/minhassolicitacoes/consultarcancelamento' },
-    { label: 'Consultar Notificação de Indeferimento de Autorização de Obra', value: 'cancelar', modal: false, routerLink: '/solicitante/minhassolicitacoes/consultarindeferimentoautorizacaoobra' }
-  ];
 
   solicitacoes = [
     {
@@ -104,10 +95,14 @@ export class Solicitacoes {
       localizacao: 'Vila Nova Esperança',
       codigoParcela: '7f2c1a9e-b8d4-4f39-9b83-92f1c3e8a4d7',
       dataRequerimento: '12/03/2024',
-      codigoProcessoSEI: '23112.045515/2023-71',
-      statusSolicitacao: 'Análise Documental',
+      codigoProcessoSEI: '-',
+      statusSolicitacao: 'Aberta',
       statusAutorizacaoObra: 'Solicitada',
-      menuItems: this.menuItemsAnaliseDocumental
+      menuItems: [
+        { label: 'Detalhar Solicitação', value: 'visualizar', modal: false, routerLink: '/analista/solicitacoes/detalharsolicitacao' },
+        { label: 'Histórico da Solicitação', value: 'cancelar', modal: false, routerLink: '/analista/solicitacoes/historicosolicitacao' },
+        { label: 'Registrar Número SEI', value: 'cancelar', modal: true, routerLink: '/analista/solicitacoes/registrarnumerosei' }
+      ]
     },
     {
       numeroSolicitacao: '9401185237',
@@ -116,9 +111,13 @@ export class Solicitacoes {
       codigoParcela: 'c41ad8c3-1ac6-4ff2-a287-d60d945fce89',
       dataRequerimento: '25/03/2024',
       codigoProcessoSEI: '23112.045534/2023-74',
-      statusSolicitacao: 'Pendência Documental',
+      statusSolicitacao: 'Aguardando Análise Documental',
       statusAutorizacaoObra: 'Não Solicitada',
-      menuItems: this.menuItemsPendenciaDocumental
+      menuItems: [
+        { label: 'Detalhar Solicitação', value: 'visualizar', modal: false, routerLink: '/analista/solicitacoes/detalharsolicitacao' },
+        { label: 'Histórico da Solicitação', value: 'cancelar', modal: false, routerLink: '/analista/solicitacoes/historicosolicitacao' },
+        { label: 'Analisar Documentação', value: 'cancelar', modal: true, routerLink: '/analista/solicitacoes/analisarsolicitacao' }
+      ]
     },
     {
       numeroSolicitacao: '5527391048',
@@ -127,9 +126,12 @@ export class Solicitacoes {
       codigoParcela: 'e0fa92c1-6b22-4ce4-b0c7-5ea9238b29cd',
       dataRequerimento: '08/04/2024',
       codigoProcessoSEI: '23112.045601/2023-19',
-      statusSolicitacao: 'Análise de Perímetro Urbano',
+      statusSolicitacao: 'Pendência Documental',
       statusAutorizacaoObra: 'Solicitada',
-      menuItems: this.menuItemsAnalisePerimetroUrbano
+      menuItems: [
+        { label: 'Detalhar Solicitação', value: 'visualizar', modal: false, routerLink: '/analista/solicitacoes/detalharsolicitacao' },
+        { label: 'Histórico da Solicitação', value: 'cancelar', modal: false, routerLink: '/analista/solicitacoes/historicosolicitacao' }
+      ]
     },
     {
       numeroSolicitacao: '1830479265',
@@ -138,9 +140,15 @@ export class Solicitacoes {
       codigoParcela: 'f92b1db7-2ee7-45fd-8b5a-8fb2f0d456ce',
       dataRequerimento: '19/04/2024',
       codigoProcessoSEI: '23112.045672/2023-83',
-      statusSolicitacao: 'Pendência no Georreferenciamento',
+      statusSolicitacao: 'Aguardando Análise de Perímetro Urbano',
       statusAutorizacaoObra: 'Solicitada',
-      menuItems: this.menuItemsPendenciaGeorreferenciamento
+      menuItems: [
+        { label: 'Detalhar Solicitação', value: 'visualizar', modal: false, routerLink: '/analista/solicitacoes/detalharsolicitacao' },
+        { label: 'Histórico da Solicitação', value: 'cancelar', modal: false, routerLink: '/analista/solicitacoes/historicosolicitacao' },
+        { label: 'Relatório de Conformidades', value: 'cancelar', modal: false, routerLink: '/analista/relatorioconformidades' },
+        { label: 'Resolver Pendência', value: 'cancelar', modal: false, routerLink: '/analista/resolverpendencias' },
+        { label: 'Analisar Perímetro Urbano', value: 'cancelar', modal: true, routerLink: '/analista/solicitacoes/analisarperimetrourbano' }
+      ]
     },
     {
       numeroSolicitacao: '4923760851',
@@ -149,9 +157,12 @@ export class Solicitacoes {
       codigoParcela: '4a2b1cef-dd53-d46d-f09c-2b90b77e64aa',
       dataRequerimento: '12/05/2024',
       codigoProcessoSEI: '23112.045711/2023-05',
-      statusSolicitacao: 'Minuta do Título Emitida',
+      statusSolicitacao: 'Pendência no Georreferenciamento',
       statusAutorizacaoObra: 'Não Solicitada',
-      menuItems: this.menuItemsMinutaTituloEmitida
+      menuItems: [
+        { label: 'Detalhar Solicitação', value: 'visualizar', modal: false, routerLink: '/analista/solicitacoes/detalharsolicitacao' },
+        { label: 'Histórico da Solicitação', value: 'cancelar', modal: false, routerLink: '/analista/solicitacoes/historicosolicitacao' }
+      ]
     },
     {
       numeroSolicitacao: '8045197632',
@@ -160,10 +171,349 @@ export class Solicitacoes {
       codigoParcela: 'd7c61f40-6150-42ad-b5a3-f4f98e2fa917',
       dataRequerimento: '14/05/2024',
       codigoProcessoSEI: '23112.045748/2023-62',
-      statusSolicitacao: 'Emissão de Título em Análise',
+      statusSolicitacao: 'Aguardando Solicitação de Parecer MCID',
       statusAutorizacaoObra: 'Indeferida',
-      menuItems: this.menuItemsTituloAguardandoAprovacaoSuperior
+      menuItems: [
+        { label: 'Detalhar Solicitação', value: 'visualizar', modal: false, routerLink: '/analista/solicitacoes/detalharsolicitacao' },
+        { label: 'Histórico da Solicitação', value: 'cancelar', modal: false, routerLink: '/analista/solicitacoes/historicosolicitacao' },
+        { label: 'Solicitar Parecer MCID', value: 'cancelar', modal: false, routerLink: '/analista/solicitacoes/solicitarparecermcid' }
+      ]
     },
+    {
+      numeroSolicitacao: '8045197632',
+      nomeGleba: 'Santo Antônio',
+      localizacao: 'Distrito Novo Progresso',
+      codigoParcela: 'd7c61f40-6150-42ad-b5a3-f4f98e2fa917',
+      dataRequerimento: '14/05/2024',
+      codigoProcessoSEI: '23112.045748/2023-62',
+      statusSolicitacao: 'Aguardando Registro do Parecer MCID',
+      statusAutorizacaoObra: 'Indeferida',
+      menuItems: [
+        { label: 'Detalhar Solicitação', value: 'visualizar', modal: false, routerLink: '/analista/solicitacoes/detalharsolicitacao' },
+        { label: 'Histórico da Solicitação', value: 'cancelar', modal: false, routerLink: '/analista/solicitacoes/historicosolicitacao' },
+        { label: 'Registrar Parecer MCID', value: 'cancelar', modal: true, routerLink: '/analista/solicitacoes/registrarparecermcid' }
+      ]
+    },
+    {
+      numeroSolicitacao: '8045197632',
+      nomeGleba: 'Santo Antônio',
+      localizacao: 'Distrito Novo Progresso',
+      codigoParcela: 'd7c61f40-6150-42ad-b5a3-f4f98e2fa917',
+      dataRequerimento: '14/05/2024',
+      codigoProcessoSEI: '23112.045748/2023-62',
+      statusSolicitacao: 'Aguardando Análise Parecer MCID',
+      statusAutorizacaoObra: 'Indeferida',
+      menuItems: [
+        { label: 'Detalhar Solicitação', value: 'visualizar', modal: false, routerLink: '/analista/solicitacoes/detalharsolicitacao' },
+        { label: 'Histórico da Solicitação', value: 'cancelar', modal: false, routerLink: '/analista/solicitacoes/historicosolicitacao' },
+        { label: 'Analisar Parecer MCID', value: 'cancelar', modal: false, routerLink: '/analista/solicitacoes/analisarparecermcid' }
+      ]
+    },
+    {
+      numeroSolicitacao: '8045197632',
+      nomeGleba: 'Santo Antônio',
+      localizacao: 'Distrito Novo Progresso',
+      codigoParcela: 'd7c61f40-6150-42ad-b5a3-f4f98e2fa917',
+      dataRequerimento: '14/05/2024',
+      codigoProcessoSEI: '23112.045748/2023-62',
+      statusSolicitacao: 'Exigência de Documentação Complementar',
+      statusAutorizacaoObra: 'Indeferida',
+      menuItems: [
+        { label: 'Detalhar Solicitação', value: 'visualizar', modal: false, routerLink: '/analista/solicitacoes/detalharsolicitacao' },
+        { label: 'Histórico da Solicitação', value: 'cancelar', modal: false, routerLink: '/analista/solicitacoes/historicosolicitacao' }
+      ]
+    },
+    {
+      numeroSolicitacao: '8045197632',
+      nomeGleba: 'Santo Antônio',
+      localizacao: 'Distrito Novo Progresso',
+      codigoParcela: 'd7c61f40-6150-42ad-b5a3-f4f98e2fa917',
+      dataRequerimento: '14/05/2024',
+      codigoProcessoSEI: '23112.045748/2023-62',
+      statusSolicitacao: 'Aguardando Elaboração do Relatório de Caracterização Urbana',
+      statusAutorizacaoObra: 'Indeferida',
+      menuItems: [
+        { label: 'Detalhar Solicitação', value: 'visualizar', modal: false, routerLink: '/analista/solicitacoes/detalharsolicitacao' },
+        { label: 'Histórico da Solicitação', value: 'cancelar', modal: false, routerLink: '/analista/solicitacoes/historicosolicitacao' },
+        { label: 'Elaborar Relatório de Caracterização Urbana', value: 'cancelar', modal: false, routerLink: '/analista/solicitacoes/elaborarrelatoriocaracterizacaourbana' }
+      ]
+    },
+    {
+      numeroSolicitacao: '8045197632',
+      nomeGleba: 'Santo Antônio',
+      localizacao: 'Distrito Novo Progresso',
+      codigoParcela: 'd7c61f40-6150-42ad-b5a3-f4f98e2fa917',
+      dataRequerimento: '14/05/2024',
+      codigoProcessoSEI: '23112.045748/2023-62',
+      statusSolicitacao: 'Aguardando Solicitação de Parecer MCID do Relatório de Caracterização Urbana',
+      statusAutorizacaoObra: 'Indeferida',
+      menuItems: [
+        { label: 'Detalhar Solicitação', value: 'visualizar', modal: false, routerLink: '/analista/solicitacoes/detalharsolicitacao' },
+        { label: 'Histórico da Solicitação', value: 'cancelar', modal: false, routerLink: '/analista/solicitacoes/historicosolicitacao' },
+        { label: 'Solicitar Parecer MCID do Relatório de Caracterização Urbana', value: 'cancelar', modal: false, routerLink: '/analista/solicitacoes/solicitacarparecermcidrelatoriocaracterizacao' }
+      ]
+    },
+    {
+      numeroSolicitacao: '8045197632',
+      nomeGleba: 'Santo Antônio',
+      localizacao: 'Distrito Novo Progresso',
+      codigoParcela: 'd7c61f40-6150-42ad-b5a3-f4f98e2fa917',
+      dataRequerimento: '14/05/2024',
+      codigoProcessoSEI: '23112.045748/2023-62',
+      statusSolicitacao: 'Aguardando Registro do Parecer MCID do Relatório de Caracterização Urbana',
+      statusAutorizacaoObra: 'Indeferida',
+      menuItems: [
+        { label: 'Detalhar Solicitação', value: 'visualizar', modal: false, routerLink: '/analista/solicitacoes/detalharsolicitacao' },
+        { label: 'Histórico da Solicitação', value: 'cancelar', modal: false, routerLink: '/analista/solicitacoes/historicosolicitacao' },
+        { label: 'Registrar Parecer MCID do Relatório de Caracterização Urbana', value: 'cancelar', modal: true, routerLink: '/analista/solicitacoes/registrarparecermcidrelatoriocaracterizacao' }
+      ]
+    },
+    {
+      numeroSolicitacao: '8045197632',
+      nomeGleba: 'Santo Antônio',
+      localizacao: 'Distrito Novo Progresso',
+      codigoParcela: 'd7c61f40-6150-42ad-b5a3-f4f98e2fa917',
+      dataRequerimento: '14/05/2024',
+      codigoProcessoSEI: '23112.045748/2023-62',
+      statusSolicitacao: 'Aguardando Análise Parecer MCID do Relatório de Caracterização Urbana',
+      statusAutorizacaoObra: 'Indeferida',
+      menuItems: [
+        { label: 'Detalhar Solicitação', value: 'visualizar', modal: false, routerLink: '/analista/solicitacoes/detalharsolicitacao' },
+        { label: 'Histórico da Solicitação', value: 'cancelar', modal: false, routerLink: '/analista/solicitacoes/historicosolicitacao' },
+        { label: 'Análise do parecer do MCID referente ao Relatório de Caracterização Urbana', value: 'cancelar', modal: false, routerLink: '/analista/solicitacoes/analisarparecermcidrelatoriocaracterizacao' }
+      ]
+    },
+    {
+      numeroSolicitacao: '8045197632',
+      nomeGleba: 'Santo Antônio',
+      localizacao: 'Distrito Novo Progresso',
+      codigoParcela: 'd7c61f40-6150-42ad-b5a3-f4f98e2fa917',
+      dataRequerimento: '14/05/2024',
+      codigoProcessoSEI: '23112.045748/2023-62',
+      statusSolicitacao: 'Exigência de Documentação Complementar para o Relatório de Caracterização Urbana',
+      statusAutorizacaoObra: 'Indeferida',
+      menuItems: [
+        { label: 'Detalhar Solicitação', value: 'visualizar', modal: false, routerLink: '/analista/solicitacoes/detalharsolicitacao' },
+        { label: 'Histórico da Solicitação', value: 'cancelar', modal: false, routerLink: '/analista/solicitacoes/historicosolicitacao' }
+      ]
+    },
+    {
+      numeroSolicitacao: '8045197632',
+      nomeGleba: 'Santo Antônio',
+      localizacao: 'Distrito Novo Progresso',
+      codigoParcela: 'd7c61f40-6150-42ad-b5a3-f4f98e2fa917',
+      dataRequerimento: '14/05/2024',
+      codigoProcessoSEI: '23112.045748/2023-62',
+      statusSolicitacao: 'Aguardando Aprovação Regularização Fundiária',
+      statusAutorizacaoObra: 'Indeferida',
+      menuItems: [
+        { label: 'Detalhar Solicitação', value: 'visualizar', modal: false, routerLink: '/analista/solicitacoes/detalharsolicitacao' },
+        { label: 'Histórico da Solicitação', value: 'cancelar', modal: false, routerLink: '/analista/solicitacoes/historicosolicitacao' },
+        { label: 'Aprovar Regularização Fundiária', value: 'cancelar', modal: false, routerLink: '/analista/solicitacoes/aprovarregularizacaofundiaria' }
+      ]
+    },
+    {
+      numeroSolicitacao: '8045197632',
+      nomeGleba: 'Santo Antônio',
+      localizacao: 'Distrito Novo Progresso',
+      codigoParcela: 'd7c61f40-6150-42ad-b5a3-f4f98e2fa917',
+      dataRequerimento: '14/05/2024',
+      codigoProcessoSEI: '23112.045748/2023-62',
+      statusSolicitacao: 'Aguardando Aprovação Superior Regularização Fundiária',
+      statusAutorizacaoObra: 'Indeferida',
+      menuItems: [
+        { label: 'Detalhar Solicitação', value: 'visualizar', modal: false, routerLink: '/analista/solicitacoes/detalharsolicitacao' },
+        { label: 'Histórico da Solicitação', value: 'cancelar', modal: false, routerLink: '/analista/solicitacoes/historicosolicitacao' },
+        { label: 'Aprovar Regularização Fundiária', value: 'cancelar', modal: false, routerLink: '/analista/solicitacoes/aprovarregularizacaofundiaria' }
+      ]
+    },
+    {
+      numeroSolicitacao: '8045197632',
+      nomeGleba: 'Santo Antônio',
+      localizacao: 'Distrito Novo Progresso',
+      codigoParcela: 'd7c61f40-6150-42ad-b5a3-f4f98e2fa917',
+      dataRequerimento: '14/05/2024',
+      codigoProcessoSEI: '23112.045748/2023-62',
+      statusSolicitacao: 'Aguardando Elaboração Minuta Título',
+      statusAutorizacaoObra: 'Indeferida',
+      menuItems: [
+        { label: 'Detalhar Solicitação', value: 'visualizar', modal: false, routerLink: '/analista/solicitacoes/detalharsolicitacao' },
+        { label: 'Histórico da Solicitação', value: 'cancelar', modal: false, routerLink: '/analista/solicitacoes/historicosolicitacao' },
+        { label: 'Elaborar Minuta do Título de Doação com Encargos', value: 'cancelar', modal: false, routerLink: '/analista/solicitacoes/elaborarminutatitulodoacaoencargos' }
+      ]
+    },
+    {
+      numeroSolicitacao: '8045197632',
+      nomeGleba: 'Santo Antônio',
+      localizacao: 'Distrito Novo Progresso',
+      codigoParcela: 'd7c61f40-6150-42ad-b5a3-f4f98e2fa917',
+      dataRequerimento: '14/05/2024',
+      codigoProcessoSEI: '23112.045748/2023-62',
+      statusSolicitacao: 'Exigência de Ciência da Titulação',
+      statusAutorizacaoObra: 'Indeferida',
+      menuItems: [
+        { label: 'Detalhar Solicitação', value: 'visualizar', modal: false, routerLink: '/analista/solicitacoes/detalharsolicitacao' },
+        { label: 'Histórico da Solicitação', value: 'cancelar', modal: false, routerLink: '/analista/solicitacoes/historicosolicitacao' }
+      ]
+    },
+    {
+      numeroSolicitacao: '8045197632',
+      nomeGleba: 'Santo Antônio',
+      localizacao: 'Distrito Novo Progresso',
+      codigoParcela: 'd7c61f40-6150-42ad-b5a3-f4f98e2fa917',
+      dataRequerimento: '14/05/2024',
+      codigoProcessoSEI: '23112.045748/2023-62',
+      statusSolicitacao: 'Aguardando Elaboração de Ofício de Solicitação Parecer PFE',
+      statusAutorizacaoObra: 'Indeferida',
+      menuItems: [
+        { label: 'Detalhar Solicitação', value: 'visualizar', modal: false, routerLink: '/analista/solicitacoes/detalharsolicitacao' },
+        { label: 'Histórico da Solicitação', value: 'cancelar', modal: false, routerLink: '/analista/solicitacoes/historicosolicitacao' },
+        { label: 'Elaborar Ofício de Solicitação de Parecer PFE', value: 'cancelar', modal: false, routerLink: '/analista/solicitacoes/elaboraroficiosolicitacaoparecerpfe' }
+      ]
+    },
+    {
+      numeroSolicitacao: '8045197632',
+      nomeGleba: 'Santo Antônio',
+      localizacao: 'Distrito Novo Progresso',
+      codigoParcela: 'd7c61f40-6150-42ad-b5a3-f4f98e2fa917',
+      dataRequerimento: '14/05/2024',
+      codigoProcessoSEI: '23112.045748/2023-62',
+      statusSolicitacao: 'Aguardando Registro da Aprovação PFE',
+      statusAutorizacaoObra: 'Indeferida',
+      menuItems: [
+        { label: 'Detalhar Solicitação', value: 'visualizar', modal: false, routerLink: '/analista/solicitacoes/detalharsolicitacao' },
+        { label: 'Histórico da Solicitação', value: 'cancelar', modal: false, routerLink: '/analista/solicitacoes/historicosolicitacao' },
+        { label: 'Registrar Aprovação PFE', value: 'cancelar', modal: false, routerLink: '/analista/solicitacoes/registraraprovacaopfe' }
+      ]
+    },
+    {
+      numeroSolicitacao: '8045197632',
+      nomeGleba: 'Santo Antônio',
+      localizacao: 'Distrito Novo Progresso',
+      codigoParcela: 'd7c61f40-6150-42ad-b5a3-f4f98e2fa917',
+      dataRequerimento: '14/05/2024',
+      codigoProcessoSEI: '23112.045748/2023-62',
+      statusSolicitacao: 'Aguardando Elaboração dos Documentos do Título de Doação',
+      statusAutorizacaoObra: 'Indeferida',
+      menuItems: [
+        { label: 'Detalhar Solicitação', value: 'visualizar', modal: false, routerLink: '/analista/solicitacoes/detalharsolicitacao' },
+        { label: 'Histórico da Solicitação', value: 'cancelar', modal: false, routerLink: '/analista/solicitacoes/historicosolicitacao' },
+        { label: 'Elaborar Documentos do Título de Doação', value: 'cancelar', modal: false, routerLink: '/analista/solicitacoes/elaborardocumentotitulodoacao' }
+      ]
+    },
+    {
+      numeroSolicitacao: '8045197632',
+      nomeGleba: 'Santo Antônio',
+      localizacao: 'Distrito Novo Progresso',
+      codigoParcela: 'd7c61f40-6150-42ad-b5a3-f4f98e2fa917',
+      dataRequerimento: '14/05/2024',
+      codigoProcessoSEI: '23112.045748/2023-62',
+      statusSolicitacao: 'Aguardando Despacho Decisório do Título de Doação',
+      statusAutorizacaoObra: 'Indeferida',
+      menuItems: [
+        { label: 'Detalhar Solicitação', value: 'visualizar', modal: false, routerLink: '/analista/solicitacoes/detalharsolicitacao' },
+        { label: 'Histórico da Solicitação', value: 'cancelar', modal: false, routerLink: '/analista/solicitacoes/historicosolicitacao' },
+        { label: 'Exibir Documentos de Título de Doação', value: 'cancelar', modal: false, routerLink: '/analista/solicitacoes/exibirdocumentostitulodoacao' },
+        { label: 'Assinar Despacho Decisório', value: 'cancelar', modal: false, routerLink: '/analista/solicitacoes/assinardespachodecisorio' }
+      ]
+    },
+    {
+      numeroSolicitacao: '8045197632',
+      nomeGleba: 'Santo Antônio',
+      localizacao: 'Distrito Novo Progresso',
+      codigoParcela: 'd7c61f40-6150-42ad-b5a3-f4f98e2fa917',
+      dataRequerimento: '14/05/2024',
+      codigoProcessoSEI: '23112.045748/2023-62',
+      statusSolicitacao: 'Aguardando Assinatura do Título de Doação',
+      statusAutorizacaoObra: 'Indeferida',
+      menuItems: [
+        { label: 'Detalhar Solicitação', value: 'visualizar', modal: false, routerLink: '/analista/solicitacoes/detalharsolicitacao' },
+        { label: 'Histórico da Solicitação', value: 'cancelar', modal: false, routerLink: '/analista/solicitacoes/historicosolicitacao' },
+        { label: 'Assinar Título de Doação', value: 'cancelar', modal: false, routerLink: '/analista/solicitacoes/assinartitulodoacao' }
+      ]
+    },
+    {
+      numeroSolicitacao: '8045197632',
+      nomeGleba: 'Santo Antônio',
+      localizacao: 'Distrito Novo Progresso',
+      codigoParcela: 'd7c61f40-6150-42ad-b5a3-f4f98e2fa917',
+      dataRequerimento: '14/05/2024',
+      codigoProcessoSEI: '23112.045748/2023-62',
+      statusSolicitacao: 'Aguardando Emissão do Título de Doação',
+      statusAutorizacaoObra: 'Indeferida',
+      menuItems: [
+        { label: 'Detalhar Solicitação', value: 'visualizar', modal: false, routerLink: '/analista/solicitacoes/detalharsolicitacao' },
+        { label: 'Histórico da Solicitação', value: 'cancelar', modal: false, routerLink: '/analista/solicitacoes/historicosolicitacao' },
+        { label: 'Emitir Título', value: 'cancelar', modal: false, routerLink: '/analista/solicitacoes/emitirtitulo' }
+      ]
+    },
+
+    //Autorização de obra
+    {
+      numeroSolicitacao: '8045197632',
+      nomeGleba: 'Santo Antônio',
+      localizacao: 'Distrito Novo Progresso',
+      codigoParcela: 'd7c61f40-6150-42ad-b5a3-f4f98e2fa917',
+      dataRequerimento: '14/05/2024',
+      codigoProcessoSEI: '23112.045748/2023-62',
+      statusSolicitacao: 'Aguardando Emissão do Título de Doação',
+      statusAutorizacaoObra: 'Aguardando Análise Cartográfica da Autorizacao de Obra',
+      menuItems: [
+        { label: 'Detalhar Solicitação', value: 'visualizar', modal: false, routerLink: '/analista/solicitacoes/detalharsolicitacao' },
+        { label: 'Histórico da Solicitação', value: 'cancelar', modal: false, routerLink: '/analista/solicitacoes/historicosolicitacao' },
+        { label: 'Realizar Análise Cartográfica da Autorização de Obra', value: 'cancelar', modal: true, routerLink: '/analista/solicitacoes/realizaranalisecartograficaautorizacaoobra' }
+      ]
+    },
+    {
+      numeroSolicitacao: '8045197632',
+      nomeGleba: 'Santo Antônio',
+      localizacao: 'Distrito Novo Progresso',
+      codigoParcela: 'd7c61f40-6150-42ad-b5a3-f4f98e2fa917',
+      dataRequerimento: '14/05/2024',
+      codigoProcessoSEI: '23112.045748/2023-62',
+      statusSolicitacao: 'Aguardando Emissão do Título de Doação',
+      statusAutorizacaoObra: 'Aguardando Análise de Georreferenciamento da Autorização de Obra',
+      menuItems: [
+        { label: 'Detalhar Solicitação', value: 'visualizar', modal: false, routerLink: '/analista/solicitacoes/detalharsolicitacao' },
+        { label: 'Histórico da Solicitação', value: 'cancelar', modal: false, routerLink: '/analista/solicitacoes/historicosolicitacao' },
+        { label: 'Realizar Análise de Georreferenciamento da Autorização de Obra', value: 'cancelar', modal: true, routerLink: '/analista/solicitacoes/realizaranalisegeorreferenciamentoautorizacaoobra' }
+      ]
+    },
+    {
+      numeroSolicitacao: '8045197632',
+      nomeGleba: 'Santo Antônio',
+      localizacao: 'Distrito Novo Progresso',
+      codigoParcela: 'd7c61f40-6150-42ad-b5a3-f4f98e2fa917',
+      dataRequerimento: '14/05/2024',
+      codigoProcessoSEI: '23112.045748/2023-62',
+      statusSolicitacao: 'Aguardando Emissão do Título de Doação',
+      statusAutorizacaoObra: 'Aguardando Elaboração da Autorização de Obra',
+      menuItems: [
+        { label: 'Detalhar Solicitação', value: 'visualizar', modal: false, routerLink: '/analista/solicitacoes/detalharsolicitacao' },
+        { label: 'Histórico da Solicitação', value: 'cancelar', modal: false, routerLink: '/analista/solicitacoes/historicosolicitacao' },
+        { label: 'Emitir Autorização de Obra', value: 'cancelar', modal: false, routerLink: '/analista/solicitacoes/emitirautorizacaoobra' }        
+      ]
+    },
+    {
+      numeroSolicitacao: '8045197632',
+      nomeGleba: 'Santo Antônio',
+      localizacao: 'Distrito Novo Progresso',
+      codigoParcela: 'd7c61f40-6150-42ad-b5a3-f4f98e2fa917',
+      dataRequerimento: '14/05/2024',
+      codigoProcessoSEI: '23112.045748/2023-62',
+      statusSolicitacao: 'Aguardando Emissão do Título de Doação',
+      statusAutorizacaoObra: 'Aguardando Assinatura da Autorização de Obra',
+      menuItems: [
+        { label: 'Detalhar Solicitação', value: 'visualizar', modal: false, routerLink: '/analista/solicitacoes/detalharsolicitacao' },
+        { label: 'Histórico da Solicitação', value: 'cancelar', modal: false, routerLink: '/analista/solicitacoes/historicosolicitacao' },
+        { label: 'Assinar Autorização de Obra', value: 'cancelar', modal: false, routerLink: '/analista/solicitacoes/assinarautorizacaoobra' }
+      ]
+    },
+
+
+
+
+
     {
       numeroSolicitacao: '8214590376',
       nomeGleba: 'Santa Ana',
@@ -173,7 +523,11 @@ export class Solicitacoes {
       codigoProcessoSEI: '23112.045389/2023-44',
       statusSolicitacao: 'Título Emitido',
       statusAutorizacaoObra: 'Emitida',
-      menuItems: this.menuItemsTituloEmitido
+      menuItems: [
+        { label: 'Detalhar Solicitação', value: 'visualizar', modal: false, routerLink: '/analista/solicitacoes/detalharsolicitacao' },
+        { label: 'Histórico da Solicitação', value: 'cancelar', modal: false, routerLink: '/analista/solicitacoes/historicosolicitacao' },
+        { label: 'Visualizar Título Emitido', value: 'visualizar', modal: false, routerLink: '/analista/solicitacoes/visualizartituloemitido' }
+      ]
     },
     {
       numeroSolicitacao: '5908214376',
@@ -184,7 +538,11 @@ export class Solicitacoes {
       codigoProcessoSEI: '23112.045812/2023-91',
       statusSolicitacao: 'Indeferida',
       statusAutorizacaoObra: 'Não Solicitada',
-      menuItems: this.menuItemsIndeferida
+      menuItems: [
+        { label: 'Detalhar Solicitação', value: 'visualizar', modal: false, routerLink: '/analista/solicitacoes/detalharsolicitacao' },
+        { label: 'Histórico da Solicitação', value: 'cancelar', modal: false, routerLink: '/analista/solicitacoes/historicosolicitacao' },
+        { label: 'Consultar Motivo do Indeferimento da Solicitação', value: 'cancelar', modal: false, routerLink: '/analista/solicitacoes/visualizarmotivoindeferimento' }
+      ]
     },
     {
       numeroSolicitacao: '3357902841',
@@ -195,33 +553,68 @@ export class Solicitacoes {
       codigoProcessoSEI: '23112.045845/2023-38',
       statusSolicitacao: 'Cancelada pelo Usuário',
       statusAutorizacaoObra: 'Indeferida',
-      menuItems: this.menuItemsCanceladaUsuario
+      menuItems: [
+        { label: 'Detalhar Solicitação', value: 'visualizar', modal: false, routerLink: '/analista/solicitacoes/detalharsolicitacao' },
+        { label: 'Histórico da Solicitação', value: 'cancelar', modal: false, routerLink: '/analista/solicitacoes/historicosolicitacao' },
+        { label: 'Consultar Motivo do Cancelamento da Solicitação', value: 'cancelar', modal: false, routerLink: '/analista/solicitacoes/visualizarmotivocancelamento' }
+      ]
     }
   ];
 
+  private cores: string[] = [
+
+    // 🔵 Blue Warm
+    'bg-blue-warm-vivid-50', 'bg-blue-warm-vivid-60', 'bg-blue-warm-vivid-70',
+    'bg-blue-warm-vivid-80', 'bg-blue-warm-vivid-90',
+
+    // 🔷 Blue Cool
+    'bg-blue-cool-vivid-50', 'bg-blue-cool-vivid-60', 'bg-blue-cool-vivid-70',
+    'bg-blue-cool-vivid-80', 'bg-blue-cool-vivid-90',
+
+    // 🟢 Green Cool
+    'bg-green-cool-vivid-50', 'bg-green-cool-vivid-60', 'bg-green-cool-vivid-70',
+    'bg-green-cool-vivid-80', 'bg-green-cool-vivid-90',
+
+    // 🟢 Green Warm
+    'bg-green-warm-vivid-50', 'bg-green-warm-vivid-60', 'bg-green-warm-vivid-70',
+    'bg-green-warm-vivid-80', 'bg-green-warm-vivid-90',
+
+    // 🟠 Orange
+    'bg-orange-vivid-50', 'bg-orange-vivid-60', 'bg-orange-vivid-70',
+    'bg-orange-vivid-80', 'bg-orange-vivid-90',
+
+    // 🟠 Orange Warm
+    'bg-orange-warm-vivid-50', 'bg-orange-warm-vivid-60', 'bg-orange-warm-vivid-70',
+    'bg-orange-warm-vivid-80', 'bg-orange-warm-vivid-90',
+
+    // 🔴 Red Cool
+    'bg-red-cool-vivid-50', 'bg-red-cool-vivid-60', 'bg-red-cool-vivid-70',
+    'bg-red-cool-vivid-80', 'bg-red-cool-vivid-90',
+
+    // 🔴 Red Warm
+    'bg-red-warm-vivid-50', 'bg-red-warm-vivid-60', 'bg-red-warm-vivid-70',
+    'bg-red-warm-vivid-80', 'bg-red-warm-vivid-90',
+
+    // 🟣 Purple
+    'bg-purple-vivid-50', 'bg-purple-vivid-60', 'bg-purple-vivid-70',
+    'bg-purple-vivid-80', 'bg-purple-vivid-90',
+
+    // ⚫ Gray (mais escuros)
+    'bg-gray-60', 'bg-gray-70', 'bg-gray-80', 'bg-gray-90'
+  ];
+
   getStatusSolicitacaoClass(status: string): string {
-    switch (status) {
-      case 'Análise Documental':
-        return 'bg-blue-warm-vivid-40';
-      case 'Análise de Perímetro Urbano':
-        return 'bg-blue-warm-vivid-70';
-      case 'Pendência Documental':
-        return 'bg-orange-warm-vivid-60';
-      case 'Pendência no Georreferenciamento':
-        return 'bg-orange-vivid-60';
-      case 'Minuta do Título Emitida':
-        return 'bg-blue-cool-vivid-20';
-      case 'Emissão de Título em Análise':
-        return 'bg-green-cool-vivid-30';
-      case 'Título Emitido':
-        return 'bg-green-warm-vivid-50';
-      case 'Indeferida':
-        return 'bg-red-warm-vivid-70';
-      case 'Cancelada pelo Usuário':
-        return 'bg-gray-40';
-      default:
-        return 'bg-black-40';
+
+    let hash = 0;
+
+    for (let i = 0; i < status.length; i++) {
+      hash = status.charCodeAt(i) + ((hash << 5) - hash);
+      hash = hash & hash;
     }
+
+    const indice = Math.abs(hash) % this.cores.length;
+
+    return this.cores[indice];
   }
 
   getStatusObraClass(status: string): string {
@@ -238,39 +631,51 @@ export class Solicitacoes {
       case 'Não Solicitada':
         return 'bg-gray-40';
 
+      case 'Aguardando Análise Cartográfica da Autorizacao de Obra':
+        return 'bg-yellow-70';
+
+      case 'Aguardando Análise de Georreferenciamento da Autorização de Obra':
+        return 'bg-purple-40';
+
+      case 'Aguardando Elaboração da Autorização de Obra':
+        return 'bg-orange-vivid-90';
+        
+      case 'Aguardando Assinatura da Autorização de Obra':
+        return 'bg-blue-warm-vivid-50';        
+
       default:
         return 'bg-black-40';
     }
   }
 
-  // openScrim() {
-  //   this.scrimOpen = true;
-  //   // se precisa de foco ou scroll, faça aqui
-  // }
+  private scrimfoco: any;
+  closeScrim() {
+    const scrim = document.querySelector('#scrimexample');
 
-  // closeScrim() {
-  //   this.scrimOpen = false;
-  // }
+    if (scrim) {
+      scrim.classList.remove('active');
+    }
+  }
 
-  // private scrimfoco: any;
-  // private buttonActivateModalScrim: HTMLButtonElement | null = null;
-  // private buttonCloseModalScrim: HTMLButtonElement | null = null;
+  irParaSolicitacoes() {
+    this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+      this.router.navigate(
+        ['/analista/solicitacoes'],
+        {
+          queryParams: {
+            tipoMensagemSucesso: 'sucesso'
+          }
+        }
+      );
+    });
+
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }
 
   ngOnInit(): void {
-    // Acessa a classe BRScrim do objeto 'core'
-    // const scrscrim = window.document.querySelector('#scrimexample');
-
-    // if (scrscrim && typeof core !== 'undefined' && core.BRScrim) {
-    //   this.scrimfoco = new core.BRScrim('br-scrim', scrscrim, true);
-
-    //   this.buttonActivateModalScrim = window.document.querySelector('.modal-btn') as HTMLButtonElement;
-
-    //   document.querySelectorAll('.modal-btn').forEach((el: Element, index: number) => {
-    //     el.addEventListener('click', (e: any) => {
-    //       this.scrimfoco.showScrim();
-    //     });
-    //   });
-    // }
 
     const accordionList = []
     for (const brAccordion of window.document.querySelectorAll('.br-accordion')) {
@@ -301,19 +706,23 @@ export class Solicitacoes {
     if (tipoMensagem) {
       this.esconderMensagemSucesso = false;
       switch (tipoMensagem) {
-        case "pendenciaDocumental":
-          this.mensagemSucesso = "Correção de pendência documental salva com sucesso!";
-          break;
-        case "pendenciaDocumentalGeo":
-          this.mensagemSucesso = "Correção de pendência de georreferenciamento salva com sucesso!";
-          break;
-        case "cancelarSolicitacao":
-          this.mensagemSucesso = "Cancelamento de solicitação salvo com sucesso!";
-          break;
-        case "tomarCienciaTitulacao":
-          this.mensagemSucesso = "Tomada de ciência de titulação salva com sucesso!";
+        case "sucesso":
+          this.mensagemSucesso = "Ação realizada com sucesso!";
           break;
       }
+    }
+
+    const uploadList = []
+
+    function uploadTimeout() {
+      return new Promise((resolve) => {
+        // Colocar aqui um upload para o servidor e retirar o timeout
+        return setTimeout(resolve, 3000)
+      })
+    }
+
+    for (const brUpload of window.document.querySelectorAll('.br-upload')) {
+      uploadList.push(new core.BRUpload('br-upload', brUpload, uploadTimeout))
     }
   }
 }

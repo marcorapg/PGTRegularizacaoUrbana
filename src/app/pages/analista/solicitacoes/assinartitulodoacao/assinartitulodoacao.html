@@ -1,0 +1,19 @@
+<app-breadcrumb [breadcrumbs]="pageBreadcrumbs"></app-breadcrumb>
+
+<h3>Assinar Título de Doação</h3>
+
+<app-cabecalhosolicitacao></app-cabecalhosolicitacao>
+
+<header class="text-center mb-5">
+    <div class="imagem-centralizada">
+        <img src="assets/images/minuta1.png" alt="Imagem ilustrativa" />
+    </div>
+</header>
+
+<div class="p-3 d-flex justify-content-end">
+    <a routerLink="/analista/solicitacoes/"><button class="br-button secondary mr-3" type="button">Voltar</button></a>
+    <button class="br-button primary mr-3" type="button" [routerLink]="['/analista/solicitacoes/']"
+        [queryParams]="{ tipoMensagemSucesso: 'sucesso' }">
+        Assinar
+    </button>
+</div>

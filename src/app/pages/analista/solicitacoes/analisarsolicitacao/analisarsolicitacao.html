@@ -1,0 +1,67 @@
+<h3>Analisar Documentação</h3>
+
+<app-cabecalhosolicitacao></app-cabecalhosolicitacao>
+
+<form class="br-form">
+
+    <!-- RADIO GROUP -->
+    <div class="br-radio-group" role="radiogroup" aria-label="Situação da solicitação">
+
+        <label class="d-block mb-2 text-weight-semi-bold">
+            Situação
+        </label>
+
+        <!-- Sem pendências -->
+        <div class="br-radio">
+            <input id="radio-sem" type="radio" name="situacao" value="sem" [(ngModel)]="situacaoSelecionada" />
+            <label for="radio-sem">Sem pendências</label>
+        </div>
+
+        <!-- Pendência -->
+        <div class="br-radio">
+            <input id="radio-pendencia1" type="radio" name="situacao" value="pendenciaDocumental"
+                [(ngModel)]="situacaoSelecionada" />
+            <label for="radio-pendencia1">
+                Pendência documental
+            </label>
+        </div>
+
+        <!-- Pendência -->
+        <div class="br-radio">
+            <input id="radio-pendencia2" type="radio" name="situacao" value="pendenciaGeo"
+                [(ngModel)]="situacaoSelecionada" />
+            <label for="radio-pendencia2">
+                Pendência de georreferenciamento
+            </label>
+        </div>
+
+        <!-- Pendência -->
+        <div class="br-radio">
+            <input id="radio-pendencia3" type="radio" name="situacao" value="pendenciaDocumentalGeo"
+                [(ngModel)]="situacaoSelecionada" />
+            <label for="radio-pendencia3">
+                Pendência documental e pendência de georreferenciamento
+            </label>
+        </div>
+
+        <!-- Indeferido -->
+        <div class="br-radio">
+            <input id="radio-indeferido" type="radio" name="situacao" value="indeferido"
+                [(ngModel)]="situacaoSelecionada" />
+            <label for="radio-indeferido">Indeferida</label>
+        </div>
+
+    </div>
+
+    <!-- TEXTAREA (aparece apenas quando necessário) -->
+    <div class="br-textarea mt-4"
+        [hidden]="situacaoSelecionada !== 'pendenciaDocumental' && situacaoSelecionada !== 'pendenciaGeo' && situacaoSelecionada !== 'pendenciaDocumentalGeo' && situacaoSelecionada !== 'indeferido'">
+        <label for="notificacao">
+            Notificação
+        </label>
+
+        <textarea id="notificacao" name="notificacao" rows="8" [(ngModel)]="notificacao"
+            placeholder="Descreva a notificação..."></textarea>
+    </div>
+
+</form>

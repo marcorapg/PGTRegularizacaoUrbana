@@ -1,0 +1,41 @@
+<app-breadcrumb [breadcrumbs]="pageBreadcrumbs"></app-breadcrumb>
+
+<h3>Elaborar Documentos do Título de Doação</h3>
+
+<app-cabecalhosolicitacao></app-cabecalhosolicitacao>
+
+<div class="form-group mt-5">
+    <label for="descricao1">Minuta de Despacho Decisório</label>
+
+    <quill-editor id="descricao1" [(ngModel)]="texto1" class="editor-full">
+    </quill-editor>
+</div>
+
+<div class="form-group mt-5">
+    <label for="descricao2">Relatório</label>
+
+    <quill-editor id="descricao2" [(ngModel)]="texto2" class="editor-full">
+    </quill-editor>
+</div>
+
+<div class="form-group mt-5">
+    <label for="descricao3">Minuta de Resolução</label>
+
+    <quill-editor id="descricao3" [(ngModel)]="texto3" class="editor-full">
+    </quill-editor>
+</div>
+
+<div class="form-group mt-5">
+    <label for="descricao4">Nota Técnica</label>
+
+    <quill-editor id="descricao4" [(ngModel)]="texto4" class="editor-full">
+    </quill-editor>
+</div>
+
+<div class="p-3 d-flex justify-content-end">
+    <a routerLink="/analista/solicitacoes/"><button class="br-button secondary mr-3" type="button">Voltar</button></a>
+    <button class="br-button primary mr-3" type="button" [routerLink]="['/analista/solicitacoes/']"
+        [queryParams]="{ tipoMensagemSucesso: 'sucesso' }">
+        Salvar
+    </button>
+</div>
