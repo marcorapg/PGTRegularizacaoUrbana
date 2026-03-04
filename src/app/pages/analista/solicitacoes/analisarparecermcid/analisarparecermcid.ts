@@ -4,10 +4,11 @@ import { RouterLink } from '@angular/router';
 import { QuillModule } from 'ngx-quill';
 import { FormsModule } from '@angular/forms';
 import { Breadcrumb } from '../../../../layout/breadcrumb/breadcrumb';
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-analisarparecermcid',
-  imports: [Cabecalhosolicitacao, RouterLink, QuillModule, FormsModule, Breadcrumb],
+  imports: [Cabecalhosolicitacao, RouterLink, QuillModule, FormsModule, Breadcrumb, NgIf],
   templateUrl: './analisarparecermcid.html',
   styleUrl: './analisarparecermcid.css'
 })

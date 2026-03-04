@@ -126,7 +126,7 @@ export class Solicitacoes {
       codigoParcela: 'e0fa92c1-6b22-4ce4-b0c7-5ea9238b29cd',
       dataRequerimento: '08/04/2024',
       codigoProcessoSEI: '23112.045601/2023-19',
-      statusSolicitacao: 'Pendência Documental',
+      statusSolicitacao: 'Aguardando Correção Documental pela Prefeitura',
       statusAutorizacaoObra: 'Solicitada',
       menuItems: [
         { label: 'Detalhar Solicitação', value: 'visualizar', modal: false, routerLink: '/analista/solicitacoes/detalharsolicitacao' },
@@ -157,7 +157,7 @@ export class Solicitacoes {
       codigoParcela: '4a2b1cef-dd53-d46d-f09c-2b90b77e64aa',
       dataRequerimento: '12/05/2024',
       codigoProcessoSEI: '23112.045711/2023-05',
-      statusSolicitacao: 'Pendência no Georreferenciamento',
+      statusSolicitacao: 'Aguardando Correção de Georreferenciamento pela Prefeitura',
       statusAutorizacaoObra: 'Não Solicitada',
       menuItems: [
         { label: 'Detalhar Solicitação', value: 'visualizar', modal: false, routerLink: '/analista/solicitacoes/detalharsolicitacao' },
@@ -206,7 +206,7 @@ export class Solicitacoes {
       menuItems: [
         { label: 'Detalhar Solicitação', value: 'visualizar', modal: false, routerLink: '/analista/solicitacoes/detalharsolicitacao' },
         { label: 'Histórico da Solicitação', value: 'cancelar', modal: false, routerLink: '/analista/solicitacoes/historicosolicitacao' },
-        { label: 'Analisar Parecer MCID', value: 'cancelar', modal: false, routerLink: '/analista/solicitacoes/analisarparecermcid' }
+        { label: 'Registrar Análise do Parecer MCID', value: 'cancelar', modal: false, routerLink: '/analista/solicitacoes/analisarparecermcid' }
       ]
     },
     {
@@ -216,7 +216,7 @@ export class Solicitacoes {
       codigoParcela: 'd7c61f40-6150-42ad-b5a3-f4f98e2fa917',
       dataRequerimento: '14/05/2024',
       codigoProcessoSEI: '23112.045748/2023-62',
-      statusSolicitacao: 'Exigência de Documentação Complementar',
+      statusSolicitacao: 'Aguardando Documentação Complementar da Prefeitura',
       statusAutorizacaoObra: 'Indeferida',
       menuItems: [
         { label: 'Detalhar Solicitação', value: 'visualizar', modal: false, routerLink: '/analista/solicitacoes/detalharsolicitacao' },

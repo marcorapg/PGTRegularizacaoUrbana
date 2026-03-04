@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { Cabecalhosolicitacao } from '../cabecalhosolicitacao/cabecalhosolicitacao';
 import { FormsModule } from '@angular/forms';
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-analisarperimetrourbano',
-  imports: [Cabecalhosolicitacao, FormsModule],
+  imports: [Cabecalhosolicitacao, FormsModule, NgIf],
   templateUrl: './analisarperimetrourbano.html',
   styleUrl: './analisarperimetrourbano.css'
 })

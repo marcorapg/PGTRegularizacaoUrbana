@@ -56,12 +56,16 @@
     <!-- TEXTAREA (aparece apenas quando necessário) -->
     <div class="br-textarea mt-4"
         [hidden]="situacaoSelecionada !== 'pendenciaDocumental' && situacaoSelecionada !== 'pendenciaGeo' && situacaoSelecionada !== 'pendenciaDocumentalGeo' && situacaoSelecionada !== 'indeferido'">
-        <label for="notificacao">
-            Notificação
-        </label>
+
+        <label *ngIf="situacaoSelecionada !== 'indeferido'" for="notificacao">
+            Notificar a Pendência à Prefeitura
+        </label>        
+        <label *ngIf="situacaoSelecionada !== 'pendenciaDocumental' && situacaoSelecionada !== 'pendenciaGeo' && situacaoSelecionada !== 'pendenciaDocumentalGeo'" for="notificacao">
+            Notificar o Indeferimento à Prefeitura
+        </label>        
 
         <textarea id="notificacao" name="notificacao" rows="8" [(ngModel)]="notificacao"
-            placeholder="Descreva a notificação..."></textarea>
+            placeholder=""></textarea>
     </div>
 
 </form>
