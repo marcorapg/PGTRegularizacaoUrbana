@@ -83,7 +83,6 @@ export const routes: Routes = [
   { path: 'analista/solicitacoes/aprovarregularizacaofundiaria', component: Aprovarregularizacaofundiaria },
   { path: 'analista/solicitacoes/elaborarminutatitulodoacaoencargos', component: Elaborarminutatitulodoacaoencargos },
   { path: 'analista/solicitacoes/elaboraroficiosolicitacaoparecerpfe', component: Elaboraroficiosolicitacaoparecerpfe },
-  { path: 'analista/solicitacoes/registraraprovacaopfe', component: Registraraprovacaopfe },
   { path: 'analista/solicitacoes/elaborardocumentotitulodoacao', component: Elaborardocumentotitulodoacao },
   { path: 'analista/solicitacoes/assinardespachodecisorio', component: Assinardespachodecisorio },
   { path: 'analista/solicitacoes/assinartitulodoacao', component: Assinartitulodoacao },
@@ -94,6 +93,7 @@ export const routes: Routes = [
   { path: 'analista/solicitacoes/visualizarmotivoindeferimento', component: Visualizarmotivoindeferimento },
   { path: 'analista/solicitacoes/visualizarmotivocancelamento', component: Visualizarmotivocancelamento },
   { path: 'analista/solicitacoes/exibirdocumentostitulodoacao', component: Exibirdocumentostitulodoacao },
+  { path: 'analista/solicitacoes/visualizarautorizacaoobra', component: Visualizarautorizacaoobra },  
   { path: '**', redirectTo: '' } // optional fallback
 ];
 

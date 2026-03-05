@@ -1,0 +1,40 @@
+<h3>Realizar Análise de Mérito da Autorização de Obra</h3>
+
+<app-cabecalhosolicitacao></app-cabecalhosolicitacao>
+
+<form class="br-form">
+
+    <!-- RADIO GROUP -->
+    <div class="br-radio-group" role="radiogroup" aria-label="Situação da solicitação">
+
+        <label class="d-block mb-2 text-weight-semi-bold">
+            Situação
+        </label>
+
+        <!-- Autorizada -->
+        <div class="br-radio">
+            <input id="radio-autorizada9" type="radio" name="situacao9" value="autorizada" [(ngModel)]="situacaoSelecionada" />
+            <label for="radio-autorizada9">Autorizada</label>
+        </div>
+
+        <!-- Indeferida -->
+        <div class="br-radio">
+            <input id="radio-indeferida9" type="radio" name="situacao9" value="indeferida"
+                [(ngModel)]="situacaoSelecionada" />
+            <label for="radio-indeferida9">Indeferida</label>
+        </div>
+
+    </div>
+
+    <!-- TEXTAREA (aparece apenas quando necessário) -->
+    <div class="br-textarea mt-4"
+        [hidden]="situacaoSelecionada !== 'indeferida'">
+        <label for="notificacao">
+            Notificar o Indeferimento à Prefeitura
+        </label>
+
+        <textarea id="notificacao" name="notificacao" rows="8" [(ngModel)]="notificacao"
+            placeholder=""></textarea>
+    </div>
+
+</form>

@@ -10,12 +10,14 @@ import { Registrarparecermcid } from './registrarparecermcid/registrarparecermci
 import { Registrarparecermcidrelatoriocaracterizacao } from './registrarparecermcidrelatoriocaracterizacao/registrarparecermcidrelatoriocaracterizacao';
 import { Realizaranalisecartograficaautorizacaoobra } from './realizaranalisecartograficaautorizacaoobra/realizaranalisecartograficaautorizacaoobra';
 import { Realizaranalisegeorreferenciamentoautorizacaoobra } from './realizaranalisegeorreferenciamentoautorizacaoobra/realizaranalisegeorreferenciamentoautorizacaoobra';
+import { Registraraprovacaopfe } from './registraraprovacaopfe/registraraprovacaopfe';
+import { Realizaranalisemeritoautorizacaoobra } from './realizaranalisemeritoautorizacaoobra/realizaranalisemeritoautorizacaoobra';
 
 declare const core: any;
 
 @Component({
   selector: 'app-solicitacoes',
-  imports: [RouterLink, Breadcrumb, ContextMenuComponent, CommonModule, Registrarnumerosei, Analisarsolicitacao, Analisarperimetrourbano, Registrarparecermcid, Registrarparecermcidrelatoriocaracterizacao, Realizaranalisecartograficaautorizacaoobra, Realizaranalisegeorreferenciamentoautorizacaoobra],
+  imports: [RouterLink, Breadcrumb, ContextMenuComponent, CommonModule, Registrarnumerosei, Analisarsolicitacao, Analisarperimetrourbano, Registrarparecermcid, Registrarparecermcidrelatoriocaracterizacao, Realizaranalisecartograficaautorizacaoobra, Realizaranalisegeorreferenciamentoautorizacaoobra, Registraraprovacaopfe, Realizaranalisemeritoautorizacaoobra],
   templateUrl: './solicitacoes.html',
   styleUrl: './solicitacoes.css'
 })
@@ -43,6 +45,8 @@ export class Solicitacoes {
   esconderRegistrarParecerMCIDRelatorioCaracterizacao = true;
   esconderRealizarAnaliseCartograficaAutorizacaoObra = true;
   esconderRealizarAnaliseGeorreferenciamentoAutorizacaoObra = true;
+  esconderRegistrarAprovacaoPFE = true;
+  esconderRealizarAnaliseMeritoAutorizacaoObra = true;
 
   onMenuSelect(item: any) {
 
@@ -55,6 +59,8 @@ export class Solicitacoes {
     this.esconderRegistrarParecerMCIDRelatorioCaracterizacao = true;
     this.esconderRealizarAnaliseCartograficaAutorizacaoObra = true;
     this.esconderRealizarAnaliseGeorreferenciamentoAutorizacaoObra = true;
+    this.esconderRegistrarAprovacaoPFE = true;
+    this.esconderRealizarAnaliseMeritoAutorizacaoObra = true;
 
     switch (item.srcElement.text) {
       case " Visualizar Solicitação ":
@@ -84,7 +90,12 @@ export class Solicitacoes {
       case " Realizar Análise de Georreferenciamento da Autorização de Obra ":
         this.esconderRealizarAnaliseGeorreferenciamentoAutorizacaoObra = false;
         break;
-        
+      case " Registrar Aprovação PFE ":
+        this.esconderRegistrarAprovacaoPFE = false;
+        break;
+      case " Realizar Análise de Mérito da Autorização de Obra ":
+        this.esconderRealizarAnaliseMeritoAutorizacaoObra = false;
+        break;
     }
   }
 
@@ -105,11 +116,11 @@ export class Solicitacoes {
       ]
     },
     {
-      numeroSolicitacao: '9401185237',
-      nomeGleba: 'Boa Vista',
-      localizacao: 'Bairro Alto do Cruzeiro',
-      codigoParcela: 'c41ad8c3-1ac6-4ff2-a287-d60d945fce89',
-      dataRequerimento: '25/03/2024',
+      numeroSolicitacao: '3819274501',
+      nomeGleba: 'Santa Luzia',
+      localizacao: 'Vila Nova Esperança',
+      codigoParcela: '7f2c1a9e-b8d4-4f39-9b83-92f1c3e8a4d7',
+      dataRequerimento: '12/03/2024',
       codigoProcessoSEI: '23112.045534/2023-74',
       statusSolicitacao: 'Aguardando Análise Documental',
       statusAutorizacaoObra: 'Não Solicitada',
@@ -120,12 +131,12 @@ export class Solicitacoes {
       ]
     },
     {
-      numeroSolicitacao: '5527391048',
-      nomeGleba: 'Primavera',
-      localizacao: 'Distrito de São Miguel',
-      codigoParcela: 'e0fa92c1-6b22-4ce4-b0c7-5ea9238b29cd',
-      dataRequerimento: '08/04/2024',
-      codigoProcessoSEI: '23112.045601/2023-19',
+      numeroSolicitacao: '3819274501',
+      nomeGleba: 'Santa Luzia',
+      localizacao: 'Vila Nova Esperança',
+      codigoParcela: '7f2c1a9e-b8d4-4f39-9b83-92f1c3e8a4d7',
+      dataRequerimento: '12/03/2024',
+      codigoProcessoSEI: '23112.045534/2023-74',
       statusSolicitacao: 'Aguardando Correção Documental pela Prefeitura',
       statusAutorizacaoObra: 'Solicitada',
       menuItems: [
@@ -134,12 +145,12 @@ export class Solicitacoes {
       ]
     },
     {
-      numeroSolicitacao: '1830479265',
-      nomeGleba: 'Esperança',
-      localizacao: 'Povoado Serra Verde',
-      codigoParcela: 'f92b1db7-2ee7-45fd-8b5a-8fb2f0d456ce',
-      dataRequerimento: '19/04/2024',
-      codigoProcessoSEI: '23112.045672/2023-83',
+      numeroSolicitacao: '3819274501',
+      nomeGleba: 'Santa Luzia',
+      localizacao: 'Vila Nova Esperança',
+      codigoParcela: '7f2c1a9e-b8d4-4f39-9b83-92f1c3e8a4d7',
+      dataRequerimento: '12/03/2024',
+      codigoProcessoSEI: '23112.045534/2023-74',
       statusSolicitacao: 'Aguardando Análise de Perímetro Urbano',
       statusAutorizacaoObra: 'Solicitada',
       menuItems: [
@@ -151,12 +162,12 @@ export class Solicitacoes {
       ]
     },
     {
-      numeroSolicitacao: '4923760851',
-      nomeGleba: 'São Fernando',
-      localizacao: 'Bairro Jardim das Cruzes',
-      codigoParcela: '4a2b1cef-dd53-d46d-f09c-2b90b77e64aa',
-      dataRequerimento: '12/05/2024',
-      codigoProcessoSEI: '23112.045711/2023-05',
+      numeroSolicitacao: '3819274501',
+      nomeGleba: 'Santa Luzia',
+      localizacao: 'Vila Nova Esperança',
+      codigoParcela: '7f2c1a9e-b8d4-4f39-9b83-92f1c3e8a4d7',
+      dataRequerimento: '12/03/2024',
+      codigoProcessoSEI: '23112.045534/2023-74',
       statusSolicitacao: 'Aguardando Correção de Georreferenciamento pela Prefeitura',
       statusAutorizacaoObra: 'Não Solicitada',
       menuItems: [
@@ -165,12 +176,12 @@ export class Solicitacoes {
       ]
     },
     {
-      numeroSolicitacao: '8045197632',
-      nomeGleba: 'Santo Antônio',
-      localizacao: 'Distrito Novo Progresso',
-      codigoParcela: 'd7c61f40-6150-42ad-b5a3-f4f98e2fa917',
-      dataRequerimento: '14/05/2024',
-      codigoProcessoSEI: '23112.045748/2023-62',
+      numeroSolicitacao: '3819274501',
+      nomeGleba: 'Santa Luzia',
+      localizacao: 'Vila Nova Esperança',
+      codigoParcela: '7f2c1a9e-b8d4-4f39-9b83-92f1c3e8a4d7',
+      dataRequerimento: '12/03/2024',
+      codigoProcessoSEI: '23112.045534/2023-74',
       statusSolicitacao: 'Aguardando Solicitação de Parecer MCID',
       statusAutorizacaoObra: 'Indeferida',
       menuItems: [
@@ -180,12 +191,12 @@ export class Solicitacoes {
       ]
     },
     {
-      numeroSolicitacao: '8045197632',
-      nomeGleba: 'Santo Antônio',
-      localizacao: 'Distrito Novo Progresso',
-      codigoParcela: 'd7c61f40-6150-42ad-b5a3-f4f98e2fa917',
-      dataRequerimento: '14/05/2024',
-      codigoProcessoSEI: '23112.045748/2023-62',
+      numeroSolicitacao: '3819274501',
+      nomeGleba: 'Santa Luzia',
+      localizacao: 'Vila Nova Esperança',
+      codigoParcela: '7f2c1a9e-b8d4-4f39-9b83-92f1c3e8a4d7',
+      dataRequerimento: '12/03/2024',
+      codigoProcessoSEI: '23112.045534/2023-74',
       statusSolicitacao: 'Aguardando Registro do Parecer MCID',
       statusAutorizacaoObra: 'Indeferida',
       menuItems: [
@@ -195,12 +206,12 @@ export class Solicitacoes {
       ]
     },
     {
-      numeroSolicitacao: '8045197632',
-      nomeGleba: 'Santo Antônio',
-      localizacao: 'Distrito Novo Progresso',
-      codigoParcela: 'd7c61f40-6150-42ad-b5a3-f4f98e2fa917',
-      dataRequerimento: '14/05/2024',
-      codigoProcessoSEI: '23112.045748/2023-62',
+      numeroSolicitacao: '3819274501',
+      nomeGleba: 'Santa Luzia',
+      localizacao: 'Vila Nova Esperança',
+      codigoParcela: '7f2c1a9e-b8d4-4f39-9b83-92f1c3e8a4d7',
+      dataRequerimento: '12/03/2024',
+      codigoProcessoSEI: '23112.045534/2023-74',
       statusSolicitacao: 'Aguardando Análise Parecer MCID',
       statusAutorizacaoObra: 'Indeferida',
       menuItems: [
@@ -210,12 +221,12 @@ export class Solicitacoes {
       ]
     },
     {
-      numeroSolicitacao: '8045197632',
-      nomeGleba: 'Santo Antônio',
-      localizacao: 'Distrito Novo Progresso',
-      codigoParcela: 'd7c61f40-6150-42ad-b5a3-f4f98e2fa917',
-      dataRequerimento: '14/05/2024',
-      codigoProcessoSEI: '23112.045748/2023-62',
+      numeroSolicitacao: '3819274501',
+      nomeGleba: 'Santa Luzia',
+      localizacao: 'Vila Nova Esperança',
+      codigoParcela: '7f2c1a9e-b8d4-4f39-9b83-92f1c3e8a4d7',
+      dataRequerimento: '12/03/2024',
+      codigoProcessoSEI: '23112.045534/2023-74',
       statusSolicitacao: 'Aguardando Documentação Complementar da Prefeitura',
       statusAutorizacaoObra: 'Indeferida',
       menuItems: [
@@ -224,12 +235,12 @@ export class Solicitacoes {
       ]
     },
     {
-      numeroSolicitacao: '8045197632',
-      nomeGleba: 'Santo Antônio',
-      localizacao: 'Distrito Novo Progresso',
-      codigoParcela: 'd7c61f40-6150-42ad-b5a3-f4f98e2fa917',
-      dataRequerimento: '14/05/2024',
-      codigoProcessoSEI: '23112.045748/2023-62',
+      numeroSolicitacao: '3819274501',
+      nomeGleba: 'Santa Luzia',
+      localizacao: 'Vila Nova Esperança',
+      codigoParcela: '7f2c1a9e-b8d4-4f39-9b83-92f1c3e8a4d7',
+      dataRequerimento: '12/03/2024',
+      codigoProcessoSEI: '23112.045534/2023-74',
       statusSolicitacao: 'Aguardando Elaboração do Relatório de Caracterização Urbana',
       statusAutorizacaoObra: 'Indeferida',
       menuItems: [
@@ -239,13 +250,13 @@ export class Solicitacoes {
       ]
     },
     {
-      numeroSolicitacao: '8045197632',
-      nomeGleba: 'Santo Antônio',
-      localizacao: 'Distrito Novo Progresso',
-      codigoParcela: 'd7c61f40-6150-42ad-b5a3-f4f98e2fa917',
-      dataRequerimento: '14/05/2024',
-      codigoProcessoSEI: '23112.045748/2023-62',
-      statusSolicitacao: 'Aguardando Solicitação de Parecer MCID do Relatório de Caracterização Urbana',
+      numeroSolicitacao: '3819274501',
+      nomeGleba: 'Santa Luzia',
+      localizacao: 'Vila Nova Esperança',
+      codigoParcela: '7f2c1a9e-b8d4-4f39-9b83-92f1c3e8a4d7',
+      dataRequerimento: '12/03/2024',
+      codigoProcessoSEI: '23112.045534/2023-74',
+      statusSolicitacao: 'Aguardando Solicitação do Parecer MCID do Relatório de Caracterização Urbana',
       statusAutorizacaoObra: 'Indeferida',
       menuItems: [
         { label: 'Detalhar Solicitação', value: 'visualizar', modal: false, routerLink: '/analista/solicitacoes/detalharsolicitacao' },
@@ -254,12 +265,12 @@ export class Solicitacoes {
       ]
     },
     {
-      numeroSolicitacao: '8045197632',
-      nomeGleba: 'Santo Antônio',
-      localizacao: 'Distrito Novo Progresso',
-      codigoParcela: 'd7c61f40-6150-42ad-b5a3-f4f98e2fa917',
-      dataRequerimento: '14/05/2024',
-      codigoProcessoSEI: '23112.045748/2023-62',
+      numeroSolicitacao: '3819274501',
+      nomeGleba: 'Santa Luzia',
+      localizacao: 'Vila Nova Esperança',
+      codigoParcela: '7f2c1a9e-b8d4-4f39-9b83-92f1c3e8a4d7',
+      dataRequerimento: '12/03/2024',
+      codigoProcessoSEI: '23112.045534/2023-74',
       statusSolicitacao: 'Aguardando Registro do Parecer MCID do Relatório de Caracterização Urbana',
       statusAutorizacaoObra: 'Indeferida',
       menuItems: [
@@ -269,13 +280,13 @@ export class Solicitacoes {
       ]
     },
     {
-      numeroSolicitacao: '8045197632',
-      nomeGleba: 'Santo Antônio',
-      localizacao: 'Distrito Novo Progresso',
-      codigoParcela: 'd7c61f40-6150-42ad-b5a3-f4f98e2fa917',
-      dataRequerimento: '14/05/2024',
-      codigoProcessoSEI: '23112.045748/2023-62',
-      statusSolicitacao: 'Aguardando Análise Parecer MCID do Relatório de Caracterização Urbana',
+      numeroSolicitacao: '3819274501',
+      nomeGleba: 'Santa Luzia',
+      localizacao: 'Vila Nova Esperança',
+      codigoParcela: '7f2c1a9e-b8d4-4f39-9b83-92f1c3e8a4d7',
+      dataRequerimento: '12/03/2024',
+      codigoProcessoSEI: '23112.045534/2023-74',
+      statusSolicitacao: 'Aguardando Análise do Parecer MCID do Relatório de Caracterização Urbana',
       statusAutorizacaoObra: 'Indeferida',
       menuItems: [
         { label: 'Detalhar Solicitação', value: 'visualizar', modal: false, routerLink: '/analista/solicitacoes/detalharsolicitacao' },
@@ -284,13 +295,13 @@ export class Solicitacoes {
       ]
     },
     {
-      numeroSolicitacao: '8045197632',
-      nomeGleba: 'Santo Antônio',
-      localizacao: 'Distrito Novo Progresso',
-      codigoParcela: 'd7c61f40-6150-42ad-b5a3-f4f98e2fa917',
-      dataRequerimento: '14/05/2024',
-      codigoProcessoSEI: '23112.045748/2023-62',
-      statusSolicitacao: 'Exigência de Documentação Complementar para o Relatório de Caracterização Urbana',
+      numeroSolicitacao: '3819274501',
+      nomeGleba: 'Santa Luzia',
+      localizacao: 'Vila Nova Esperança',
+      codigoParcela: '7f2c1a9e-b8d4-4f39-9b83-92f1c3e8a4d7',
+      dataRequerimento: '12/03/2024',
+      codigoProcessoSEI: '23112.045534/2023-74',
+      statusSolicitacao: 'Aguardando Documentação Complementar da Prefeitura',
       statusAutorizacaoObra: 'Indeferida',
       menuItems: [
         { label: 'Detalhar Solicitação', value: 'visualizar', modal: false, routerLink: '/analista/solicitacoes/detalharsolicitacao' },
@@ -298,13 +309,13 @@ export class Solicitacoes {
       ]
     },
     {
-      numeroSolicitacao: '8045197632',
-      nomeGleba: 'Santo Antônio',
-      localizacao: 'Distrito Novo Progresso',
-      codigoParcela: 'd7c61f40-6150-42ad-b5a3-f4f98e2fa917',
-      dataRequerimento: '14/05/2024',
-      codigoProcessoSEI: '23112.045748/2023-62',
-      statusSolicitacao: 'Aguardando Aprovação Regularização Fundiária',
+      numeroSolicitacao: '3819274501',
+      nomeGleba: 'Santa Luzia',
+      localizacao: 'Vila Nova Esperança',
+      codigoParcela: '7f2c1a9e-b8d4-4f39-9b83-92f1c3e8a4d7',
+      dataRequerimento: '12/03/2024',
+      codigoProcessoSEI: '23112.045534/2023-74',
+      statusSolicitacao: 'Aguardando Aprovação Técnica da Regularização Fundiária',
       statusAutorizacaoObra: 'Indeferida',
       menuItems: [
         { label: 'Detalhar Solicitação', value: 'visualizar', modal: false, routerLink: '/analista/solicitacoes/detalharsolicitacao' },
@@ -313,12 +324,12 @@ export class Solicitacoes {
       ]
     },
     {
-      numeroSolicitacao: '8045197632',
-      nomeGleba: 'Santo Antônio',
-      localizacao: 'Distrito Novo Progresso',
-      codigoParcela: 'd7c61f40-6150-42ad-b5a3-f4f98e2fa917',
-      dataRequerimento: '14/05/2024',
-      codigoProcessoSEI: '23112.045748/2023-62',
+      numeroSolicitacao: '3819274501',
+      nomeGleba: 'Santa Luzia',
+      localizacao: 'Vila Nova Esperança',
+      codigoParcela: '7f2c1a9e-b8d4-4f39-9b83-92f1c3e8a4d7',
+      dataRequerimento: '12/03/2024',
+      codigoProcessoSEI: '23112.045534/2023-74',
       statusSolicitacao: 'Aguardando Aprovação Superior Regularização Fundiária',
       statusAutorizacaoObra: 'Indeferida',
       menuItems: [
@@ -328,12 +339,12 @@ export class Solicitacoes {
       ]
     },
     {
-      numeroSolicitacao: '8045197632',
-      nomeGleba: 'Santo Antônio',
-      localizacao: 'Distrito Novo Progresso',
-      codigoParcela: 'd7c61f40-6150-42ad-b5a3-f4f98e2fa917',
-      dataRequerimento: '14/05/2024',
-      codigoProcessoSEI: '23112.045748/2023-62',
+      numeroSolicitacao: '3819274501',
+      nomeGleba: 'Santa Luzia',
+      localizacao: 'Vila Nova Esperança',
+      codigoParcela: '7f2c1a9e-b8d4-4f39-9b83-92f1c3e8a4d7',
+      dataRequerimento: '12/03/2024',
+      codigoProcessoSEI: '23112.045534/2023-74',
       statusSolicitacao: 'Aguardando Elaboração Minuta Título',
       statusAutorizacaoObra: 'Indeferida',
       menuItems: [
@@ -343,13 +354,13 @@ export class Solicitacoes {
       ]
     },
     {
-      numeroSolicitacao: '8045197632',
-      nomeGleba: 'Santo Antônio',
-      localizacao: 'Distrito Novo Progresso',
-      codigoParcela: 'd7c61f40-6150-42ad-b5a3-f4f98e2fa917',
-      dataRequerimento: '14/05/2024',
-      codigoProcessoSEI: '23112.045748/2023-62',
-      statusSolicitacao: 'Exigência de Ciência da Titulação',
+      numeroSolicitacao: '3819274501',
+      nomeGleba: 'Santa Luzia',
+      localizacao: 'Vila Nova Esperança',
+      codigoParcela: '7f2c1a9e-b8d4-4f39-9b83-92f1c3e8a4d7',
+      dataRequerimento: '12/03/2024',
+      codigoProcessoSEI: '23112.045534/2023-74',
+      statusSolicitacao: 'Aguardando Ciência da Titulação pela Prefeitura',
       statusAutorizacaoObra: 'Indeferida',
       menuItems: [
         { label: 'Detalhar Solicitação', value: 'visualizar', modal: false, routerLink: '/analista/solicitacoes/detalharsolicitacao' },
@@ -357,12 +368,12 @@ export class Solicitacoes {
       ]
     },
     {
-      numeroSolicitacao: '8045197632',
-      nomeGleba: 'Santo Antônio',
-      localizacao: 'Distrito Novo Progresso',
-      codigoParcela: 'd7c61f40-6150-42ad-b5a3-f4f98e2fa917',
-      dataRequerimento: '14/05/2024',
-      codigoProcessoSEI: '23112.045748/2023-62',
+      numeroSolicitacao: '3819274501',
+      nomeGleba: 'Santa Luzia',
+      localizacao: 'Vila Nova Esperança',
+      codigoParcela: '7f2c1a9e-b8d4-4f39-9b83-92f1c3e8a4d7',
+      dataRequerimento: '12/03/2024',
+      codigoProcessoSEI: '23112.045534/2023-74',
       statusSolicitacao: 'Aguardando Elaboração de Ofício de Solicitação Parecer PFE',
       statusAutorizacaoObra: 'Indeferida',
       menuItems: [
@@ -372,27 +383,27 @@ export class Solicitacoes {
       ]
     },
     {
-      numeroSolicitacao: '8045197632',
-      nomeGleba: 'Santo Antônio',
-      localizacao: 'Distrito Novo Progresso',
-      codigoParcela: 'd7c61f40-6150-42ad-b5a3-f4f98e2fa917',
-      dataRequerimento: '14/05/2024',
-      codigoProcessoSEI: '23112.045748/2023-62',
+      numeroSolicitacao: '3819274501',
+      nomeGleba: 'Santa Luzia',
+      localizacao: 'Vila Nova Esperança',
+      codigoParcela: '7f2c1a9e-b8d4-4f39-9b83-92f1c3e8a4d7',
+      dataRequerimento: '12/03/2024',
+      codigoProcessoSEI: '23112.045534/2023-74',
       statusSolicitacao: 'Aguardando Registro da Aprovação PFE',
       statusAutorizacaoObra: 'Indeferida',
       menuItems: [
         { label: 'Detalhar Solicitação', value: 'visualizar', modal: false, routerLink: '/analista/solicitacoes/detalharsolicitacao' },
         { label: 'Histórico da Solicitação', value: 'cancelar', modal: false, routerLink: '/analista/solicitacoes/historicosolicitacao' },
-        { label: 'Registrar Aprovação PFE', value: 'cancelar', modal: false, routerLink: '/analista/solicitacoes/registraraprovacaopfe' }
+        { label: 'Registrar Aprovação PFE', value: 'cancelar', modal: true, routerLink: '/analista/solicitacoes/registraraprovacaopfe' }        
       ]
     },
     {
-      numeroSolicitacao: '8045197632',
-      nomeGleba: 'Santo Antônio',
-      localizacao: 'Distrito Novo Progresso',
-      codigoParcela: 'd7c61f40-6150-42ad-b5a3-f4f98e2fa917',
-      dataRequerimento: '14/05/2024',
-      codigoProcessoSEI: '23112.045748/2023-62',
+      numeroSolicitacao: '3819274501',
+      nomeGleba: 'Santa Luzia',
+      localizacao: 'Vila Nova Esperança',
+      codigoParcela: '7f2c1a9e-b8d4-4f39-9b83-92f1c3e8a4d7',
+      dataRequerimento: '12/03/2024',
+      codigoProcessoSEI: '23112.045534/2023-74',
       statusSolicitacao: 'Aguardando Elaboração dos Documentos do Título de Doação',
       statusAutorizacaoObra: 'Indeferida',
       menuItems: [
@@ -402,28 +413,28 @@ export class Solicitacoes {
       ]
     },
     {
-      numeroSolicitacao: '8045197632',
-      nomeGleba: 'Santo Antônio',
-      localizacao: 'Distrito Novo Progresso',
-      codigoParcela: 'd7c61f40-6150-42ad-b5a3-f4f98e2fa917',
-      dataRequerimento: '14/05/2024',
-      codigoProcessoSEI: '23112.045748/2023-62',
+      numeroSolicitacao: '3819274501',
+      nomeGleba: 'Santa Luzia',
+      localizacao: 'Vila Nova Esperança',
+      codigoParcela: '7f2c1a9e-b8d4-4f39-9b83-92f1c3e8a4d7',
+      dataRequerimento: '12/03/2024',
+      codigoProcessoSEI: '23112.045534/2023-74',
       statusSolicitacao: 'Aguardando Despacho Decisório do Título de Doação',
       statusAutorizacaoObra: 'Indeferida',
       menuItems: [
         { label: 'Detalhar Solicitação', value: 'visualizar', modal: false, routerLink: '/analista/solicitacoes/detalharsolicitacao' },
         { label: 'Histórico da Solicitação', value: 'cancelar', modal: false, routerLink: '/analista/solicitacoes/historicosolicitacao' },
         { label: 'Exibir Documentos de Título de Doação', value: 'cancelar', modal: false, routerLink: '/analista/solicitacoes/exibirdocumentostitulodoacao' },
-        { label: 'Assinar Despacho Decisório', value: 'cancelar', modal: false, routerLink: '/analista/solicitacoes/assinardespachodecisorio' }
+        { label: 'Assinar Despacho Decisório do Título de Doação', value: 'cancelar', modal: false, routerLink: '/analista/solicitacoes/assinardespachodecisorio' }
       ]
     },
     {
-      numeroSolicitacao: '8045197632',
-      nomeGleba: 'Santo Antônio',
-      localizacao: 'Distrito Novo Progresso',
-      codigoParcela: 'd7c61f40-6150-42ad-b5a3-f4f98e2fa917',
-      dataRequerimento: '14/05/2024',
-      codigoProcessoSEI: '23112.045748/2023-62',
+      numeroSolicitacao: '3819274501',
+      nomeGleba: 'Santa Luzia',
+      localizacao: 'Vila Nova Esperança',
+      codigoParcela: '7f2c1a9e-b8d4-4f39-9b83-92f1c3e8a4d7',
+      dataRequerimento: '12/03/2024',
+      codigoProcessoSEI: '23112.045534/2023-74',
       statusSolicitacao: 'Aguardando Assinatura do Título de Doação',
       statusAutorizacaoObra: 'Indeferida',
       menuItems: [
@@ -433,12 +444,12 @@ export class Solicitacoes {
       ]
     },
     {
-      numeroSolicitacao: '8045197632',
-      nomeGleba: 'Santo Antônio',
-      localizacao: 'Distrito Novo Progresso',
-      codigoParcela: 'd7c61f40-6150-42ad-b5a3-f4f98e2fa917',
-      dataRequerimento: '14/05/2024',
-      codigoProcessoSEI: '23112.045748/2023-62',
+      numeroSolicitacao: '3819274501',
+      nomeGleba: 'Santa Luzia',
+      localizacao: 'Vila Nova Esperança',
+      codigoParcela: '7f2c1a9e-b8d4-4f39-9b83-92f1c3e8a4d7',
+      dataRequerimento: '12/03/2024',
+      codigoProcessoSEI: '23112.045534/2023-74',
       statusSolicitacao: 'Aguardando Emissão do Título de Doação',
       statusAutorizacaoObra: 'Indeferida',
       menuItems: [
@@ -450,12 +461,12 @@ export class Solicitacoes {
 
     //Autorização de obra
     {
-      numeroSolicitacao: '8045197632',
-      nomeGleba: 'Santo Antônio',
-      localizacao: 'Distrito Novo Progresso',
-      codigoParcela: 'd7c61f40-6150-42ad-b5a3-f4f98e2fa917',
-      dataRequerimento: '14/05/2024',
-      codigoProcessoSEI: '23112.045748/2023-62',
+      numeroSolicitacao: '3819274501',
+      nomeGleba: 'Santa Luzia',
+      localizacao: 'Vila Nova Esperança',
+      codigoParcela: '7f2c1a9e-b8d4-4f39-9b83-92f1c3e8a4d7',
+      dataRequerimento: '12/03/2024',
+      codigoProcessoSEI: '23112.045534/2023-74',
       statusSolicitacao: 'Aguardando Emissão do Título de Doação',
       statusAutorizacaoObra: 'Aguardando Análise Cartográfica da Autorizacao de Obra',
       menuItems: [
@@ -465,12 +476,27 @@ export class Solicitacoes {
       ]
     },
     {
-      numeroSolicitacao: '8045197632',
-      nomeGleba: 'Santo Antônio',
-      localizacao: 'Distrito Novo Progresso',
-      codigoParcela: 'd7c61f40-6150-42ad-b5a3-f4f98e2fa917',
-      dataRequerimento: '14/05/2024',
-      codigoProcessoSEI: '23112.045748/2023-62',
+      numeroSolicitacao: '3819274501',
+      nomeGleba: 'Santa Luzia',
+      localizacao: 'Vila Nova Esperança',
+      codigoParcela: '7f2c1a9e-b8d4-4f39-9b83-92f1c3e8a4d7',
+      dataRequerimento: '12/03/2024',
+      codigoProcessoSEI: '23112.045534/2023-74',
+      statusSolicitacao: 'Aguardando Emissão do Título de Doação',
+      statusAutorizacaoObra: 'Aguardando Análise de Mérito',
+      menuItems: [
+        { label: 'Detalhar Solicitação', value: 'visualizar', modal: false, routerLink: '/analista/solicitacoes/detalharsolicitacao' },
+        { label: 'Histórico da Solicitação', value: 'cancelar', modal: false, routerLink: '/analista/solicitacoes/historicosolicitacao' },
+        { label: 'Realizar Análise de Mérito da Autorização de Obra', value: 'cancelar', modal: true, routerLink: '/analista/solicitacoes/realizaranalisemeritoautorizacaoobra' }
+      ]
+    },    
+    {
+      numeroSolicitacao: '3819274501',
+      nomeGleba: 'Santa Luzia',
+      localizacao: 'Vila Nova Esperança',
+      codigoParcela: '7f2c1a9e-b8d4-4f39-9b83-92f1c3e8a4d7',
+      dataRequerimento: '12/03/2024',
+      codigoProcessoSEI: '23112.045534/2023-74',
       statusSolicitacao: 'Aguardando Emissão do Título de Doação',
       statusAutorizacaoObra: 'Aguardando Análise de Georreferenciamento da Autorização de Obra',
       menuItems: [
@@ -480,12 +506,12 @@ export class Solicitacoes {
       ]
     },
     {
-      numeroSolicitacao: '8045197632',
-      nomeGleba: 'Santo Antônio',
-      localizacao: 'Distrito Novo Progresso',
-      codigoParcela: 'd7c61f40-6150-42ad-b5a3-f4f98e2fa917',
-      dataRequerimento: '14/05/2024',
-      codigoProcessoSEI: '23112.045748/2023-62',
+      numeroSolicitacao: '3819274501',
+      nomeGleba: 'Santa Luzia',
+      localizacao: 'Vila Nova Esperança',
+      codigoParcela: '7f2c1a9e-b8d4-4f39-9b83-92f1c3e8a4d7',
+      dataRequerimento: '12/03/2024',
+      codigoProcessoSEI: '23112.045534/2023-74',
       statusSolicitacao: 'Aguardando Emissão do Título de Doação',
       statusAutorizacaoObra: 'Aguardando Elaboração da Autorização de Obra',
       menuItems: [
@@ -495,12 +521,12 @@ export class Solicitacoes {
       ]
     },
     {
-      numeroSolicitacao: '8045197632',
-      nomeGleba: 'Santo Antônio',
-      localizacao: 'Distrito Novo Progresso',
-      codigoParcela: 'd7c61f40-6150-42ad-b5a3-f4f98e2fa917',
-      dataRequerimento: '14/05/2024',
-      codigoProcessoSEI: '23112.045748/2023-62',
+      numeroSolicitacao: '3819274501',
+      nomeGleba: 'Santa Luzia',
+      localizacao: 'Vila Nova Esperança',
+      codigoParcela: '7f2c1a9e-b8d4-4f39-9b83-92f1c3e8a4d7',
+      dataRequerimento: '12/03/2024',
+      codigoProcessoSEI: '23112.045534/2023-74',
       statusSolicitacao: 'Aguardando Emissão do Título de Doação',
       statusAutorizacaoObra: 'Aguardando Assinatura da Autorização de Obra',
       menuItems: [
@@ -515,27 +541,28 @@ export class Solicitacoes {
 
 
     {
-      numeroSolicitacao: '8214590376',
-      nomeGleba: 'Santa Ana',
-      localizacao: 'Bairro Lapinha',
-      codigoParcela: '8b71fc54-8e11-c44d-4c2a-e72d6939c9b3',
-      dataRequerimento: '01/02/2024',
-      codigoProcessoSEI: '23112.045389/2023-44',
+      numeroSolicitacao: '3819274501',
+      nomeGleba: 'Santa Luzia',
+      localizacao: 'Vila Nova Esperança',
+      codigoParcela: '7f2c1a9e-b8d4-4f39-9b83-92f1c3e8a4d7',
+      dataRequerimento: '12/03/2024',
+      codigoProcessoSEI: '23112.045534/2023-74',
       statusSolicitacao: 'Título Emitido',
       statusAutorizacaoObra: 'Emitida',
       menuItems: [
         { label: 'Detalhar Solicitação', value: 'visualizar', modal: false, routerLink: '/analista/solicitacoes/detalharsolicitacao' },
         { label: 'Histórico da Solicitação', value: 'cancelar', modal: false, routerLink: '/analista/solicitacoes/historicosolicitacao' },
-        { label: 'Visualizar Título Emitido', value: 'visualizar', modal: false, routerLink: '/analista/solicitacoes/visualizartituloemitido' }
+        { label: 'Visualizar Título Emitido', value: 'visualizar', modal: false, routerLink: '/analista/solicitacoes/visualizartituloemitido' },
+        { label: 'Visualizar Autorização de Obra', value: 'visualizar', modal: false, routerLink: '/analista/solicitacoes/visualizarautorizacaoobra' }
       ]
     },
     {
-      numeroSolicitacao: '5908214376',
-      nomeGleba: 'Santa Fé',
-      localizacao: 'Bairro Central',
-      codigoParcela: 'c8b71f54-18e1-44cd-a4c2-3e72d69c9b93',
-      dataRequerimento: '03/06/2024',
-      codigoProcessoSEI: '23112.045812/2023-91',
+      numeroSolicitacao: '3819274501',
+      nomeGleba: 'Santa Luzia',
+      localizacao: 'Vila Nova Esperança',
+      codigoParcela: '7f2c1a9e-b8d4-4f39-9b83-92f1c3e8a4d7',
+      dataRequerimento: '12/03/2024',
+      codigoProcessoSEI: '23112.045534/2023-74',
       statusSolicitacao: 'Indeferida',
       statusAutorizacaoObra: 'Não Solicitada',
       menuItems: [
@@ -545,12 +572,12 @@ export class Solicitacoes {
       ]
     },
     {
-      numeroSolicitacao: '3357902841',
-      nomeGleba: 'Nova União',
-      localizacao: 'Vila do Carmo',
-      codigoParcela: 'e71c0d7a-92d9-41b2-8890-4c329961b774',
-      dataRequerimento: '11/06/2024',
-      codigoProcessoSEI: '23112.045845/2023-38',
+      numeroSolicitacao: '3819274501',
+      nomeGleba: 'Santa Luzia',
+      localizacao: 'Vila Nova Esperança',
+      codigoParcela: '7f2c1a9e-b8d4-4f39-9b83-92f1c3e8a4d7',
+      dataRequerimento: '12/03/2024',
+      codigoProcessoSEI: '23112.045534/2023-74',
       statusSolicitacao: 'Cancelada pelo Usuário',
       statusAutorizacaoObra: 'Indeferida',
       menuItems: [
