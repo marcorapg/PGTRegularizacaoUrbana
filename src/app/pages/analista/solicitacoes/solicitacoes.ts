@@ -72,10 +72,10 @@ export class Solicitacoes {
       case " Registrar Número SEI ":
         this.esconderRegistrarNumeroSei = false;
         break;
-      case " Analisar Documentação ":
+      case " Registrar Parecer da Análise Documental ":
         this.esconderAnalisarSolicitacao = false;
         break;
-      case " Analisar Perímetro Urbano ":
+      case " Registrar Parecer da Análise de Perímetro Urbano ":
         this.esconderAnalisarPerimetroUrbano = false;
         break;
       case " Registrar Parecer MCID ":
@@ -127,7 +127,7 @@ export class Solicitacoes {
       menuItems: [
         { label: 'Detalhar Solicitação', value: 'visualizar', modal: false, routerLink: '/analista/solicitacoes/detalharsolicitacao' },
         { label: 'Histórico da Solicitação', value: 'cancelar', modal: false, routerLink: '/analista/solicitacoes/historicosolicitacao' },
-        { label: 'Analisar Documentação', value: 'cancelar', modal: true, routerLink: '/analista/solicitacoes/analisarsolicitacao' }
+        { label: 'Registrar Parecer da Análise Documental', value: 'cancelar', modal: true, routerLink: '/analista/solicitacoes/analisarsolicitacao' }
       ]
     },
     {
@@ -158,7 +158,7 @@ export class Solicitacoes {
         { label: 'Histórico da Solicitação', value: 'cancelar', modal: false, routerLink: '/analista/solicitacoes/historicosolicitacao' },
         { label: 'Relatório de Conformidades', value: 'cancelar', modal: false, routerLink: '/analista/relatorioconformidades' },
         { label: 'Resolver Pendência', value: 'cancelar', modal: false, routerLink: '/analista/resolverpendencias' },
-        { label: 'Analisar Perímetro Urbano', value: 'cancelar', modal: true, routerLink: '/analista/solicitacoes/analisarperimetrourbano' }
+        { label: 'Registrar Parecer da Análise de Perímetro Urbano', value: 'cancelar', modal: true, routerLink: '/analista/solicitacoes/analisarperimetrourbano' }
       ]
     },
     {
@@ -389,11 +389,12 @@ export class Solicitacoes {
       codigoParcela: '7f2c1a9e-b8d4-4f39-9b83-92f1c3e8a4d7',
       dataRequerimento: '12/03/2024',
       codigoProcessoSEI: '23112.045534/2023-74',
-      statusSolicitacao: 'Aguardando Registro da Aprovação PFE',
+      statusSolicitacao: 'Aguardando Envio e Registro da Aprovação PFE',
       statusAutorizacaoObra: 'Indeferida',
       menuItems: [
         { label: 'Detalhar Solicitação', value: 'visualizar', modal: false, routerLink: '/analista/solicitacoes/detalharsolicitacao' },
         { label: 'Histórico da Solicitação', value: 'cancelar', modal: false, routerLink: '/analista/solicitacoes/historicosolicitacao' },
+        { label: 'Baixar Ofício de Solicitação de Parecer PFE', value: 'cancelar', modal: false, routerLink: '/analista/solicitacoes/historicosolicitacao' },
         { label: 'Registrar Aprovação PFE', value: 'cancelar', modal: true, routerLink: '/analista/solicitacoes/registraraprovacaopfe' }        
       ]
     },
@@ -498,26 +499,11 @@ export class Solicitacoes {
       dataRequerimento: '12/03/2024',
       codigoProcessoSEI: '23112.045534/2023-74',
       statusSolicitacao: 'Aguardando Emissão do Título de Doação',
-      statusAutorizacaoObra: 'Aguardando Análise de Georreferenciamento da Autorização de Obra',
-      menuItems: [
-        { label: 'Detalhar Solicitação', value: 'visualizar', modal: false, routerLink: '/analista/solicitacoes/detalharsolicitacao' },
-        { label: 'Histórico da Solicitação', value: 'cancelar', modal: false, routerLink: '/analista/solicitacoes/historicosolicitacao' },
-        { label: 'Realizar Análise de Georreferenciamento da Autorização de Obra', value: 'cancelar', modal: true, routerLink: '/analista/solicitacoes/realizaranalisegeorreferenciamentoautorizacaoobra' }
-      ]
-    },
-    {
-      numeroSolicitacao: '3819274501',
-      nomeGleba: 'Santa Luzia',
-      localizacao: 'Vila Nova Esperança',
-      codigoParcela: '7f2c1a9e-b8d4-4f39-9b83-92f1c3e8a4d7',
-      dataRequerimento: '12/03/2024',
-      codigoProcessoSEI: '23112.045534/2023-74',
-      statusSolicitacao: 'Aguardando Emissão do Título de Doação',
       statusAutorizacaoObra: 'Aguardando Elaboração da Autorização de Obra',
       menuItems: [
         { label: 'Detalhar Solicitação', value: 'visualizar', modal: false, routerLink: '/analista/solicitacoes/detalharsolicitacao' },
         { label: 'Histórico da Solicitação', value: 'cancelar', modal: false, routerLink: '/analista/solicitacoes/historicosolicitacao' },
-        { label: 'Emitir Autorização de Obra', value: 'cancelar', modal: false, routerLink: '/analista/solicitacoes/emitirautorizacaoobra' }        
+        { label: 'Elaborar Autorização de Obra', value: 'cancelar', modal: false, routerLink: '/analista/solicitacoes/emitirautorizacaoobra' }        
       ]
     },
     {
@@ -632,6 +618,33 @@ export class Solicitacoes {
 
   getStatusSolicitacaoClass(status: string): string {
 
+    
+    switch (status) {
+      case 'Aberta':
+        return 'bg-blue-cool-vivid-70';
+
+      case 'Aguardando Análise Documental':
+      case 'Aguardando Correção Documental pela Prefeitura':
+        return 'bg-green-cool-vivid-50';
+
+      case 'Aguardando Análise de Perímetro Urbano':
+      case 'Aguardando Correção de Georreferenciamento pela Prefeitura':
+        return 'bg-green-cool-vivid-80';        
+
+      case 'Aguardando Análise Parecer MCID':
+      case 'Aguardando Documentação Complementar da Prefeitura':
+      case 'Aguardando Elaboração do Relatório de Caracterização Urbana':
+      case 'Aguardando Solicitação do Parecer MCID do Relatório de Caracterização Urbana':
+      case 'Aguardando Análise do Parecer MCID do Relatório de Caracterização Urbana':
+      case 'Aguardando Registro do Parecer MCID do Relatório de Caracterização Urbana':
+      case 'Aguardando Documentação Complementar da Prefeitura':                                             
+        return 'bg-red-warm-vivid-70';
+
+      case 'Aguardando Elaboração de Ofício de Solicitação Parecer PFE':
+      case 'Aguardando Envio e Registro da Aprovação PFE':                                             
+        return 'bg-red-warm-vivid-70';
+    };
+
     let hash = 0;
 
     for (let i = 0; i < status.length; i++) {
@@ -645,6 +658,8 @@ export class Solicitacoes {
   }
 
   getStatusObraClass(status: string): string {
+    return 'bg-gray-60';
+
     switch (status) {
       case 'Solicitada':
         return 'bg-blue-cool-vivid-70';

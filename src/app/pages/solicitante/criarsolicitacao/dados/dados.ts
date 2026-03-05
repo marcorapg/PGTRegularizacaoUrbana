@@ -19,8 +19,8 @@ export class Dados implements AfterViewInit {
 
   pesquisarCPFResponsavel() {
     this.nomeResponsavel = 'Carlos Vieira Mota';
-    this.emailResponsavel = 'carlos.vieira@pbh.mg.gov.br';
-    this.telefoneResponsavel = '(31) 99548-7896';
+    this.emailResponsavel = '';
+    this.telefoneResponsavel = '';
   }
 
   ngAfterViewInit(): void {

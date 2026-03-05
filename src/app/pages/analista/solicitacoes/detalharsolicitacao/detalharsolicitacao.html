@@ -11,6 +11,10 @@
             <li class="tab-item" title="Notícias">
                 <button type="button" data-panel="panel-8-count"><span class="name">Parcelas</span></button>
             </li>
+            <li class="tab-item" title="Documentos">
+                <button type="button" data-panel="panel-9-count"><span class="name">Documentos
+                        complementares</span></button>
+            </li>
         </ul>
     </nav>
     <div class="tab-content">
@@ -379,12 +383,48 @@
                 </div>
             </div>
         </div>
+
+        <!-- Documentos complementares -->
+        <div class="tab-panel" id="panel-9-count">
+            <div class="row">
+                <div class="br-item" role="listitem">
+                    <div class="row align-items-center">
+                        <div class="col-auto"><i class="fa fa-paperclip" aria-hidden="true"></i>
+                        </div>
+                        <div class="col">
+                            <a href="">Documento complementar 1</a>
+                        </div>
+                    </div>
+                    <div class="row align-items-center">
+                        <div class="col-auto"><i class="fa fa-paperclip" aria-hidden="true"></i>
+                        </div>
+                        <div class="col">
+                            <a href="">Documento complementar 2</a>
+                        </div>
+                    </div>
+                    <div class="row align-items-center">
+                        <div class="col-auto"><i class="fa fa-paperclip" aria-hidden="true"></i>
+                        </div>
+                        <div class="col">
+                            <a href="">Documento complementar 3</a>
+                        </div>
+                    </div>
+                    <div class="row align-items-center">
+                        <div class="col-auto"><i class="fa fa-paperclip" aria-hidden="true"></i>
+                        </div>
+                        <div class="col">
+                            <a href="">Documento complementar 4</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
 <div class="p-3 d-flex justify-content-end">
     <a routerLink="/analista/solicitacoes/"><button class="br-button primary mr-3" type="button">Voltar</button></a>
     <button class="br-button primary mr-3" type="button" (click)="imprimir()">
-        Imprimir
+        Fazer download
     </button>
 </div>

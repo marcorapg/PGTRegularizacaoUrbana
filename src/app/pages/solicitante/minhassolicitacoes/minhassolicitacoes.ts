@@ -45,25 +45,31 @@ export class Minhassolicitacoes {
 
   menuItemsAnalisePerimetroUrbano: MenuItem[] = [
     { label: 'Detalhar Solicitação', value: 'visualizar', modal: false, routerLink: '/solicitante/minhassolicitacoes/visualizarsolicitacao' },
+    { label: 'Cancelar Solicitação', value: 'cancelar', modal: false, routerLink: '/solicitante/minhassolicitacoes/cancelamento' }
   ];
 
   menuItemsPendenciaGeorreferenciamento: MenuItem[] = [
     { label: 'Detalhar Solicitação', value: 'visualizar', modal: false, routerLink: '/solicitante/minhassolicitacoes/visualizarsolicitacao' },
-    { label: 'Detalhar Pendência no Georreferenciamento', value: 'visualizar', modal: false, routerLink: '/solicitante/minhassolicitacoes/detalharpendenciageorreferenciamento' },
+    { label: 'Detalhar Pendência de Georreferenciamento', value: 'visualizar', modal: false, routerLink: '/solicitante/minhassolicitacoes/detalharpendenciageorreferenciamento' },
     { label: 'Corrigir Pendência de Georreferenciamento', value: 'visualizar', modal: false, routerLink: '/solicitante/minhassolicitacoes/corrigirpendenciadocumentalgeo' },
     { label: 'Cancelar Solicitação', value: 'cancelar', modal: false, routerLink: '/solicitante/minhassolicitacoes/cancelamento' }
   ];
 
-  menuItemsMinutaTituloEmitida: MenuItem[] = [
+  menuItemsExigenciaDocumentacaoComplementar: MenuItem[] = [
     { label: 'Detalhar Solicitação', value: 'visualizar', modal: false, routerLink: '/solicitante/minhassolicitacoes/visualizarsolicitacao' },
-    { label: 'Tomar Ciêncida da Titulação', value: 'visualizar', modal: false, routerLink: '/solicitante/minhassolicitacoes/tomarcienciatitulacao' },
-    { label: 'Visualizar Minuta do Título', value: 'visualizar', modal: false, routerLink: '/solicitante/minhassolicitacoes/visualizarminutatitulo' }
+    { label: 'Detalhar Exigência de Documentação Complementar', value: 'visualizar', modal: false, routerLink: '/solicitante/minhassolicitacoes/detalharexigenciadocumentacaocomplementar' },
+    { label: 'Anexar Documentação Complementar Exigida', value: 'visualizar', modal: false, routerLink: '/solicitante/minhassolicitacoes/anexardocumentacaocomplementar' }
   ];
 
-  menuItemsTituloAguardandoAprovacaoSuperior: MenuItem[] = [
-    { label: 'Detalhar Solicitação', value: 'novoprefeito', modal: false, routerLink: '/solicitante/minhassolicitacoes/visualizarsolicitacao' },
+  menuItemsExigenciaCienciaTitulacao: MenuItem[] = [
+    { label: 'Detalhar Solicitação', value: 'visualizar', modal: false, routerLink: '/solicitante/minhassolicitacoes/visualizarsolicitacao' },
     { label: 'Visualizar Minuta do Título', value: 'visualizar', modal: false, routerLink: '/solicitante/minhassolicitacoes/visualizarminutatitulo' },
-    { label: 'Consultar Notificação de Indeferimento de Autorização de Obra', value: 'cancelar', modal: false, routerLink: '/solicitante/minhassolicitacoes/consultarindeferimentoautorizacaoobra' }
+    { label: 'Declarar Ciência da Titulação', value: 'visualizar', modal: false, routerLink: '/solicitante/minhassolicitacoes/tomarcienciatitulacao' }
+  ];
+
+  menuItemsEmissaoTituloAnalise: MenuItem[] = [
+    { label: 'Detalhar Solicitação', value: 'visualizar', modal: false, routerLink: '/solicitante/minhassolicitacoes/visualizarsolicitacao' },
+    { label: 'Visualizar Minuta do Título', value: 'visualizar', modal: false, routerLink: '/solicitante/minhassolicitacoes/visualizarminutatitulo' }
   ];
 
   menuItemsTituloEmitido: MenuItem[] = [
@@ -75,13 +81,13 @@ export class Minhassolicitacoes {
 
   menuItemsIndeferida: MenuItem[] = [
     { label: 'Detalhar Solicitação', value: 'novoprefeito', modal: false, routerLink: '/solicitante/minhassolicitacoes/visualizarsolicitacao' },
-    { label: 'Consultar Motivo do Indeferimento da Solicitação', value: 'cancelar', modal: false, routerLink: '/solicitante/minhassolicitacoes/consultarindeferimento' }
+    { label: 'Consultar Motivo do Indeferimento da Solicitação', value: 'cancelar', modal: false, routerLink: '/solicitante/minhassolicitacoes/consultarindeferimento' },
+    { label: 'Consultar Notificação de Indeferimento de Autorização de Obra', value: 'cancelar', modal: false, routerLink: '/solicitante/minhassolicitacoes/consultarindeferimentoautorizacaoobra' }
   ];
 
   menuItemsCanceladaUsuario: MenuItem[] = [
     { label: 'Detalhar Solicitação', value: 'novoprefeito', modal: false, routerLink: '/solicitante/minhassolicitacoes/visualizarsolicitacao' },
-    { label: 'Consultar Motivo do Cancelamento da Solicitação', value: 'cancelar', modal: false, routerLink: '/solicitante/minhassolicitacoes/consultarcancelamento' },
-    { label: 'Consultar Notificação de Indeferimento de Autorização de Obra', value: 'cancelar', modal: false, routerLink: '/solicitante/minhassolicitacoes/consultarindeferimentoautorizacaoobra' }
+    { label: 'Consultar Motivo do Cancelamento da Solicitação', value: 'cancelar', modal: false, routerLink: '/solicitante/minhassolicitacoes/consultarcancelamento' }
   ];
 
   scrimOpen = false;
@@ -172,6 +178,9 @@ export class Minhassolicitacoes {
           break;
         case "tomarCienciaTitulacao":
           this.mensagemSucesso = "Tomada de ciência de titulação salva com sucesso!";
+          break;
+        default:
+          this.mensagemSucesso = "Ação realizada com sucesso!";
           break;
       }
     }

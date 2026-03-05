@@ -14,7 +14,7 @@ export class Tomarcienciatitulacao  implements AfterViewInit {
   pageBreadcrumbs = [
     { text: 'Home', address: '/solicitante/' },
     { text: 'Minhas solicitações', address: '/solicitante/minhassolicitacoes' },
-    { text: 'Tomar Ciência da Titulação', address: '' }
+    { text: 'Declarar Ciência da Titulação', address: '' }
   ];
 
   ngAfterViewInit(): void {

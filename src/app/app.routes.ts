@@ -46,6 +46,8 @@ import { Visualizartituloemitido } from './pages/analista/solicitacoes/visualiza
 import { Visualizarmotivoindeferimento } from './pages/analista/solicitacoes/visualizarmotivoindeferimento/visualizarmotivoindeferimento';
 import { Visualizarmotivocancelamento } from './pages/analista/solicitacoes/visualizarmotivocancelamento/visualizarmotivocancelamento';
 import { Exibirdocumentostitulodoacao } from './pages/analista/solicitacoes/exibirdocumentostitulodoacao/exibirdocumentostitulodoacao';
+import { Detalharexigenciadocumentacaocomplementar } from './pages/solicitante/minhassolicitacoes/detalharexigenciadocumentacaocomplementar/detalharexigenciadocumentacaocomplementar';
+import { Anexardocumentacaocomplementar } from './pages/solicitante/minhassolicitacoes/anexardocumentacaocomplementar/anexardocumentacaocomplementar';
 
 export const routes: Routes = [
   { path: '', component: Home },
@@ -68,6 +70,8 @@ export const routes: Routes = [
   { path: 'solicitante/minhassolicitacoes/corrigirpendenciadocumental', component: Corrigirpendenciadocumental },
   { path: 'solicitante/minhassolicitacoes/corrigirpendenciadocumentalgeo', component: Corrigirpendenciadocumentalgeo },
   { path: 'solicitante/minhassolicitacoes/visualizarautorizacaoobra', component: Visualizarautorizacaoobra },
+  { path: 'solicitante/minhassolicitacoes/detalharexigenciadocumentacaocomplementar', component: Detalharexigenciadocumentacaocomplementar },
+  { path: 'solicitante/minhassolicitacoes/anexardocumentacaocomplementar', component: Anexardocumentacaocomplementar },  
   { path: 'analista', component: Analista },
   { path: 'analista/solicitacoes', component: Solicitacoes },
   { path: 'analista/relatorioconformidades', component: Relatorioconformidades },
@@ -89,11 +93,11 @@ export const routes: Routes = [
   { path: 'analista/solicitacoes/emitirtitulo', component: Emitirtitulo },
   { path: 'analista/solicitacoes/emitirautorizacaoobra', component: Emitirautorizacaoobra },
   { path: 'analista/solicitacoes/assinarautorizacaoobra', component: Assinarautorizacaoobra },
-  { path: 'analista/solicitacoes/visualizartituloemitido', component: Visualizartituloemitido }, 
+  { path: 'analista/solicitacoes/visualizartituloemitido', component: Visualizartituloemitido },
   { path: 'analista/solicitacoes/visualizarmotivoindeferimento', component: Visualizarmotivoindeferimento },
   { path: 'analista/solicitacoes/visualizarmotivocancelamento', component: Visualizarmotivocancelamento },
   { path: 'analista/solicitacoes/exibirdocumentostitulodoacao', component: Exibirdocumentostitulodoacao },
-  { path: 'analista/solicitacoes/visualizarautorizacaoobra', component: Visualizarautorizacaoobra },  
+  { path: 'analista/solicitacoes/visualizarautorizacaoobra', component: Visualizarautorizacaoobra },
   { path: '**', redirectTo: '' } // optional fallback
 ];
 
