@@ -11,6 +11,6 @@ import { Breadcrumb } from '../../../../layout/breadcrumb/breadcrumb';
 export class Sucesso {
   pageBreadcrumbs = [
     { text: 'Home', address: '/solicitante/' },
-    { text: 'Criação de Solicitação de Título de Regularização Fundiária Urbana', address: '/solicitante/criarsolicitacao/' }
+    { text: 'Criação de Solicitação de Título de Regularização Urbana', address: '/solicitante/criarsolicitacao/' }
   ];
 }

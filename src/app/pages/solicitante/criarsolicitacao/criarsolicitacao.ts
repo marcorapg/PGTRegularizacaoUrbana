@@ -18,7 +18,7 @@ import { RouterLink } from '@angular/router';
 export class Criarsolicitacao implements AfterViewInit {
   pageBreadcrumbs = [
     { text: 'Home', address: '/solicitante/' },
-    { text: 'Solicitação de Título de Regularização Fundiária Urbana', address: '/solicitante/criarsolicitacao/' }
+    { text: 'Solicitação de Título de Regularização Urbana', address: '/solicitante/criarsolicitacao/' }
   ];
 
   ngAfterViewInit(): void {

@@ -18,7 +18,7 @@ declare const core: any;
 export class Minhassolicitacoes {
   pageBreadcrumbs = [
     { text: 'Home', address: '/solicitante/' },
-    { text: 'Minhas Solicitações de Título de Regularização Fundiária Urbana', address: '/solicitante/criarsolicitacao/' }
+    { text: 'Minhas Solicitações de Título de Regularização Urbana', address: '/solicitante/criarsolicitacao/' }
   ];
 
   constructor(private route: ActivatedRoute) { }
