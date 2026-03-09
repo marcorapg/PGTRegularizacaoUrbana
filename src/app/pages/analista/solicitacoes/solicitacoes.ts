@@ -108,7 +108,7 @@ export class Solicitacoes {
       dataRequerimento: '12/03/2024',
       codigoProcessoSEI: '-',
       statusSolicitacao: 'Aberta',
-      statusAutorizacaoObra: 'Solicitada',
+      statusAutorizacaoObra: 'Aguardando Análise Cartográfica da Autorizacao de Obra',
       menuItems: [
         { label: 'Detalhar Solicitação', value: 'visualizar', modal: false, routerLink: '/analista/solicitacoes/detalharsolicitacao' },
         { label: 'Histórico da Solicitação', value: 'cancelar', modal: false, routerLink: '/analista/solicitacoes/historicosolicitacao' },
@@ -138,7 +138,7 @@ export class Solicitacoes {
       dataRequerimento: '12/03/2024',
       codigoProcessoSEI: '23112.045534/2023-74',
       statusSolicitacao: 'Aguardando Correção Documental pela Prefeitura',
-      statusAutorizacaoObra: 'Solicitada',
+      statusAutorizacaoObra: 'Aguardando Análise Cartográfica da Autorizacao de Obra',
       menuItems: [
         { label: 'Detalhar Solicitação', value: 'visualizar', modal: false, routerLink: '/analista/solicitacoes/detalharsolicitacao' },
         { label: 'Histórico da Solicitação', value: 'cancelar', modal: false, routerLink: '/analista/solicitacoes/historicosolicitacao' }
@@ -152,7 +152,7 @@ export class Solicitacoes {
       dataRequerimento: '12/03/2024',
       codigoProcessoSEI: '23112.045534/2023-74',
       statusSolicitacao: 'Aguardando Análise de Perímetro Urbano',
-      statusAutorizacaoObra: 'Solicitada',
+      statusAutorizacaoObra: 'Aguardando Análise Cartográfica da Autorizacao de Obra',
       menuItems: [
         { label: 'Detalhar Solicitação', value: 'visualizar', modal: false, routerLink: '/analista/solicitacoes/detalharsolicitacao' },
         { label: 'Histórico da Solicitação', value: 'cancelar', modal: false, routerLink: '/analista/solicitacoes/historicosolicitacao' },
@@ -228,7 +228,7 @@ export class Solicitacoes {
       dataRequerimento: '12/03/2024',
       codigoProcessoSEI: '23112.045534/2023-74',
       statusSolicitacao: 'Aguardando Documentação Complementar da Prefeitura',
-      statusAutorizacaoObra: 'Indeferida',
+      statusAutorizacaoObra: 'Aguardando Análise Cartográfica da Autorizacao de Obra',
       menuItems: [
         { label: 'Detalhar Solicitação', value: 'visualizar', modal: false, routerLink: '/analista/solicitacoes/detalharsolicitacao' },
         { label: 'Histórico da Solicitação', value: 'cancelar', modal: false, routerLink: '/analista/solicitacoes/historicosolicitacao' }
@@ -272,7 +272,7 @@ export class Solicitacoes {
       dataRequerimento: '12/03/2024',
       codigoProcessoSEI: '23112.045534/2023-74',
       statusSolicitacao: 'Aguardando Registro do Parecer MCID do Relatório de Caracterização Urbana',
-      statusAutorizacaoObra: 'Indeferida',
+      statusAutorizacaoObra: 'Aguardando Análise Cartográfica da Autorizacao de Obra',
       menuItems: [
         { label: 'Detalhar Solicitação', value: 'visualizar', modal: false, routerLink: '/analista/solicitacoes/detalharsolicitacao' },
         { label: 'Histórico da Solicitação', value: 'cancelar', modal: false, routerLink: '/analista/solicitacoes/historicosolicitacao' },
@@ -287,7 +287,7 @@ export class Solicitacoes {
       dataRequerimento: '12/03/2024',
       codigoProcessoSEI: '23112.045534/2023-74',
       statusSolicitacao: 'Aguardando Análise do Parecer MCID do Relatório de Caracterização Urbana',
-      statusAutorizacaoObra: 'Indeferida',
+      statusAutorizacaoObra: 'Não Solicitada',
       menuItems: [
         { label: 'Detalhar Solicitação', value: 'visualizar', modal: false, routerLink: '/analista/solicitacoes/detalharsolicitacao' },
         { label: 'Histórico da Solicitação', value: 'cancelar', modal: false, routerLink: '/analista/solicitacoes/historicosolicitacao' },
@@ -331,7 +331,7 @@ export class Solicitacoes {
       dataRequerimento: '12/03/2024',
       codigoProcessoSEI: '23112.045534/2023-74',
       statusSolicitacao: 'Aguardando Aprovação Superior Regularização Fundiária',
-      statusAutorizacaoObra: 'Indeferida',
+      statusAutorizacaoObra: 'Aguardando Análise Cartográfica da Autorizacao de Obra',
       menuItems: [
         { label: 'Detalhar Solicitação', value: 'visualizar', modal: false, routerLink: '/analista/solicitacoes/detalharsolicitacao' },
         { label: 'Histórico da Solicitação', value: 'cancelar', modal: false, routerLink: '/analista/solicitacoes/historicosolicitacao' },
@@ -361,7 +361,7 @@ export class Solicitacoes {
       dataRequerimento: '12/03/2024',
       codigoProcessoSEI: '23112.045534/2023-74',
       statusSolicitacao: 'Aguardando Ciência da Titulação pela Prefeitura',
-      statusAutorizacaoObra: 'Indeferida',
+      statusAutorizacaoObra: 'Aguardando Análise Cartográfica da Autorizacao de Obra',
       menuItems: [
         { label: 'Detalhar Solicitação', value: 'visualizar', modal: false, routerLink: '/analista/solicitacoes/detalharsolicitacao' },
         { label: 'Histórico da Solicitação', value: 'cancelar', modal: false, routerLink: '/analista/solicitacoes/historicosolicitacao' }
@@ -421,7 +421,7 @@ export class Solicitacoes {
       dataRequerimento: '12/03/2024',
       codigoProcessoSEI: '23112.045534/2023-74',
       statusSolicitacao: 'Aguardando Despacho Decisório do Título de Doação',
-      statusAutorizacaoObra: 'Indeferida',
+      statusAutorizacaoObra: 'Não Solicitada',
       menuItems: [
         { label: 'Detalhar Solicitação', value: 'visualizar', modal: false, routerLink: '/analista/solicitacoes/detalharsolicitacao' },
         { label: 'Histórico da Solicitação', value: 'cancelar', modal: false, routerLink: '/analista/solicitacoes/historicosolicitacao' },
@@ -658,7 +658,7 @@ export class Solicitacoes {
   }
 
   getStatusObraClass(status: string): string {
-    return 'bg-gray-60';
+    //return 'bg-gray-60';
 
     switch (status) {
       case 'Solicitada':
@@ -676,11 +676,11 @@ export class Solicitacoes {
       case 'Aguardando Análise Cartográfica da Autorizacao de Obra':
         return 'bg-yellow-70';
 
-      case 'Aguardando Análise de Georreferenciamento da Autorização de Obra':
-        return 'bg-purple-40';
+      case 'Aguardando Análise de Mérito':
+        return 'bg-purple-20';
 
       case 'Aguardando Elaboração da Autorização de Obra':
-        return 'bg-orange-vivid-90';
+        return 'bg-orange-vivid-60';
         
       case 'Aguardando Assinatura da Autorização de Obra':
         return 'bg-blue-warm-vivid-50';        
